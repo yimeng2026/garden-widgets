@@ -93,6 +93,7 @@ class Cdp {
 async function run() {
   if (!fs.existsSync(EDGE)) throw new Error("Edge not found; set EDGE_BIN to a local Chromium executable");
   fs.mkdirSync(OUT, { recursive: true });
+  fs.rmSync(path.join(OUT, "report.json"), { force: true });
   const previewPort = await freePort();
   const profile = path.join(OUT, `profile-${process.pid}`);
   const previewLog = fs.openSync(path.join(OUT, "preview.log"), "w");
@@ -215,6 +216,9 @@ async function run() {
     await cdp.evaluate("document.querySelector('#reference-status').value='all';document.querySelector('#reference-query').value='Roache';document.querySelector('[data-form=reference-filter]').requestSubmit()");
     assert.equal(await cdp.evaluate("document.querySelectorAll('.project-card').length"), 1);
     assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('Hermosa')"));
+    assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('正文编号')"));
+    await cdp.evaluate("document.querySelector('.details summary').click()");
+    assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('覆盖 19/19')"));
     await cdp.screenshot("09-references");
     await assertNoOverflow("references");
     pass("39 条来源、第三篇 13 条元数据与 Roache 定位");

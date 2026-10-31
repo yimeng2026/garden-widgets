@@ -1,5 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { buildReferenceAudit } from "../scripts/build-reference-audit.mjs";
 import { referenceExplorer, renderContentExplorer } from "../src/content-explorers.mjs";
 import { assertStaticWidgetHtml } from "../src/research-renderer.mjs";
@@ -38,15 +41,21 @@ test("metadata corrections and background references preserve registration bound
   assert.ok(!JSON.stringify(audit).includes("Scholar 检索返回"));
 });
 
-test("local evidence references resolve to present files with hashes and no invented numbered citations", () => {
+test("local evidence and explicit citations resolve without missing or invalid references", () => {
   for (const file of audit.references.flatMap((item) => item.localFiles)) {
     assert.equal(file.present, true);
     assert.match(file.sha256, /^[a-f0-9]{64}$/);
   }
-  assert.ok(audit.papers.every((paper) => paper.explicitCitationCount === 0));
-  assert.ok(audit.references.some((item) => item.linkage === "author_year"));
-  assert.ok(audit.references.some((item) => item.linkage === "identifier"));
-  assert.ok(audit.references.some((item) => item.linkage === "bibliography_only"));
+  assert.deepEqual(audit.papers.map((paper) => paper.explicitCitationCount), [9, 8, 18]);
+  for (const paper of audit.papers) {
+    assert.equal(paper.citedReferenceCount, paper.referenceCount);
+    assert.deepEqual(paper.uncitedReferenceNumbers, []);
+    assert.deepEqual(paper.invalidCitationNumbers, []);
+  }
+  assert.ok(audit.references.every((item) => item.linkage === "explicit_number"));
+  assert.ok(audit.references.every((item) => item.linkedSections.every((section) => section.citation)));
+  assert.ok(audit.references.some((item) => item.inferredSections.some((section) => section.linkage === "author_year")));
+  assert.ok(audit.references.some((item) => item.inferredSections.some((section) => section.linkage === "identifier")));
 });
 
 test("reference explorer renders original entries and metadata without network or status inflation", () => {
@@ -58,4 +67,26 @@ test("reference explorer renders original entries and metadata without network o
   assert.ok(html.includes("未发现可靠的自动关联章节"));
   assert.ok(html.includes("10.3389/fninf.2017.00076"));
   assert.deepEqual(assertStaticWidgetHtml(html), []);
+});
+
+test("citation audit reports missing and out-of-range numbers instead of forcing full coverage", () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const temporaryRoot = path.join(root, ".tmp");
+  fs.mkdirSync(temporaryRoot, { recursive: true });
+  const temporary = fs.mkdtempSync(path.join(temporaryRoot, "reference-audit-"));
+  try {
+    fs.mkdirSync(path.join(temporary, "snapshots"));
+    for (const name of ["paper-collection.json", "reference-metadata.json", "reference-supplement.json", "validation-records.json"]) {
+      fs.copyFileSync(path.join(root, "snapshots", name), path.join(temporary, "snapshots", name));
+    }
+    const file = path.join(temporary, "snapshots/paper-collection.json");
+    const collection = JSON.parse(fs.readFileSync(file, "utf8"));
+    collection.papers[0].markdown = collection.papers[0].markdown.replace("仅属于 CHEMBL657848[3]", "仅属于 CHEMBL657848[99]");
+    fs.writeFileSync(file, JSON.stringify(collection));
+    const damaged = buildReferenceAudit({ rootDir: temporary, write: false });
+    assert.deepEqual(damaged.papers[0].uncitedReferenceNumbers, [3]);
+    assert.deepEqual(damaged.papers[0].invalidCitationNumbers, [99]);
+  } finally {
+    fs.rmSync(temporary, { recursive: true, force: true });
+  }
 });

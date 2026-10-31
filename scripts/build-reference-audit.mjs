@@ -24,6 +24,13 @@ function identifiers(raw) {
   return [...new Set(patterns.flatMap((pattern) => raw.match(pattern) || []))];
 }
 
+function citationGroups(text) {
+  return [...text.matchAll(/\[((?:\d+\s*,\s*)*\d+)\]/g)].map((match) => ({
+    raw: match[0],
+    numbers: match[1].split(/\s*,\s*/).map(Number),
+  }));
+}
+
 function sectionsOf(markdown) {
   const body = markdown.split(/^## 参考文献$/m)[0];
   const lines = body.split(/\r?\n/);
@@ -69,10 +76,16 @@ export function buildReferenceAudit({ rootDir = ROOT, write = true } = {}) {
     const { body, sections } = sectionsOf(paper.markdown);
     const bibliography = paper.markdown.split(/^## 参考文献$/m)[1]?.split(/^## 附录 A/m)[0] || "";
     const entries = [...bibliography.matchAll(/^\[(\d+)\]\s+(.+)$/gm)];
-    const explicitCitationCount = (body.match(/\[\d+\]/g) || []).length;
+    const citationGroupsInBody = citationGroups(body);
+    const citedNumbers = new Set(citationGroupsInBody.flatMap((group) => group.numbers));
+    const referenceNumbers = new Set(entries.map((match) => Number(match[1])));
+    const explicitCitationCount = citationGroupsInBody.length;
     papers.push({
       id: paper.id, title: paper.title, referenceCount: entries.length,
       explicitCitationCount,
+      citedReferenceCount: [...citedNumbers].filter((number) => referenceNumbers.has(number)).length,
+      uncitedReferenceNumbers: [...referenceNumbers].filter((number) => !citedNumbers.has(number)),
+      invalidCitationNumbers: [...citedNumbers].filter((number) => !referenceNumbers.has(number)),
       citationStyle: explicitCitationCount ? "numbered_inline" : "bibliography_only_numbers",
     });
     let inheritedUrl = null;
@@ -103,10 +116,16 @@ export function buildReferenceAudit({ rootDir = ROOT, write = true } = {}) {
         status = covered.length === ids.length ? "record_snapshot_matched" : "record_snapshot_partial";
       } else status = "source_locator_only";
       const aliases = [...(ALIASES[metadataKey] || []), ...ids];
-      const linkedSections = sections.filter((section) => aliases.some((alias) => section.text.toLowerCase().includes(alias.toLowerCase()))).map((section) => ({
+      const inferredSections = sections.filter((section) => aliases.some((alias) => section.text.toLowerCase().includes(alias.toLowerCase()))).map((section) => ({
         title: section.title,
         linkage: meta?.year && ALIASES[metadataKey]?.some((alias) => section.text.includes(alias) && section.text.includes(String(meta.year))) ? "author_year" : "identifier",
       }));
+      const explicitSections = sections.flatMap((section) => citationGroups(section.text).filter((group) => group.numbers.includes(number)).map((group) => ({
+        title: section.title,
+        linkage: "explicit_number",
+        citation: group.raw,
+      })));
+      const linkedSections = explicitSections.length ? explicitSections : inferredSections;
       references.push({
         id: `${paper.id}-ref-${pad(number)}`,
         paperId: paper.id,
@@ -124,7 +143,8 @@ export function buildReferenceAudit({ rootDir = ROOT, write = true } = {}) {
           registry: meta.registry, sourceUrl: meta.sourceUrl,
         } : null,
         linkedSections,
-        linkage: linkedSections.some((item) => item.linkage === "author_year") ? "author_year" : linkedSections.length ? "identifier" : "bibliography_only",
+        linkage: explicitSections.length ? "explicit_number" : inferredSections.some((item) => item.linkage === "author_year") ? "author_year" : inferredSections.length ? "identifier" : "bibliography_only",
+        inferredSections,
         fullTextVerified: false,
       });
     }
@@ -133,7 +153,7 @@ export function buildReferenceAudit({ rootDir = ROOT, write = true } = {}) {
   const result = {
     schemaVersion: 1,
     snapshotType: "reference_audit",
-    scope: "逐条书目、标识符与本地快照审计。DOI／目录元数据匹配不等于全文已读；数据库记录复核不等于独立实验；链接关联不冒充正文编号引用。",
+    scope: "逐条书目、正文编号、标识符与本地快照审计。DOI／目录元数据匹配不等于全文已读；数据库记录复核不等于独立实验；作者—年份与标识符仅作辅助关联。",
     repair: { contextReferencesAdded: 10, metadataReferencesCorrected: 3, note: "第三篇补入正文已有作者—年份提及的 10 组背景来源，并校正 3 条注册书目信息。" },
     papers,
     statusCounts,
