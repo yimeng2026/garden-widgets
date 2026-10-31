@@ -21,6 +21,48 @@
       "description": "数学、化学、材料和生物的上游复用、独立重算与跨库桥接。",
       "entry": "widgets/frontier-evidence/index.html",
       "snapshot": "snapshots/frontier-evidence.json"
+    },
+    {
+      "title": "论文与图件阅览室",
+      "status": "3 篇完整论文 · 13 幅图",
+      "description": "全文分章、篇内检索、原始图件放大与未同行评议边界。",
+      "entry": "widgets/paper-library/index.html",
+      "snapshot": "snapshots/paper-collection.json"
+    },
+    {
+      "title": "CA 表观活性比较",
+      "status": "6 组配对 · 方法敏感",
+      "description": "表观 Ki 比值、方法筛选、重复标记和 CA IX 单列边界。",
+      "entry": "widgets/ca-activity/index.html",
+      "snapshot": "snapshots/ca-document-stability.json"
+    },
+    {
+      "title": "结构—序列构建对照",
+      "status": "3 类差异 · 长度待核",
+      "description": "3HS4 与 2H4N 的构建差异、完整对齐区间和排除候选。",
+      "entry": "widgets/structure-control/index.html",
+      "snapshot": "snapshots/structural-control.json"
+    },
+    {
+      "title": "全球前沿项目协作图谱",
+      "status": "88 个项目 · 协作优先",
+      "description": "按领域、采用层级、本地状态与关键词检索全球公开项目。",
+      "entry": "widgets/project-atlas/index.html",
+      "snapshot": "snapshots/projects.json"
+    },
+    {
+      "title": "验证与重放工作台",
+      "status": "真实快照 · 重放路径",
+      "description": "区分已执行复核与上游原始快照，关联脚本、边界和哈希。",
+      "entry": "widgets/validation-workbench/index.html",
+      "snapshot": "snapshots/validation-records.json"
+    },
+    {
+      "title": "长文预算与恢复规划器",
+      "status": "最高 1 亿累计 token",
+      "description": "计算分段、重试和尾段预算；只读规划，不调用模型。",
+      "entry": "widgets/generation-budget/index.html",
+      "snapshot": "docs/CONTENT_COVERAGE.md"
     }
   ]
 }

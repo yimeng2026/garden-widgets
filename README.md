@@ -7,8 +7,14 @@
 - **规律实验室**：CA2 冻结规则留出验证、材料带隙对象完备性、可逆但不稳定的反演反例、竞争模型主动判别。
 - **复杂性与证据控制**：智能体控制论、诺顿穹顶与形式化、2025 三项数学工作、罗文俊·探索者及公开框架审查。
 - **跨域证据链**：PySINDy、Z3、PubChem/RDKit、Materials Project/PyMatGen、PDB/UniProt、ChEMBL/PubChem/PDB 的六项真实复核，显示算法口径、快照与上游互补贡献。
+- **论文与图件阅览室**：三篇完整研究简报、篇内全文检索、章节导航与 13 幅图件放大。
+- **CA 表观活性比较**：六组文档内 Ki 配对、同方法筛选、重复标记和 CA IX 方法边界。
+- **结构—序列构建对照**：3HS4／2H4N 的三类构建差异、完整对齐区间、排除候选和长度元数据不一致。
+- **全球前沿项目协作图谱**：88 个公开项目按领域、采用层级、本地状态和关键词筛选，强调与上游协作而非重复包装。
+- **验证与重放工作台**：21 份验证或上游快照、SHA-256、标量记录和关联重放脚本。
+- **长文预算与恢复规划器**：最高 1 亿累计 token 的分段、尾段、重试和恢复规划；不调用模型。
 
-所有组件都显示证据状态、反例、限制和下一项动作。页面不自行提升结论，不把形式证明、数据库留出、数值演示和独立实验复现混为一谈。
+所有组件都显示证据状态、反例、限制和下一项动作。页面不自行提升结论，不把形式证明、数据库留出、数值演示和独立实验复现混为一谈。仓库内容映射与更新路径见 `docs/CONTENT_COVERAGE.md`。
 
 ## 架构
 
@@ -31,7 +37,7 @@ npm ci
 npm run check
 ```
 
-`check` 先构建，再运行接口、schema、XSS、凭据泄漏、重复案例、静态网络和预览路径测试。
+`check` 先构建，再运行接口、schema、XSS、凭据泄漏、重复案例、静态网络和预览路径测试。`npm run qa:browser` 另使用本机 Edge 的隔离临时配置执行桌面／移动端交互与截图检查；结束时关闭浏览器和预览服务，不读取个人浏览器会话。
 
 ## 本地预览
 
@@ -65,27 +71,30 @@ npm run sync
 
 ```text
 src/
-  contracts.mjs                 证据契约、ID、来源状态、HTML 转义
-  garden-adapter.mjs           花园只读接口与鉴权
-  research-renderer.mjs        共享叙事渲染与静态策略
-  research-widget-template.html 客户端组件模板
+  contracts.mjs                  证据契约、ID、来源状态、HTML 转义
+  garden-adapter.mjs            花园只读接口与鉴权
+  research-renderer.mjs         共享叙事渲染与静态策略
+  research-widget-template.html  原有研究案例组件模板
+  content-explorers.mjs         六类新组件的数据适配与安全 Markdown 渲染
+  content-explorer-template.html 新组件共享的交互壳
 scripts/
-  sync-law-packages.mjs        作者时同步
-  build.mjs                    构建与画廊
-  dev.mjs                      显式创建的安全预览服务器
+  sync-law-packages.mjs         花园证据作者时同步
+  sync-frontier-content.mjs     本地论文、图件、项目与验证快照同步
+  build.mjs                     构建 9 个组件与画廊
+  dev.mjs                       显式创建的安全预览服务器
 schemas/
-  law-package.schema.json      公开 JSON Schema
+  law-package.schema.json       公开 JSON Schema
 snapshots/
-  law-packages.json           当前规律包快照
-  complexity.json             当前复杂性研究快照
-  frontier-evidence.json      当前跨域证据快照
-  history/                    不覆盖的历史快照
-widgets/
-  law-lab/index.html
-  complexity-lab/index.html
-  frontier-evidence/index.html
-  manifest.json
- tests/                        Node 内置测试，无额外框架
+  law-packages.json            当前规律包快照
+  complexity.json              当前复杂性研究快照
+  frontier-evidence.json       当前跨域证据快照
+  paper-collection.json        三篇论文全文与图件登记
+  projects.json                88 个全球公开项目
+  validation-records.json      21 份验证或上游快照及 SHA-256
+  history/                     不覆盖的历史快照
+assets/papers/                 13 幅本地论文原图
+widgets/                       9 个独立静态组件与 manifest
+tests/                         Node 内置测试，无额外测试框架
 ```
 
 ## 边界

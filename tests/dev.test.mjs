@@ -16,6 +16,16 @@ test("preview serves gallery, components and snapshots, but not arbitrary files"
   assert.ok((await component.text()).includes("复杂性与证据控制"));
   const snapshot = await fetch(`${origin}/snapshots/law-packages.json`);
   assert.equal(snapshot.status, 200);
+  const figure = await fetch(`${origin}/assets/papers/01_${encodeURIComponent("乙酰唑胺跨库证据链")}/fig01e_structural_control.png`);
+  assert.equal(figure.status, 200);
+  assert.equal(figure.headers.get("content-type"), "image/png");
+  const imageBytes = Buffer.from(await figure.arrayBuffer());
+  assert.equal(imageBytes.subarray(1, 4).toString(), "PNG");
+  const library = await fetch(`${origin}/widgets/paper-library/index.html`);
+  assert.equal(library.status, 200);
+  assert.ok((await library.text()).includes("论文与图件阅览室"));
   const arbitrary = await fetch(`${origin}/package.json`);
   assert.equal(arbitrary.status, 404);
+  const arbitraryAsset = await fetch(`${origin}/assets/papers/01_${encodeURIComponent("乙酰唑胺跨库证据链")}/01_${encodeURIComponent("乙酰唑胺跨库证据链")}.md`);
+  assert.equal(arbitraryAsset.status, 404);
 });

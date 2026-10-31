@@ -19,7 +19,7 @@ export function createPreviewServer() {
   return http.createServer((request, response) => {
     try {
       const filename = resolvePreviewPath(request.url);
-      const allowed = filename.endsWith("index.html") || filename.includes(`${path.sep}docs${path.sep}`) || filename.includes(`${path.sep}snapshots${path.sep}`) || filename.endsWith("widgets/manifest.json");
+      const allowed = filename.endsWith("index.html") || filename.includes(`${path.sep}docs${path.sep}`) || filename.includes(`${path.sep}snapshots${path.sep}`) || (filename.includes(`${path.sep}assets${path.sep}papers${path.sep}`) && filename.endsWith(".png")) || filename.endsWith("widgets/manifest.json");
       if (!allowed || !fs.existsSync(filename) || !fs.statSync(filename).isFile()) {
         response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
         response.end("Not found");

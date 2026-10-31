@@ -11,8 +11,14 @@
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
     "sync": "node scripts/sync-law-packages.mjs",
+    "sync:frontier": "node scripts/sync-frontier-content.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm run build && npm test"
+    "check": "npm run build && npm test",
+    "qa:browser": "node scripts/browser-check.mjs",
+    "export:widget": "node scripts/export-durable-widget.mjs"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "marked": "18.1.2"
+  }
 }

@@ -1,0 +1,36 @@
+{
+  "engine": "ChEMBL method-aware selectivity analysis",
+  "version": "snapshot-2026-10-31",
+  "molecule_chembl_id": "CHEMBL20",
+  "document_chembl_id": "CHEMBL1146805",
+  "record_id": 235477,
+  "independence": "同一文档、同一 record_id；三条记录不是独立重复实验",
+  "ca_i": {
+    "activity_id": 47559,
+    "ki_nM": 250,
+    "pchembl": 6.6,
+    "assay_method": "esterase assay method",
+    "potential_duplicate": 1
+  },
+  "ca_ii": {
+    "activity_id": 47560,
+    "ki_nM": 12,
+    "pchembl": 7.92,
+    "assay_method": "esterase assay method",
+    "potential_duplicate": 1
+  },
+  "ca_ix": {
+    "activity_id": 47561,
+    "ki_nM": 25,
+    "pchembl": 7.6,
+    "assay_method": "CO2 hydrase assay method",
+    "potential_duplicate": 1
+  },
+  "matched_comparison": "CA I 与 CA II 均为 esterase assay；Ki 单位均为 nM",
+  "ca_i_ii_ki_ratio": 20.833333333333332,
+  "ca_ii_minus_ca_i_pchembl_delta": 1.3187587626244124,
+  "ca_ix_comparison": "方法为 CO2 hydrase assay，不与 esterase 结果合并计算选择性比或统一排名",
+  "ca_ix_ratio_computed": false,
+  "status": "verified",
+  "scope": "CA I/II 的 250/12=20.8333 是同一文档、同一酯酶方法下的表观 Ki 比值，提示而非证明普遍选择性；无重复实验统计、置信区间或临床外推。CA IX 因方法不同仅单列。potential_duplicate=1 全部保留。"
+}

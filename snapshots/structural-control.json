@@ -1,0 +1,104 @@
+{
+  "engine": "CA II structural control analysis",
+  "version": "snapshot-2026-10-31",
+  "reference": {
+    "pdb_id": "3HS4",
+    "resolution_A": 1.1,
+    "data_collection_date": "2006-11-10",
+    "primary_citation_doi": "10.1107/S1744309109036665",
+    "construct": "wild-type CA II / P00918"
+  },
+  "control": {
+    "pdb_id": "2H4N",
+    "resolution_A": 1.9,
+    "data_collection_date": "1996-10-23",
+    "primary_citation_doi": "10.1021/bi971296x",
+    "construct": "标题为 H94N；实际序列还含起始缺失和中段插入"
+  },
+  "shared": "均为 X-RAY DIFFRACTION 的人 CA II—乙酰唑胺实验结构，配体均为 AZM",
+  "comparison_type": "different_construct_structural_control",
+  "exact_wildtype_replication": false,
+  "control_initial_methionine_absent": true,
+  "alignment_difference_event_count": 3,
+  "sequence_differences": [
+    {
+      "type": "terminal_deletion",
+      "reference": "M at position 1",
+      "control": "absent"
+    },
+    {
+      "type": "substitution",
+      "position": 94,
+      "reference": "H",
+      "control": "N"
+    },
+    {
+      "type": "insertion",
+      "after_reference_position": 200,
+      "control": "P"
+    }
+  ],
+  "alignment_opcodes": [
+    [
+      "delete",
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      "equal",
+      1,
+      93,
+      0,
+      92
+    ],
+    [
+      "replace",
+      93,
+      94,
+      92,
+      93
+    ],
+    [
+      "equal",
+      94,
+      201,
+      93,
+      200
+    ],
+    [
+      "insert",
+      201,
+      201,
+      200,
+      201
+    ],
+    [
+      "equal",
+      201,
+      260,
+      201,
+      260
+    ]
+  ],
+  "metadata_sample_sequence_length": 259,
+  "sequence_string_length": 260,
+  "length_metadata_discrepancy": true,
+  "excluded_candidates": [
+    {
+      "pdb_id": "1CA2",
+      "reason": "CA II 但不含乙酰唑胺配体"
+    },
+    {
+      "pdb_id": "3UCJ",
+      "reason": "Coccomyxa beta-carbonic anhydrase，不是人 CA II"
+    },
+    {
+      "pdb_id": "2XTK",
+      "reason": "真菌几丁质酶，不是人 CA II"
+    }
+  ],
+  "status": "verified",
+  "scope": "2H4N 与 3HS4 是不同构建的实验结构对照，不能当作同一野生型复合物的独立重复；序列字符串长度 260 与元数据 259 不一致，需进一步核对原始 mmCIF。未比较坐标或结合几何，也不据此证明 Ki 重复。"
+}

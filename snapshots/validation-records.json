@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 1,
+  "snapshotType": "validation_records",
+  "source": "frontier-breakthrough/validation",
+  "note": "verified 仅指记录所述的指定复核，不代表整个模型、数据库或科学结论已独立验证。",
+  "records": [
+    {
+      "id": "ca-document-stability",
+      "file": "validation/ca-document-stability.json",
+      "sha256": "500e62fe58f4a5efebb98d5547aafa644310504a6a5133afaa91584afb3c8aeb",
+      "script": "analyze_ca_document_stability.py",
+      "data": {
+        "engine": "Cross-document CA I/II sensitivity analysis",
+        "version": "snapshot-2026-10-31",
+        "document_count": 6,
+        "strict_method_matched_count": 1,
+        "method_incomplete_count": 5,
+        "pairs": [
+          {
+            "document_chembl_id": "CHEMBL1146805",
+            "year": 2004,
+            "record_id": 235477,
+            "ca_i_activity": 47559,
+            "ca_ii_activity": 47560,
+            "ca_i_ki_nM": 250,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "esterase assay method",
+            "ca_ii_method": "esterase assay method",
+            "method_status": "explicit_matched",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1,
+            "ki_ratio": 20.833333333333332
+          },
+          {
+            "document_chembl_id": "CHEMBL1133556",
+            "year": 2000,
+            "record_id": 282506,
+            "ca_i_activity": 49652,
+            "ca_ii_activity": 49653,
+            "ca_i_ki_nM": 900,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1,
+            "ki_ratio": 75
+          },
+          {
+            "document_chembl_id": "CHEMBL1146697",
+            "year": 2004,
+            "record_id": 136210,
+            "ca_i_activity": 80687,
+            "ca_ii_activity": 80688,
+            "ca_i_ki_nM": 900,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1,
+            "ki_ratio": 75
+          },
+          {
+            "document_chembl_id": "CHEMBL1136178",
+            "year": 2003,
+            "record_id": 180522,
+            "ca_i_activity": 106505,
+            "ca_ii_activity": 106506,
+            "ca_i_ki_nM": 200,
+            "ca_ii_ki_nM": 7,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 0,
+            "ca_ii_duplicate": 0,
+            "ki_ratio": 28.571428571428573
+          },
+          {
+            "document_chembl_id": "CHEMBL1146695",
+            "year": 2004,
+            "record_id": 126435,
+            "ca_i_activity": 151872,
+            "ca_ii_activity": 151873,
+            "ca_i_ki_nM": 250,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1,
+            "ki_ratio": 20.833333333333332
+          },
+          {
+            "document_chembl_id": "CHEMBL1134204",
+            "year": 2001,
+            "record_id": 302270,
+            "ca_i_activity": 288595,
+            "ca_ii_activity": 288596,
+            "ca_i_ki_nM": 900,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1,
+            "ki_ratio": 75
+          }
+        ],
+        "ratio_min": 20.833333333333332,
+        "ratio_max": 75,
+        "max_min_fold": 3.6,
+        "exploratory_median_ratio_not_a_selectivity_estimate": 51.785714285714285,
+        "stability_conclusion": "not_supported_as_stable_point_estimate",
+        "meta_analysis_performed": false,
+        "status": "verified",
+        "scope": "六组文档的表观 Ki 比值从 20.8333 到 75，极差倍数为 3.6；仅一组明确同酯酶方法，其余方法信息不足，不能据此合并成普适选择性常数。不同文档和重复标记也不保证实验独立。"
+      }
+    },
+    {
+      "id": "ca-selectivity",
+      "file": "validation/ca-selectivity.json",
+      "sha256": "da49fe91d18e68c2c4487add161fb3481bbfeb2b0e68df64a074df6b48b1990c",
+      "script": "analyze_ca_selectivity.py",
+      "data": {
+        "engine": "ChEMBL method-aware selectivity analysis",
+        "version": "snapshot-2026-10-31",
+        "molecule_chembl_id": "CHEMBL20",
+        "document_chembl_id": "CHEMBL1146805",
+        "record_id": 235477,
+        "independence": "同一文档、同一 record_id；三条记录不是独立重复实验",
+        "ca_i": {
+          "activity_id": 47559,
+          "ki_nM": 250,
+          "pchembl": 6.6,
+          "assay_method": "esterase assay method",
+          "potential_duplicate": 1
+        },
+        "ca_ii": {
+          "activity_id": 47560,
+          "ki_nM": 12,
+          "pchembl": 7.92,
+          "assay_method": "esterase assay method",
+          "potential_duplicate": 1
+        },
+        "ca_ix": {
+          "activity_id": 47561,
+          "ki_nM": 25,
+          "pchembl": 7.6,
+          "assay_method": "CO2 hydrase assay method",
+          "potential_duplicate": 1
+        },
+        "matched_comparison": "CA I 与 CA II 均为 esterase assay；Ki 单位均为 nM",
+        "ca_i_ii_ki_ratio": 20.833333333333332,
+        "ca_ii_minus_ca_i_pchembl_delta": 1.3187587626244124,
+        "ca_ix_comparison": "方法为 CO2 hydrase assay，不与 esterase 结果合并计算选择性比或统一排名",
+        "ca_ix_ratio_computed": false,
+        "status": "verified",
+        "scope": "CA I/II 的 250/12=20.8333 是同一文档、同一酯酶方法下的表观 Ki 比值，提示而非证明普遍选择性；无重复实验统计、置信区间或临床外推。CA IX 因方法不同仅单列。potential_duplicate=1 全部保留。"
+      }
+    },
+    {
+      "id": "ca2-sequence",
+      "file": "validation/ca2-sequence.json",
+      "sha256": "bc81715f3c79cdb7f14fc4383e6cdce680a1a67b4ab5199810c90347d3e99237",
+      "script": "verify_ca2_sequence.py",
+      "data": {
+        "engine": "PDB–UniProt CA II sequence check",
+        "version": "snapshot-2026-10-31",
+        "pdb_id": "3HS4",
+        "pdb_entity": 1,
+        "pdb_chain": "A",
+        "uniprot_accession": "P00918",
+        "uniprot_id": "CAH2_HUMAN",
+        "sequence_length": 260,
+        "exact_sequence_match": true,
+        "pdb_mutation_count": 0,
+        "pdb_insertion_count": 0,
+        "pdb_deletion_count": 0,
+        "sequence_md5_recomputed": "94EB709966E01FBC15DC1C46A0D03AC5",
+        "status": "verified",
+        "scope": "3HS4 entity 1 与 reviewed P00918 的 260 aa 序列逐字符一致；不是独立酶活或临床验证。"
+      }
+    },
+    {
+      "id": "chembl-acetazolamide",
+      "file": "validation/chembl-acetazolamide.json",
+      "sha256": "23ba60417157080cc20a29601b82a58e05856eead3a53f0abb7ec1cde3564c3b",
+      "script": null,
+      "data": {
+        "source": "https://www.ebi.ac.uk/chembl/api/data",
+        "retrieved": "2026-10-31",
+        "molecule": {
+          "molecule_chembl_id": "CHEMBL20",
+          "pref_name": "ACETAZOLAMIDE",
+          "canonical_smiles": "CC(=O)Nc1nnc(S(N)(=O)=O)s1",
+          "standard_inchi_key": "BZKPWHYZMXOIDC-UHFFFAOYSA-N",
+          "full_molformula": "C4H6N4O3S2",
+          "alogp": "-0.86",
+          "psa": "115.04"
+        },
+        "mechanism": {
+          "mec_id": 92,
+          "mechanism_of_action": "Carbonic anhydrase II inhibitor",
+          "action_type": "INHIBITOR",
+          "direct_interaction": 1,
+          "molecular_mechanism": 1,
+          "target_chembl_id": "CHEMBL205",
+          "mechanism_ref_pubmed": "20605094"
+        },
+        "target": {
+          "target_chembl_id": "CHEMBL205",
+          "pref_name": "Carbonic anhydrase 2",
+          "organism": "Homo sapiens",
+          "component_accession": "P00918",
+          "component_relationship": "SINGLE PROTEIN",
+          "gene_symbol": "CA2"
+        },
+        "activity": {
+          "activity_id": 47560,
+          "record_id": 235477,
+          "assay_chembl_id": "CHEMBL657848",
+          "assay_description": "Inhibitory activity against human carbonic anhydrase II (hCA II) by using esterase assay method",
+          "assay_type": "B",
+          "document_chembl_id": "CHEMBL1146805",
+          "document_journal": "Bioorg Med Chem Lett",
+          "document_year": 2004,
+          "molecule_chembl_id": "CHEMBL20",
+          "target_chembl_id": "CHEMBL205",
+          "target_organism": "Homo sapiens",
+          "standard_type": "Ki",
+          "standard_relation": "=",
+          "standard_value": "12.0",
+          "standard_units": "nM",
+          "pchembl_value": "7.92",
+          "potential_duplicate": 1,
+          "data_validity_comment": null
+        },
+        "assay": {
+          "assay_chembl_id": "CHEMBL657848",
+          "description": "Inhibitory activity against human carbonic anhydrase II (hCA II) by using esterase assay method",
+          "assay_type": "B",
+          "assay_type_description": "Binding",
+          "bao_label": "single protein format",
+          "confidence_score": 8,
+          "confidence_description": "Homologous single protein target assigned",
+          "relationship_type": "H",
+          "target_chembl_id": "CHEMBL205",
+          "assay_organism": null,
+          "assay_parameters": []
+        },
+        "scope": "单一 ChEMBL 活性记录和策划机制快照；potential_duplicate=1 被保留，不把 Ki=12 nM 外推为所有实验或临床效力的统一值。"
+      }
+    },
+    {
+      "id": "chembl-ca-document-pairs",
+      "file": "validation/chembl-ca-document-pairs.json",
+      "sha256": "a803efebfc4503eeadfae954fa0e8cb5a6d163e98010fc59e7cec48ee149b07e",
+      "script": null,
+      "data": {
+        "source": "https://www.ebi.ac.uk/chembl/api/data",
+        "retrieved": "2026-10-31",
+        "molecule_chembl_id": "CHEMBL20",
+        "pairs": [
+          {
+            "document_chembl_id": "CHEMBL1146805",
+            "year": 2004,
+            "record_id": 235477,
+            "ca_i_activity": 47559,
+            "ca_ii_activity": 47560,
+            "ca_i_ki_nM": 250,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "esterase assay method",
+            "ca_ii_method": "esterase assay method",
+            "method_status": "explicit_matched",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1
+          },
+          {
+            "document_chembl_id": "CHEMBL1133556",
+            "year": 2000,
+            "record_id": 282506,
+            "ca_i_activity": 49652,
+            "ca_ii_activity": 49653,
+            "ca_i_ki_nM": 900,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1
+          },
+          {
+            "document_chembl_id": "CHEMBL1146697",
+            "year": 2004,
+            "record_id": 136210,
+            "ca_i_activity": 80687,
+            "ca_ii_activity": 80688,
+            "ca_i_ki_nM": 900,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1
+          },
+          {
+            "document_chembl_id": "CHEMBL1136178",
+            "year": 2003,
+            "record_id": 180522,
+            "ca_i_activity": 106505,
+            "ca_ii_activity": 106506,
+            "ca_i_ki_nM": 200,
+            "ca_ii_ki_nM": 7,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 0,
+            "ca_ii_duplicate": 0
+          },
+          {
+            "document_chembl_id": "CHEMBL1146695",
+            "year": 2004,
+            "record_id": 126435,
+            "ca_i_activity": 151872,
+            "ca_ii_activity": 151873,
+            "ca_i_ki_nM": 250,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1
+          },
+          {
+            "document_chembl_id": "CHEMBL1134204",
+            "year": 2001,
+            "record_id": 302270,
+            "ca_i_activity": 288595,
+            "ca_ii_activity": 288596,
+            "ca_i_ki_nM": 900,
+            "ca_ii_ki_nM": 12,
+            "ca_i_method": "not specified in assay description",
+            "ca_ii_method": "not specified in assay description",
+            "method_status": "method_incomplete",
+            "ca_i_duplicate": 1,
+            "ca_ii_duplicate": 1
+          }
+        ],
+        "scope": "六组 ChEMBL 文档配对；文档不同不自动等于实验独立，只有 CHEMBL1146805 明确写出双方均为 esterase assay。"
+      }
+    },
+    {
+      "id": "chembl-ca-selectivity-panel",
+      "file": "validation/chembl-ca-selectivity-panel.json",
+      "sha256": "8821542045a62c6cf5e8a57f5a538462f0b4734013eea79a4570d5145e849e5e",
+      "script": null,
+      "data": {
+        "source": "https://www.ebi.ac.uk/chembl/api/data",
+        "retrieved": "2026-10-31",
+        "molecule_chembl_id": "CHEMBL20",
+        "document_chembl_id": "CHEMBL1146805",
+        "document_journal": "Bioorg Med Chem Lett",
+        "document_year": 2004,
+        "record_id": 235477,
+        "activities": [
+          {
+            "activity_id": 47559,
+            "target": "CA I",
+            "target_chembl_id": "CHEMBL261",
+            "target_organism": "Homo sapiens",
+            "assay_chembl_id": "CHEMBL873200",
+            "assay_method": "esterase assay method",
+            "assay_description": "Inhibitory activity against human carbonic anhydrase I (hCA I) by using esterase assay method",
+            "assay_confidence_score": 8,
+            "standard_type": "Ki",
+            "standard_relation": "=",
+            "standard_value": 250,
+            "standard_units": "nM",
+            "pchembl_value": 6.6,
+            "potential_duplicate": 1
+          },
+          {
+            "activity_id": 47560,
+            "target": "CA II",
+            "target_chembl_id": "CHEMBL205",
+            "target_organism": "Homo sapiens",
+            "assay_chembl_id": "CHEMBL657848",
+            "assay_method": "esterase assay method",
+            "assay_description": "Inhibitory activity against human carbonic anhydrase II (hCA II) by using esterase assay method",
+            "assay_confidence_score": 8,
+            "standard_type": "Ki",
+            "standard_relation": "=",
+            "standard_value": 12,
+            "standard_units": "nM",
+            "pchembl_value": 7.92,
+            "potential_duplicate": 1
+          },
+          {
+            "activity_id": 47561,
+            "target": "CA IX",
+            "target_chembl_id": "CHEMBL3594",
+            "target_organism": "Homo sapiens",
+            "assay_chembl_id": "CHEMBL657970",
+            "assay_method": "CO2 hydrase assay method",
+            "assay_description": "Inhibitory activity against human carbonic anhydrase IX (hCA IX) by using CO2 hydrase assay method",
+            "assay_confidence_score": 8,
+            "standard_type": "Ki",
+            "standard_relation": "=",
+            "standard_value": 25,
+            "standard_units": "nM",
+            "pchembl_value": 7.6,
+            "potential_duplicate": 1
+          }
+        ],
+        "scope": "同一 ChEMBL 文档和 record_id 的三条活性记录；不同 assay 方法显式保留，potential_duplicate=1 不删除。"
+      }
+    },
+    {
+      "id": "drug-target-structure",
+      "file": "validation/drug-target-structure.json",
+      "sha256": "f4c46a805168b93439978537ca8b832d8c38554d179eb3347eb84b56b2547850",
+      "script": "verify_drug_target_structure.py",
+      "data": {
+        "engine": "ChEMBL–PubChem–PDB evidence-chain check",
+        "version": "snapshot-2026-10-31",
+        "drug": "acetazolamide",
+        "chembl_molecule": "CHEMBL20",
+        "pubchem_cid": 1986,
+        "inchi_key": "BZKPWHYZMXOIDC-UHFFFAOYSA-N",
+        "target_chembl_id": "CHEMBL205",
+        "target_name": "Carbonic anhydrase 2",
+        "target_uniprot": "P00918",
+        "target_pdb_entity": 1,
+        "target_pdb_chain": "A",
+        "target_sequence_exact_match": true,
+        "target_sequence_length": 260,
+        "target_sequence_md5": "94EB709966E01FBC15DC1C46A0D03AC5",
+        "mechanism": "Carbonic anhydrase II inhibitor",
+        "activity_id": 47560,
+        "assay_chembl_id": "CHEMBL657848",
+        "assay_description": "Inhibitory activity against human carbonic anhydrase II (hCA II) by using esterase assay method",
+        "ki_nM": 12,
+        "pchembl_external": 7.92,
+        "pchembl_recomputed": 7.920818753952375,
+        "assay_confidence_score": 8,
+        "potential_duplicate": 1,
+        "pdb_id": "3HS4",
+        "pdb_ligand_entity": 4,
+        "pdb_ligand_comp_id": "AZM",
+        "resolution_A": 1.1,
+        "experimental_method": "X-RAY DIFFRACTION",
+        "status": "verified",
+        "scope": "化合物 InChIKey、CA II 靶点、P00918/3HS4 entity 1 的 260 aa 精确序列、单一活性记录和实验复合物已核对；Ki=12 nM 只属于 assay CHEMBL657848。potential_duplicate=1 保留为审计警告，不据此直接判造假，也不外推临床效力。"
+      }
+    },
+    {
+      "id": "materials-project-si",
+      "file": "validation/materials-project-si.json",
+      "sha256": "1ce53308681003c8955c00f77c4997c1ad26455bf4d71455c7a02aea45f6c3f2",
+      "script": null,
+      "data": {
+        "source": "https://api.materialsproject.org",
+        "retrieved": "2026-10-31",
+        "requested_legacy_id": "mp-149",
+        "material_id": "mp-aaaaaaft",
+        "api_version": "0.88.1",
+        "formula_pretty": "Si",
+        "nsites": 2,
+        "density": 2.3128002565764314,
+        "band_gap": 0.6102999999999996,
+        "is_metal": false,
+        "energy_above_hull": 0,
+        "is_stable": true,
+        "symmetry": {
+          "crystal_system": "Cubic",
+          "symbol": "Fd-3m",
+          "number": 227,
+          "point_group": "m-3m",
+          "symprec": 0.1,
+          "angle_tolerance": 5,
+          "version": "2.7.0"
+        },
+        "structure": {
+          "@module": "pymatgen.core.structure",
+          "@class": "Structure",
+          "charge": 0,
+          "lattice": {
+            "matrix": [
+              [
+                3.333573,
+                0,
+                1.924639
+              ],
+              [
+                1.111191,
+                3.142924,
+                1.924639
+              ],
+              [
+                0,
+                0,
+                3.849278
+              ]
+            ],
+            "pbc": [
+              true,
+              true,
+              true
+            ]
+          },
+          "properties": {},
+          "sites": [
+            {
+              "species": [
+                {
+                  "element": "Si",
+                  "occu": 1
+                }
+              ],
+              "abc": [
+                0.875,
+                0.875,
+                0.875
+              ],
+              "properties": {},
+              "label": "Si"
+            },
+            {
+              "species": [
+                {
+                  "element": "Si",
+                  "occu": 1
+                }
+              ],
+              "abc": [
+                0.125,
+                0.125,
+                0.125
+              ],
+              "properties": {},
+              "label": "Si"
+            }
+          ]
+        },
+        "scope": "Materials Project DFT 与结构快照；本地只重算结构密度和对称性，不独立重算 DFT 带隙。"
+      }
+    },
+    {
+      "id": "pdb-2h4n",
+      "file": "validation/pdb-2h4n.json",
+      "sha256": "622033664b8b21a9c67906ebd753633533a858bd4ac7a7193b66160c5114a6ef",
+      "script": null,
+      "data": {
+        "source": "https://data.rcsb.org/rest/v1/core",
+        "retrieved": "2026-10-31",
+        "pdb_id": "2H4N",
+        "doi": "10.2210/pdb2h4n/pdb",
+        "title": "H94N CARBONIC ANHYDRASE II COMPLEXED WITH ACETAZOLAMIDE",
+        "experimental_method": "X-RAY DIFFRACTION",
+        "resolution_A": 1.9,
+        "data_collection_date": "1996-10-23",
+        "radiation_source": "RIGAKU RUH2R rotating anode",
+        "primary_citation_doi": "10.1021/bi971296x",
+        "primary_citation_year": 1997,
+        "entity_id": 1,
+        "chain": "A",
+        "gene": "CAII",
+        "organism": "Homo sapiens",
+        "sequence": "SHHWGYGKHNGPEHWHKDFPIAKGERQSPVDIDTHTAKYDPSLKPLSVSYDQATSLRILNNGHAFNVEFDDSQDKAVLKGGPLDGTYRLIQFNFHWGSLDGQGSEHTVDKKKYAAELHLVHWNTKYGDFGKAVQQPDGLAVLGIFLKVGSAKPGLQKVVDVLDSIKTKGKSADFTNFDPRGLLPESLDYWTYPGSLTTPPPLLECVTWIVLKEPISVSSEQVLKFRKLNFNGEGEPEELMVDNWRPAQPLKNRQIKASFK",
+        "length": 260,
+        "metadata_sample_sequence_length": 259,
+        "sequence_string_length": 260,
+        "mutation_count": 1,
+        "insertion_count": 0,
+        "deletion_count": 0,
+        "ligand_entity_id": 3,
+        "ligand_comp_id": "AZM",
+        "ligand_name": "5-ACETAMIDO-1,3,4-THIADIAZOLE-2-SULFONAMIDE",
+        "nonpolymer_bound_components": [
+          "AZM",
+          "ZN"
+        ],
+        "scope": "H94N 人 CA II—乙酰唑胺实验结构；不是 3HS4 的野生型重复。序列字符串长度 260 与元数据 259 不一致，且含起始缺失和中段插入，需进一步核对原始 mmCIF。"
+      }
+    },
+    {
+      "id": "pdb-3hs4-ca2",
+      "file": "validation/pdb-3hs4-ca2.json",
+      "sha256": "83e726e7b145530488f620e4b8db8ec6a7fa573b7594e741b68176c46a617813",
+      "script": null,
+      "data": {
+        "source": "https://data.rcsb.org/rest/v1/core",
+        "retrieved": "2026-10-31",
+        "pdb_id": "3HS4",
+        "entity_id": 1,
+        "chain": "A",
+        "gene": "CA2",
+        "organism": "Homo sapiens",
+        "taxon_id": 9606,
+        "expression_host": "Escherichia coli BL21(DE3)pLysS",
+        "sequence": "MSHHWGYGKHNGPEHWHKDFPIAKGERQSPVDIDTHTAKYDPSLKPLSVSYDQATSLRILNNGHAFNVEFDDSQDKAVLKGGPLDGTYRLIQFHFHWGSLDGQGSEHTVDKKKYAAELHLVHWNTKYGDFGKAVQQPDGLAVLGIFLKVGSAKPGLQKVVDVLDSIKTKGKSADFTNFDPRGLLPESLDYWTYPGSLTTPPLLECVTWIVLKEPISVSSEQVLKFRKLNFNGEGEPEELMVDNWRPAQPLKNRQIKASFK",
+        "length": 260,
+        "mutation_count": 0,
+        "insertion_count": 0,
+        "deletion_count": 0,
+        "artifact_monomer_count": 0,
+        "scope": "3HS4 entity 1 的蛋白实体序列快照；entity_id 不是 chain id，序列一致不等于独立功能验证。"
+      }
+    },
+    {
+      "id": "pdb-3hs4",
+      "file": "validation/pdb-3hs4.json",
+      "sha256": "47007e7ccf3dda2aa689518cb12d06653896f6dfc4c082d7a39ee3faec2d6108",
+      "script": null,
+      "data": {
+        "source": "https://data.rcsb.org/rest/v1/core",
+        "retrieved": "2026-10-31",
+        "pdb_id": "3HS4",
+        "doi": "10.2210/pdb3hs4/pdb",
+        "title": "Human carbonic anhydrase II complexed with acetazolamide",
+        "experimental_method": "X-RAY DIFFRACTION",
+        "resolution_A": 1.1,
+        "primary_citation_doi": "10.1107/S1744309109036665",
+        "primary_citation_year": 2009,
+        "nonpolymer_bound_components": [
+          "AZM",
+          "ZN"
+        ],
+        "ligand": {
+          "entity_id": 4,
+          "comp_id": "AZM",
+          "name": "5-ACETAMIDO-1,3,4-THIADIAZOLE-2-SULFONAMIDE",
+          "formula_weight_kDa": 0.222,
+          "number_of_molecules": 3,
+          "asym_ids": [
+            "D",
+            "E",
+            "F"
+          ],
+          "auth_asym_ids": [
+            "A"
+          ]
+        },
+        "scope": "人碳酸酐酶 II 与乙酰唑胺复合物的实验结构快照；不把结构存在等同于特定 assay 的活性数值。"
+      }
+    },
+    {
+      "id": "pdb-4hhb",
+      "file": "validation/pdb-4hhb.json",
+      "sha256": "76567e33ea3564c22a9f3a3227acabbb4493404147419a2bc5d0ac9446c6380a",
+      "script": null,
+      "data": {
+        "source": "https://data.rcsb.org/rest/v1/core",
+        "retrieved": "2026-10-31",
+        "pdb_id": "4HHB",
+        "doi": "10.2210/pdb4hhb/pdb",
+        "title": "THE CRYSTAL STRUCTURE OF HUMAN DEOXYHAEMOGLOBIN AT 1.74 ANGSTROMS RESOLUTION",
+        "experimental_method": "X-RAY DIFFRACTION",
+        "resolution_A": 1.74,
+        "primary_citation_doi": "10.1016/0022-2836(84)90472-8",
+        "entity_id": 2,
+        "gene": "HBB",
+        "organism": "Homo sapiens",
+        "taxon_id": 9606,
+        "chains": "B,D",
+        "sequence": "VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+        "length": 146,
+        "scope": "实验结构条目和实体序列快照；entity_id 不是 chain id。"
+      }
+    },
+    {
+      "id": "pdb-uniprot",
+      "file": "validation/pdb-uniprot.json",
+      "sha256": "8e0163776dd49a7f8824ed2788c6f6d29c1ed1e5835c8c38f93bc597be13b4b1",
+      "script": "verify_pdb_uniprot.py",
+      "data": {
+        "engine": "PDB–UniProt cross-database check",
+        "version": "snapshot-2026-10-31",
+        "pdb_id": "4HHB",
+        "pdb_entity": 2,
+        "pdb_chains": "B,D",
+        "experimental_method": "X-RAY DIFFRACTION",
+        "resolution_A": 1.74,
+        "uniprot_accession": "P68871",
+        "uniprot_id": "HBB_HUMAN",
+        "uniprot_length": 147,
+        "pdb_length": 146,
+        "relationship": "UniProt 去除起始 M 后与 PDB entity 2 的 146 aa 序列逐字符一致",
+        "sequence_md5_recomputed": "209D686939D0B8D1EA089368150140E2",
+        "mapping_basis": "PDB 的 HBB/9606 → UniProt 条件检索 → 精确序列比对；未依赖截断的跨库引用字段",
+        "status": "verified",
+        "scope": "验证实验结构实体与 reviewed 序列记录的对应关系，不是蛋白功能、机制或临床结论。"
+      }
+    },
+    {
+      "id": "pubchem-acetazolamide",
+      "file": "validation/pubchem-acetazolamide.json",
+      "sha256": "0303eb9c9cb0a3535b9f43abd78687a94d756d79425fe3c3fe0fdbc3f22ee2a6",
+      "script": null,
+      "data": {
+        "source": "https://pubchem.ncbi.nlm.nih.gov/rest/pug",
+        "retrieved": "2026-10-31",
+        "query": "pubchem_get_properties by CID 1986；2026-10-31 补充 InChIKey",
+        "CID": 1986,
+        "Title": "Acetazolamide",
+        "MolecularFormula": "C4H6N4O3S2",
+        "MolecularWeight": "222.3",
+        "ConnectivitySMILES": "CC(=O)NC1=NN=C(S1)S(=O)(=O)N",
+        "InChIKey": "BZKPWHYZMXOIDC-UHFFFAOYSA-N",
+        "XLogP": -0.3,
+        "ExactMass": "221.98813241",
+        "TPSA": 152,
+        "scope": "PubChem 计算属性快照；不是独立湿实验测量。"
+      }
+    },
+    {
+      "id": "pymatgen",
+      "file": "validation/pymatgen.json",
+      "sha256": "cb129cf749b6e1cdb7e4d4e8ce49e6fadfc5240e73e2281a4fbd09072292d590",
+      "script": "verify_pymatgen.py",
+      "data": {
+        "engine": "PyMatGen",
+        "version": "2026.10.24",
+        "python": "D:/research-engines/pymatgen-env/Scripts/python.exe",
+        "material_id": "mp-aaaaaaft",
+        "formula": "Si",
+        "nsites": 2,
+        "density_local_g_cm3": 2.3128002565764314,
+        "density_external_g_cm3": 2.3128002565764314,
+        "density_abs_error": 0,
+        "space_group_local": "Fd-3m",
+        "space_group_number_local": 227,
+        "external_band_gap_eV": 0.6102999999999996,
+        "external_energy_above_hull_eV_atom": 0,
+        "status": "verified",
+        "scope": "本地从公开结构独立重算密度与空间群并核对；带隙和稳定性仅为外部 DFT 快照，未在本机重算。"
+      }
+    },
+    {
+      "id": "pysindy",
+      "file": "validation/pysindy.json",
+      "sha256": "e82cd6d93c22fc6b1a7f6f6a10ad068998125ab37dece80fb978a663dbf506bf",
+      "script": "verify_pysindy.py",
+      "data": {
+        "engine": "PySINDy",
+        "version": "2.1.0",
+        "python": "D:/research-engines/pysindy-env/Scripts/python.exe",
+        "input": "x'= -2x, y'=y; 401 points; t in [0,2]",
+        "coefficients": [
+          [
+            -2.000031361902758,
+            0
+          ],
+          [
+            0,
+            1.0000040379877289
+          ]
+        ],
+        "max_abs_error": 0.00003136190275787598,
+        "status": "verified",
+        "scope": "仅验证本机指定版本能恢复已知线性系统，不是新规律发现。"
+      }
+    },
+    {
+      "id": "rdkit",
+      "file": "validation/rdkit.json",
+      "sha256": "67965dd0f6e2893e88602621686d3e8973573f5a22f4be38c90ed1aa42b61d60",
+      "script": "verify_rdkit.py",
+      "data": {
+        "engine": "RDKit",
+        "version": "2026.9.1",
+        "python": "D:/research-engines/rdkit-env/Scripts/python.exe",
+        "input_smiles": "CC(=O)Nc1nnc(S(N)(=O)=O)s1",
+        "compound": "acetazolamide（乙酰唑胺）",
+        "pubchem_cid": 1986,
+        "canonical_structure_matches_pubchem": true,
+        "formula": "C4H6N4O3S2",
+        "tpsa_default_NO_A2": 115.03999999999999,
+        "tpsa_include_S_P_A2": 151.66,
+        "pubchem_tpsa_A2": 152,
+        "rdkit_crippen_mollogp": -0.8561000000000003,
+        "pubchem_xlogp": -0.3,
+        "xlogp_algorithm_note": "Crippen MolLogP 与 PubChem XLogP 算法不同，数值差异不能直接判为数据错误。",
+        "exact_mass_Da": 221.988132052,
+        "pubchem_exact_mass_Da": 221.98813241,
+        "status": "verified",
+        "scope": "规范结构、分子式和精确质量与 PubChem 快照一致；TPSA 计入 S/P 后按整数口径一致；XLogP 算法差异单独保留。这不是实验验证，也不据此指认数据造假。"
+      }
+    },
+    {
+      "id": "structural-control",
+      "file": "validation/structural-control.json",
+      "sha256": "ad1c93c7a0bb02a7d452975e7d94d3da91443db40a1b87d9fa4f1159ef759c35",
+      "script": "analyze_structural_control.py",
+      "data": {
+        "engine": "CA II structural control analysis",
+        "version": "snapshot-2026-10-31",
+        "reference": {
+          "pdb_id": "3HS4",
+          "resolution_A": 1.1,
+          "data_collection_date": "2006-11-10",
+          "primary_citation_doi": "10.1107/S1744309109036665",
+          "construct": "wild-type CA II / P00918"
+        },
+        "control": {
+          "pdb_id": "2H4N",
+          "resolution_A": 1.9,
+          "data_collection_date": "1996-10-23",
+          "primary_citation_doi": "10.1021/bi971296x",
+          "construct": "标题为 H94N；实际序列还含起始缺失和中段插入"
+        },
+        "shared": "均为 X-RAY DIFFRACTION 的人 CA II—乙酰唑胺实验结构，配体均为 AZM",
+        "comparison_type": "different_construct_structural_control",
+        "exact_wildtype_replication": false,
+        "control_initial_methionine_absent": true,
+        "alignment_difference_event_count": 3,
+        "sequence_differences": [
+          {
+            "type": "terminal_deletion",
+            "reference": "M at position 1",
+            "control": "absent"
+          },
+          {
+            "type": "substitution",
+            "position": 94,
+            "reference": "H",
+            "control": "N"
+          },
+          {
+            "type": "insertion",
+            "after_reference_position": 200,
+            "control": "P"
+          }
+        ],
+        "alignment_opcodes": [
+          [
+            "delete",
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            "equal",
+            1,
+            93,
+            0,
+            92
+          ],
+          [
+            "replace",
+            93,
+            94,
+            92,
+            93
+          ],
+          [
+            "equal",
+            94,
+            201,
+            93,
+            200
+          ],
+          [
+            "insert",
+            201,
+            201,
+            200,
+            201
+          ],
+          [
+            "equal",
+            201,
+            260,
+            201,
+            260
+          ]
+        ],
+        "metadata_sample_sequence_length": 259,
+        "sequence_string_length": 260,
+        "length_metadata_discrepancy": true,
+        "excluded_candidates": [
+          {
+            "pdb_id": "1CA2",
+            "reason": "CA II 但不含乙酰唑胺配体"
+          },
+          {
+            "pdb_id": "3UCJ",
+            "reason": "Coccomyxa beta-carbonic anhydrase，不是人 CA II"
+          },
+          {
+            "pdb_id": "2XTK",
+            "reason": "真菌几丁质酶，不是人 CA II"
+          }
+        ],
+        "status": "verified",
+        "scope": "2H4N 与 3HS4 是不同构建的实验结构对照，不能当作同一野生型复合物的独立重复；序列字符串长度 260 与元数据 259 不一致，需进一步核对原始 mmCIF。未比较坐标或结合几何，也不据此证明 Ki 重复。"
+      }
+    },
+    {
+      "id": "uniprot-ca2",
+      "file": "validation/uniprot-ca2.json",
+      "sha256": "a85005085c85c00ff5e8128e6a7ce5c05b25cc4405ecc51d4463cd37d747a187",
+      "script": null,
+      "data": {
+        "source": "https://rest.uniprot.org",
+        "retrieved": "2026-10-31",
+        "query": "accession:P00918",
+        "entry_type": "UniProtKB reviewed (Swiss-Prot)",
+        "primary_accession": "P00918",
+        "uniprotkb_id": "CAH2_HUMAN",
+        "gene": "CA2",
+        "organism": "Homo sapiens",
+        "taxon_id": 9606,
+        "sequence": "MSHHWGYGKHNGPEHWHKDFPIAKGERQSPVDIDTHTAKYDPSLKPLSVSYDQATSLRILNNGHAFNVEFDDSQDKAVLKGGPLDGTYRLIQFHFHWGSLDGQGSEHTVDKKKYAAELHLVHWNTKYGDFGKAVQQPDGLAVLGIFLKVGSAKPGLQKVVDVLDSIKTKGKSADFTNFDPRGLLPESLDYWTYPGSLTTPPLLECVTWIVLKEPISVSSEQVLKFRKLNFNGEGEPEELMVDNWRPAQPLKNRQIKASFK",
+        "length": 260,
+        "molecular_weight_Da": 29246,
+        "crc64": "2EC2BB7548F10558",
+        "sequence_md5_reported_by_uniprot": "94EB709966E01FBC15DC1C46A0D03AC5",
+        "scope": "UniProtKB reviewed CAH2_HUMAN 序列快照。"
+      }
+    },
+    {
+      "id": "uniprot-hbb",
+      "file": "validation/uniprot-hbb.json",
+      "sha256": "1b79735c4b0d24cf68cce6562125dc2f4c786f8458ba7f46f95549e421d2a638",
+      "script": null,
+      "data": {
+        "source": "https://rest.uniprot.org",
+        "retrieved": "2026-10-31",
+        "query": "gene:HBB AND organism_id:9606 AND reviewed:true",
+        "entry_type": "UniProtKB reviewed (Swiss-Prot)",
+        "primary_accession": "P68871",
+        "uniprotkb_id": "HBB_HUMAN",
+        "gene": "HBB",
+        "organism": "Homo sapiens",
+        "taxon_id": 9606,
+        "sequence": "MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+        "length": 147,
+        "molecular_weight_Da": 15998,
+        "crc64": "A31F6D621C6556A1",
+        "sequence_md5_reported_by_uniprot": "209D686939D0B8D1EA089368150140E2",
+        "scope": "UniProtKB reviewed 条目的序列快照，不把序列一致性外推成功能验证。"
+      }
+    },
+    {
+      "id": "z3",
+      "file": "validation/z3.json",
+      "sha256": "5d3397344ad26032905ef5306a963ca96695e3548ac0fa2ffff51adf2f231747",
+      "script": "verify_z3.py",
+      "data": {
+        "engine": "Z3",
+        "version": "5.3.3.0",
+        "python": "D:/research-engines/z3-env/Scripts/python.exe",
+        "checks": {
+          "negation_of_x_positive_implies_x_plus_1_positive": "unsat",
+          "x_squared_less_than_zero": "unsat"
+        },
+        "status": "verified",
+        "scope": "验证两个实数约束的已知答案，不等同一般数学定理的自动证明。"
+      }
+    }
+  ]
+}
