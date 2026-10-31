@@ -108,6 +108,7 @@ function frontierAnalysisSections(item) {
       `CA I Ki=${m.caIKiNm} nM；CA II Ki=${m.caIiKiNm} nM；同酯酶方法表观比值 ${Number(m.caIiKiRatio.toFixed(4))}，ΔpChEMBL=${Number(m.caIiPchemblDelta.toFixed(5))}。`,
       `CA IX Ki=${m.caIxKiNm} nM，使用 CO2 hydrase 方法；不与酯酶结果合并计算比值或统一排名。`,
       `${m.selectivityIndependence}；三条记录均保留 potential_duplicate=1。`,
+      `六组文档表观比值范围 ${Number(m.ratioMin.toFixed(4))}–${m.ratioMax}，极差 ${m.maxMinFold} 倍；仅 ${m.methodMatchedCount}/6 明确同方法，${m.methodIncompleteCount} 组信息不足，不执行跨文献合并。`,
     ],
   }];
 }
