@@ -8,19 +8,19 @@ import { build } from "../scripts/build.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("build produces nine widgets, a gallery, and a manifest without writing in inspection mode", () => {
+test("build produces ten widgets, a gallery, and a manifest without writing in inspection mode", () => {
   const result = build({ rootDir: root, write: false });
   assert.equal(result.ok, true);
-  const widgets = ["law-lab", "complexity-lab", "frontier-evidence", "paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget"];
+  const widgets = ["law-lab", "complexity-lab", "frontier-evidence", "paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"];
   assert.deepEqual(result.outputs.sort(), ["index.html", "widgets/manifest.json", ...widgets.map((id) => `widgets/${id}/index.html`)].sort());
-  assert.equal(result.manifest.length, 9);
+  assert.equal(result.manifest.length, 10);
 });
 
 test("build rejects duplicate case identifiers", () => {
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "garden-widgets-build-"));
   try {
     fs.mkdirSync(path.join(temporary, "snapshots"));
-    const snapshots = ["law-packages.json", "complexity.json", "frontier-evidence.json", "paper-collection.json", "ca-document-stability.json", "ca-selectivity.json", "structural-control.json", "projects.json", "validation-records.json"];
+    const snapshots = ["law-packages.json", "complexity.json", "frontier-evidence.json", "paper-collection.json", "ca-document-stability.json", "ca-selectivity.json", "structural-control.json", "projects.json", "validation-records.json", "reference-audit.json"];
     for (const name of snapshots) {
       fs.copyFileSync(path.join(root, "snapshots", name), path.join(temporary, "snapshots", name));
     }

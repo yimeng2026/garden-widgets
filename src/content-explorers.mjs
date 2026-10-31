@@ -88,6 +88,15 @@ export function structureExplorer(structure) {
   };
 }
 
+export function referenceExplorer(snapshot) {
+  return {
+    kind: "references",
+    title: "来源与引用核验",
+    subtitle: `${snapshot.references.length} 条书目 · DOI／目录 · 本地版本 · 数据库快照 · 引用关联`,
+    data: snapshot,
+  };
+}
+
 export function projectExplorer(snapshot) {
   return {
     kind: "projects",

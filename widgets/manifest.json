@@ -63,6 +63,13 @@
       "description": "计算分段、重试和尾段预算；只读规划，不调用模型。",
       "entry": "widgets/generation-budget/index.html",
       "snapshot": "docs/CONTENT_COVERAGE.md"
+    },
+    {
+      "title": "来源与引用核验",
+      "status": "39 条书目 · 分层核验",
+      "description": "逐条显示原始书目、DOI／目录、软件版本、数据库快照与正文关联。",
+      "entry": "widgets/reference-audit/index.html",
+      "snapshot": "snapshots/reference-audit.json"
     }
   ]
 }

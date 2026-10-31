@@ -13,6 +13,7 @@
 - **全球前沿项目协作图谱**：88 个公开项目按领域、采用层级、本地状态和关键词筛选，强调与上游协作而非重复包装。
 - **验证与重放工作台**：21 份验证或上游快照、SHA-256、标量记录和关联重放脚本。
 - **长文预算与恢复规划器**：最高 1 亿累计 token 的分段、尾段、重试和恢复规划；不调用模型。
+- **来源与引用核验**：39 条书目逐条关联 DOI／目录元数据、软件版本、数据库快照和本地证据；区分作者—年份、标识符关联与仅书目条目。
 
 所有组件都显示证据状态、反例、限制和下一项动作。页面不自行提升结论，不把形式证明、数据库留出、数值演示和独立实验复现混为一谈。仓库内容映射与更新路径见 `docs/CONTENT_COVERAGE.md`。
 
@@ -75,12 +76,14 @@ src/
   garden-adapter.mjs            花园只读接口与鉴权
   research-renderer.mjs         共享叙事渲染与静态策略
   research-widget-template.html  原有研究案例组件模板
-  content-explorers.mjs         六类新组件的数据适配与安全 Markdown 渲染
+  content-explorers.mjs         七类新组件的数据适配与安全 Markdown 渲染
   content-explorer-template.html 新组件共享的交互壳
 scripts/
   sync-law-packages.mjs         花园证据作者时同步
   sync-frontier-content.mjs     本地论文、图件、项目与验证快照同步
-  build.mjs                     构建 9 个组件与画廊
+  verify-reference-metadata.mjs DOI 注册元数据作者时回读
+  build-reference-audit.mjs     39 条来源、版本、快照与引用关联审计
+  build.mjs                     构建 10 个组件与画廊
   dev.mjs                       显式创建的安全预览服务器
 schemas/
   law-package.schema.json       公开 JSON Schema
@@ -91,9 +94,12 @@ snapshots/
   paper-collection.json        三篇论文全文与图件登记
   projects.json                88 个全球公开项目
   validation-records.json      21 份验证或上游快照及 SHA-256
+  reference-metadata.json      13 条 DOI 注册元数据
+  reference-supplement.json    图书馆目录与 ACM 官方政策元数据
+  reference-audit.json         39 条来源与正文关联审计
   history/                     不覆盖的历史快照
 assets/papers/                 13 幅本地论文原图
-widgets/                       9 个独立静态组件与 manifest
+widgets/                       10 个独立静态组件与 manifest
 tests/                         Node 内置测试，无额外测试框架
 ```
 

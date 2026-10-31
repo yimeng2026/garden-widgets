@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "snapshotType": "reference_supplement",
+  "scope": "图书馆目录与 ACM 官方政策页面核对，不代表全文或实验复核。",
+  "records": [
+    {
+      "key": "context-roache-1998",
+      "status": "metadata_matched",
+      "registry": "Open Library",
+      "sourceUrl": "https://openlibrary.org/books/OL400789M.json",
+      "title": "Verification and validation in computational science and engineering",
+      "authors": ["Patrick J. Roache"],
+      "year": 1998,
+      "venue": "Hermosa Publishers",
+      "type": "book",
+      "isbn": "0913478083",
+      "pagination": "xvi, 446 p.",
+      "url": "https://openlibrary.org/books/OL400789M"
+    },
+    {
+      "key": "context-acm-2020",
+      "status": "metadata_matched",
+      "registry": "ACM official policy",
+      "sourceUrl": "https://www.acm.org/publications/badging-terms",
+      "title": "Artifact Review and Badging Version 1.1",
+      "authors": ["Association for Computing Machinery"],
+      "year": 2020,
+      "published": "2020-08-24",
+      "type": "policy",
+      "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current"
+    }
+  ]
+}

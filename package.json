@@ -13,7 +13,9 @@
     "sync": "node scripts/sync-law-packages.mjs",
     "sync:frontier": "node scripts/sync-frontier-content.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm run build && npm test",
+    "audit:references": "node scripts/build-reference-audit.mjs",
+    "verify:references": "node scripts/verify-reference-metadata.mjs && node scripts/build-reference-audit.mjs",
+    "check": "npm run audit:references && npm run build && npm test",
     "qa:browser": "node scripts/browser-check.mjs",
     "export:widget": "node scripts/export-durable-widget.mjs"
   },

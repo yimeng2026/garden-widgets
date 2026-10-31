@@ -16,6 +16,7 @@ import {
   generationBudgetExplorer,
   paperExplorer,
   projectExplorer,
+  referenceExplorer,
   renderContentExplorer,
   structureExplorer,
   validationExplorer,
@@ -98,6 +99,13 @@ export function build({ rootDir = DEFAULT_ROOT, write = true } = {}) {
       status: "最高 1 亿累计 token",
       description: "计算分段、重试和尾段预算；只读规划，不调用模型。",
       snapshot: "docs/CONTENT_COVERAGE.md",
+    },
+    {
+      id: "reference-audit",
+      explorer: referenceExplorer(readJson(rootDir, "snapshots/reference-audit.json")),
+      status: "39 条书目 · 分层核验",
+      description: "逐条显示原始书目、DOI／目录、软件版本、数据库快照与正文关联。",
+      snapshot: "snapshots/reference-audit.json",
     },
   ];
   const outputs = new Map();

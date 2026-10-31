@@ -1,0 +1,1538 @@
+{
+  "schemaVersion": 1,
+  "snapshotType": "reference_audit",
+  "scope": "逐条书目、标识符与本地快照审计。DOI／目录元数据匹配不等于全文已读；数据库记录复核不等于独立实验；链接关联不冒充正文编号引用。",
+  "repair": {
+    "contextReferencesAdded": 10,
+    "metadataReferencesCorrected": 3,
+    "note": "第三篇补入正文已有作者—年份提及的 10 组背景来源，并校正 3 条注册书目信息。"
+  },
+  "papers": [
+    {
+      "id": "01",
+      "title": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "referenceCount": 12,
+      "explicitCitationCount": 0,
+      "citationStyle": "bibliography_only_numbers"
+    },
+    {
+      "id": "02",
+      "title": "CA I/II 表观活性比为什么不应当作固定常数",
+      "referenceCount": 8,
+      "explicitCitationCount": 0,
+      "citationStyle": "bibliography_only_numbers"
+    },
+    {
+      "id": "03",
+      "title": "轻量可复现科研引擎的协作方法",
+      "referenceCount": 19,
+      "explicitCitationCount": 0,
+      "citationStyle": "bibliography_only_numbers"
+    }
+  ],
+  "statusCounts": {
+    "local_evidence_present": 4,
+    "local_version_matched": 5,
+    "metadata_matched": 15,
+    "record_snapshot_matched": 15
+  },
+  "references": [
+    {
+      "id": "01-ref-01",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 1,
+      "raw": "EMBL-EBI. ChEMBL molecule CHEMBL20（ACETAZOLAMIDE）及 molecule_structures。https://www.ebi.ac.uk/chembl/api/data",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL20"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.4 本文的研究动机与内容安排",
+          "linkage": "identifier"
+        },
+        {
+          "title": "2.2 身份核验的判据",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 逐层核验状态",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        },
+        {
+          "title": "5.2 开放问题",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-02",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 2,
+      "raw": "EMBL-EBI. ChEMBL target CHEMBL205（Carbonic anhydrase 2，Homo sapiens，component P00918）。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL205",
+        "P00918"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.4 本文的研究动机与内容安排",
+          "linkage": "identifier"
+        },
+        {
+          "title": "2.2 身份核验的判据",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.1 核验结果汇总",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 逐层核验状态",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.1 命题 1 的成立条件",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        },
+        {
+          "title": "5.2 开放问题",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-03",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 3,
+      "raw": "EMBL-EBI. Activity 47560；assay CHEMBL657848；document CHEMBL1146805。Ki=12 nM，pChEMBL=7.92，potential_duplicate=1。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL657848",
+        "CHEMBL1146805",
+        "47560"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.4 本文的研究动机与内容安排",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.1 核验结果汇总",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 逐层核验状态",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.2 活性边界：为何 12 nM 不能被外推",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        },
+        {
+          "title": "5.2 开放问题",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-04",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 4,
+      "raw": "NCBI. PubChem CID 1986（Acetazolamide），MolecularFormula、ConnectivitySMILES、InChIKey、TPSA 与 XLogP。https://pubchem.ncbi.nlm.nih.gov/rest/pug",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug",
+      "identifiers": [
+        "CID 1986"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "2.2 身份核验的判据",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-05",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 5,
+      "raw": "UniProt Consortium. UniProtKB reviewed P00918（CAH2_HUMAN），260 aa reviewed 序列。https://rest.uniprot.org",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://rest.uniprot.org/",
+      "identifiers": [
+        "P00918",
+        "CAH2_HUMAN"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.4 本文的研究动机与内容安排",
+          "linkage": "identifier"
+        },
+        {
+          "title": "2.2 身份核验的判据",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.1 核验结果汇总",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 逐层核验状态",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.1 命题 1 的成立条件",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        },
+        {
+          "title": "5.2 开放问题",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-06",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 6,
+      "raw": "RCSB PDB. 3HS4：Human carbonic anhydrase II complexed with acetazolamide；entity 1 与 AZM entity 4。https://data.rcsb.org/rest/v1/core",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://data.rcsb.org/rest/v1/core",
+      "identifiers": [
+        "3HS4"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 相关工作与已知结果",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.4 本文的研究动机与内容安排",
+          "linkage": "identifier"
+        },
+        {
+          "title": "2.2 身份核验的判据",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.1 核验结果汇总",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 逐层核验状态",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.3 结构性发现",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.1 命题 1 的成立条件",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.5 不同构建的结构对照与“独立重复”的边界",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        },
+        {
+          "title": "5.2 开放问题",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-07",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 7,
+      "raw": "Sippel KH, Robbins AH, Domsic J, Genis C, Agbandje-McKenna M, McKenna R. High-resolution structure of human carbonic anhydrase II complexed with acetazolamide reveals insights into inhibitor drug design. Acta Crystallographica Section F, 2009, 65:992–995. DOI: 10.1107/S1744309109036665（元数据由 PDB 3HS4 回读）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1107/s1744309109036665",
+      "identifiers": [
+        "3HS4"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "paper1-07",
+        "title": "High-resolution structure of human carbonic anhydrase II complexed with acetazolamide reveals insights into inhibitor drug design",
+        "doi": "10.1107/s1744309109036665",
+        "authors": [
+          "Katherine H. Sippel",
+          "Arthur H. Robbins",
+          "John Domsic",
+          "Caroli Genis",
+          "Mavis Agbandje-McKenna",
+          "Robert McKenna"
+        ],
+        "authorCount": 6,
+        "year": 2009,
+        "venue": "Acta Crystallographica Section F Structural Biology and Crystallization Communications",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1107%2FS1744309109036665"
+      },
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 相关工作与已知结果",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.4 本文的研究动机与内容安排",
+          "linkage": "identifier"
+        },
+        {
+          "title": "2.2 身份核验的判据",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.1 核验结果汇总",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 逐层核验状态",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.3 结构性发现",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.1 命题 1 的成立条件",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.5 不同构建的结构对照与“独立重复”的边界",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        },
+        {
+          "title": "5.2 开放问题",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-08",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 8,
+      "raw": "RDKit contributors. RDKit 2026.9.1：规范结构、TPSA、Crippen MolLogP 与 ExactMolWt 的本地计算。https://github.com/rdkit/rdkit",
+      "kind": "software",
+      "status": "local_version_matched",
+      "url": "https://github.com/rdkit/rdkit",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-09",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 9,
+      "raw": "本研究快照：`validation/chembl-acetazolamide.json`、`validation/pdb-3hs4.json`、`validation/pdb-3hs4-ca2.json`、`validation/uniprot-ca2.json`、`validation/pubchem-acetazolamide.json`。",
+      "kind": "local_evidence",
+      "status": "local_evidence_present",
+      "url": null,
+      "identifiers": [],
+      "localFiles": [
+        {
+          "file": "validation/chembl-acetazolamide.json",
+          "present": true,
+          "sha256": "23ba60417157080cc20a29601b82a58e05856eead3a53f0abb7ec1cde3564c3b",
+          "script": null
+        },
+        {
+          "file": "validation/pdb-3hs4.json",
+          "present": true,
+          "sha256": "47007e7ccf3dda2aa689518cb12d06653896f6dfc4c082d7a39ee3faec2d6108",
+          "script": null
+        },
+        {
+          "file": "validation/pdb-3hs4-ca2.json",
+          "present": true,
+          "sha256": "83e726e7b145530488f620e4b8db8ec6a7fa573b7594e741b68176c46a617813",
+          "script": null
+        },
+        {
+          "file": "validation/uniprot-ca2.json",
+          "present": true,
+          "sha256": "a85005085c85c00ff5e8128e6a7ce5c05b25cc4405ecc51d4463cd37d747a187",
+          "script": null
+        },
+        {
+          "file": "validation/pubchem-acetazolamide.json",
+          "present": true,
+          "sha256": "0303eb9c9cb0a3535b9f43abd78687a94d756d79425fe3c3fe0fdbc3f22ee2a6",
+          "script": null
+        }
+      ],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-10",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 10,
+      "raw": "RCSB PDB. 2H4N：H94N carbonic anhydrase II complexed with acetazolamide；entity 1 与 AZM entity 3。https://data.rcsb.org/rest/v1/core",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://data.rcsb.org/rest/v1/core",
+      "identifiers": [
+        "2H4N"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "4.5 不同构建的结构对照与“独立重复”的边界",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-11",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 11,
+      "raw": "Lesburg CA, Huang C, Christianson DW, Fierke CA. Histidine --> carboxamide ligand substitutions in the zinc binding site of carbonic anhydrase II alter metal coordination geometry but retain catalytic activity. Biochemistry, 1997, 36:15780–15791. DOI: 10.1021/bi971296x（元数据由 PDB 2H4N 回读）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1021/bi971296x",
+      "identifiers": [
+        "2H4N",
+        "15780",
+        "15791"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "paper1-11",
+        "title": "Histidine → Carboxamide Ligand Substitutions in the Zinc Binding Site of Carbonic Anhydrase II Alter Metal Coordination Geometry but Retain Catalytic Activity",
+        "doi": "10.1021/bi971296x",
+        "authors": [
+          "Charles A. Lesburg",
+          "Chih-chin Huang",
+          "David W. Christianson",
+          "Carol A. Fierke"
+        ],
+        "authorCount": 4,
+        "year": 1997,
+        "venue": "Biochemistry",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1021%2Fbi971296x"
+      },
+      "linkedSections": [
+        {
+          "title": "4.5 不同构建的结构对照与“独立重复”的边界",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "01-ref-12",
+      "paperId": "01",
+      "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
+      "number": 12,
+      "raw": "本研究结构对照：`validation/pdb-2h4n.json` 与 `validation/structural-control.json`，由 `scripts/analyze_structural_control.py` 全局对齐生成。",
+      "kind": "local_evidence",
+      "status": "local_evidence_present",
+      "url": null,
+      "identifiers": [],
+      "localFiles": [
+        {
+          "file": "validation/pdb-2h4n.json",
+          "present": true,
+          "sha256": "622033664b8b21a9c67906ebd753633533a858bd4ac7a7193b66160c5114a6ef",
+          "script": null
+        },
+        {
+          "file": "validation/structural-control.json",
+          "present": true,
+          "sha256": "ad1c93c7a0bb02a7d452975e7d94d3da91443db40a1b87d9fa4f1159ef759c35",
+          "script": "analyze_structural_control.py"
+        }
+      ],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-01",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 1,
+      "raw": "EMBL-EBI. ChEMBL activities 47559/47560/47561，document CHEMBL1146805，record_id=235477；CA I/II 为 esterase，CA IX 为 CO2 hydrase。https://www.ebi.ac.uk/chembl/api/data",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL1146805",
+        "47559",
+        "47560",
+        "47561",
+        "235477"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 本简报范围与证据边界",
+          "linkage": "identifier"
+        },
+        {
+          "title": "2.4 方向性、同方法与临床外推的限制",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.1 给定证据汇总",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 六组文档配对明细",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.4 负结果的呈现",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-02",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 2,
+      "raw": "EMBL-EBI. Activities 49652/49653，document CHEMBL1133556，record_id=282506。Ki 900/12 nM，方法描述未给出酯酶细节。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL1133556",
+        "49652",
+        "49653",
+        "282506"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "3.2 六组文档配对明细",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-03",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 3,
+      "raw": "EMBL-EBI. Activities 80687/80688，document CHEMBL1146697，record_id=136210。Ki 900/12 nM，方法信息不足。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL1146697",
+        "80687",
+        "80688",
+        "136210"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "3.2 六组文档配对明细",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-04",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 4,
+      "raw": "EMBL-EBI. Activities 106505/106506，document CHEMBL1136178，record_id=180522。Ki 200/7 nM，双方 potential_duplicate=0。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL1136178",
+        "106505",
+        "106506",
+        "180522"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "3.2 六组文档配对明细",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-05",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 5,
+      "raw": "EMBL-EBI. Activities 151872/151873，document CHEMBL1146695，record_id=126435。Ki 250/12 nM，方法信息不足。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL1146695",
+        "151872",
+        "151873",
+        "126435"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "3.2 六组文档配对明细",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-06",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 6,
+      "raw": "EMBL-EBI. Activities 288595/288596，document CHEMBL1134204，record_id=302270。Ki 900/12 nM，方法信息不足。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL1134204",
+        "288595",
+        "288596",
+        "302270"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "3.2 六组文档配对明细",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-07",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 7,
+      "raw": "EMBL-EBI. Assay CHEMBL873200、CHEMBL657848、CHEMBL657970：用于核对 esterase 与 CO2 hydrase 方法及 confidence_score=8。同上。",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "identifiers": [
+        "CHEMBL873200",
+        "CHEMBL657848",
+        "CHEMBL657970"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "02-ref-08",
+      "paperId": "02",
+      "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
+      "number": 8,
+      "raw": "本研究原始面板与计算：`validation/chembl-ca-selectivity-panel.json`、`validation/ca-selectivity.json`、`validation/chembl-ca-document-pairs.json`、`validation/ca-document-stability.json`。",
+      "kind": "local_evidence",
+      "status": "local_evidence_present",
+      "url": null,
+      "identifiers": [],
+      "localFiles": [
+        {
+          "file": "validation/chembl-ca-selectivity-panel.json",
+          "present": true,
+          "sha256": "8821542045a62c6cf5e8a57f5a538462f0b4734013eea79a4570d5145e849e5e",
+          "script": null
+        },
+        {
+          "file": "validation/ca-selectivity.json",
+          "present": true,
+          "sha256": "da49fe91d18e68c2c4487add161fb3481bbfeb2b0e68df64a074df6b48b1990c",
+          "script": "analyze_ca_selectivity.py"
+        },
+        {
+          "file": "validation/chembl-ca-document-pairs.json",
+          "present": true,
+          "sha256": "a803efebfc4503eeadfae954fa0e8cb5a6d163e98010fc59e7cec48ee149b07e",
+          "script": null
+        },
+        {
+          "file": "validation/ca-document-stability.json",
+          "present": true,
+          "sha256": "500e62fe58f4a5efebb98d5547aafa644310504a6a5133afaa91584afb3c8aeb",
+          "script": "analyze_ca_document_stability.py"
+        }
+      ],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-01",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 1,
+      "raw": "de Silva B, Champion K, Quade M, et al. PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data. Journal of Open Source Software, 2020, 5(49):2104. DOI: 10.21105/joss.02104。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.21105/joss.02104",
+      "identifiers": [
+        "21105",
+        "02104"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "paper3-01",
+        "title": "PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data",
+        "doi": "10.21105/joss.02104",
+        "authors": [
+          "Brian de Silva",
+          "Kathleen Champion",
+          "Markus Quade",
+          "Jean-Christophe Loiseau",
+          "J. Kutz",
+          "Steven Brunton"
+        ],
+        "authorCount": 6,
+        "year": 2020,
+        "venue": "Journal of Open Source Software",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.21105%2Fjoss.02104"
+      },
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        },
+        {
+          "title": "3.1 本地引擎清点（环境审计，非性能基准）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 已知线性系统的验证（对 \\(K\\)）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.4 证据汇总（最小数值集）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-02",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 2,
+      "raw": "Kaptanoglu AA, de Silva BM, Fasel U, et al. PySINDy: A comprehensive Python package for robust sparse system identification. Journal of Open Source Software, 2022, 7(69):3994. DOI: 10.21105/joss.03994。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.21105/joss.03994",
+      "identifiers": [
+        "21105",
+        "03994"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "paper3-02",
+        "title": "PySINDy: A comprehensive Python package for robust sparse system identification",
+        "doi": "10.21105/joss.03994",
+        "authors": [
+          "Alan Kaptanoglu",
+          "Brian de Silva",
+          "Urban Fasel",
+          "Kadierdan Kaheman",
+          "Andy Goldschmidt",
+          "Jared Callaham"
+        ],
+        "authorCount": 12,
+        "year": 2022,
+        "venue": "Journal of Open Source Software",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.21105%2Fjoss.03994"
+      },
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        },
+        {
+          "title": "3.1 本地引擎清点（环境审计，非性能基准）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.2 已知线性系统的验证（对 \\(K\\)）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.4 证据汇总（最小数值集）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "五、结论",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-03",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 3,
+      "raw": "PySINDy contributors. PySINDy 2.1.0：本地线性库与 STLSQ 验证。https://github.com/dynamicslab/pysindy",
+      "kind": "software",
+      "status": "local_version_matched",
+      "url": "https://github.com/dynamicslab/pysindy",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-04",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 4,
+      "raw": "Z3 contributors. Z3 5.3.3.0：实数约束求解与 UNSAT 结果。https://github.com/Z3Prover/z3",
+      "kind": "software",
+      "status": "local_version_matched",
+      "url": "https://github.com/Z3Prover/z3",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-05",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 5,
+      "raw": "RDKit contributors. RDKit 2026.9.1：规范结构与分子描述符。https://github.com/rdkit/rdkit",
+      "kind": "software",
+      "status": "local_version_matched",
+      "url": "https://github.com/rdkit/rdkit",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-06",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 6,
+      "raw": "Materials Project. PyMatGen 2026.10.24：结构、密度与空间群分析。https://github.com/materialsproject/pymatgen",
+      "kind": "software",
+      "status": "local_version_matched",
+      "url": "https://github.com/materialsproject/pymatgen",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-07",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 7,
+      "raw": "Jain A, Ong SP, Hautier G, Chen W, Richards WD, et al. Commentary: The Materials Project: A materials genome approach to accelerating materials innovation. APL Materials, 2013, 1(1). DOI: 10.1063/1.4812323。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1063/1.4812323",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": {
+        "key": "paper3-07",
+        "title": "Commentary: The Materials Project: A materials genome approach to accelerating materials innovation",
+        "doi": "10.1063/1.4812323",
+        "authors": [
+          "Anubhav Jain",
+          "Shyue Ping Ong",
+          "Geoffroy Hautier",
+          "Wei Chen",
+          "William Davidson Richards",
+          "Stephen Dacek"
+        ],
+        "authorCount": 11,
+        "year": 2013,
+        "venue": "APL Materials",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1063%2F1.4812323"
+      },
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        },
+        {
+          "title": "命题 2.4（发现主张的必要条件：额外不变量）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.3 硅密度的快照复核（对 \\(S\\)）",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-08",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 8,
+      "raw": "RCSB PDB 与 UniProt Consortium：4HHB/HBB_HUMAN、3HS4/CAH2_HUMAN 的结构与 reviewed 序列快照。https://data.rcsb.org/rest/v1/core；https://rest.uniprot.org",
+      "kind": "database_record",
+      "status": "record_snapshot_matched",
+      "url": "https://data.rcsb.org/rest/v1/core",
+      "identifiers": [
+        "4HHB",
+        "3HS4",
+        "HBB_HUMAN",
+        "CAH2_HUMAN"
+      ],
+      "localFiles": [],
+      "metadata": null,
+      "linkedSections": [
+        {
+          "title": "3.4 证据汇总（最小数值集）",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "identifier",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-09",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 9,
+      "raw": "本研究全部机器可读结果：`validation/pysindy.json`、`validation/z3.json`、`validation/rdkit.json`、`validation/pymatgen.json`、`validation/pdb-uniprot.json`、`validation/ca2-sequence.json`。",
+      "kind": "local_evidence",
+      "status": "local_evidence_present",
+      "url": null,
+      "identifiers": [],
+      "localFiles": [
+        {
+          "file": "validation/pysindy.json",
+          "present": true,
+          "sha256": "e82cd6d93c22fc6b1a7f6f6a10ad068998125ab37dece80fb978a663dbf506bf",
+          "script": "verify_pysindy.py"
+        },
+        {
+          "file": "validation/z3.json",
+          "present": true,
+          "sha256": "5d3397344ad26032905ef5306a963ca96695e3548ac0fa2ffff51adf2f231747",
+          "script": "verify_z3.py"
+        },
+        {
+          "file": "validation/rdkit.json",
+          "present": true,
+          "sha256": "67965dd0f6e2893e88602621686d3e8973573f5a22f4be38c90ed1aa42b61d60",
+          "script": "verify_rdkit.py"
+        },
+        {
+          "file": "validation/pymatgen.json",
+          "present": true,
+          "sha256": "cb129cf749b6e1cdb7e4d4e8ce49e6fadfc5240e73e2281a4fbd09072292d590",
+          "script": "verify_pymatgen.py"
+        },
+        {
+          "file": "validation/pdb-uniprot.json",
+          "present": true,
+          "sha256": "8e0163776dd49a7f8824ed2788c6f6d29c1ed1e5835c8c38f93bc597be13b4b1",
+          "script": "verify_pdb_uniprot.py"
+        },
+        {
+          "file": "validation/ca2-sequence.json",
+          "present": true,
+          "sha256": "bc81715f3c79cdb7f14fc4383e6cdce680a1a67b4ab5199810c90347d3e99237",
+          "script": "verify_ca2_sequence.py"
+        }
+      ],
+      "metadata": null,
+      "linkedSections": [],
+      "linkage": "bibliography_only",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-10",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 10,
+      "raw": "Barba LA. Terminologies for Reproducible Research. arXiv:1802.03311, 2018. DOI: 10.48550/arXiv.1802.03311。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://arxiv.org/abs/1802.03311",
+      "identifiers": [
+        "03311",
+        "48550"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-barba-2018",
+        "title": "Terminologies for Reproducible Research",
+        "doi": "10.48550/arxiv.1802.03311",
+        "authors": [
+          "Barba, Lorena A."
+        ],
+        "authorCount": 1,
+        "year": 2018,
+        "venue": "arXiv",
+        "type": "Preprint",
+        "registry": "DataCite",
+        "sourceUrl": "https://api.datacite.org/dois/10.48550%2FarXiv.1802.03311"
+      },
+      "linkedSections": [
+        {
+          "title": "1.1 问题背景",
+          "linkage": "author_year"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-11",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 11,
+      "raw": "Plesser HE. Reproducibility vs. Replicability: A Brief History of a Confused Terminology. Frontiers in Neuroinformatics, 2018, 11. DOI: 10.3389/fninf.2017.00076。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.3389/fninf.2017.00076",
+      "identifiers": [
+        "00076"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-plesser-2018",
+        "title": "Reproducibility vs. Replicability: A Brief History of a Confused Terminology",
+        "doi": "10.3389/fninf.2017.00076",
+        "authors": [
+          "Hans E. Plesser"
+        ],
+        "authorCount": 1,
+        "year": 2018,
+        "venue": "Frontiers in Neuroinformatics",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.3389%2Ffninf.2017.00076"
+      },
+      "linkedSections": [
+        {
+          "title": "1.1 问题背景",
+          "linkage": "author_year"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-12",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 12,
+      "raw": "National Academies of Sciences, Engineering, and Medicine. Reproducibility and Replicability in Science. National Academies Press, 2019. DOI: 10.17226/25303。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.17226/25303",
+      "identifiers": [
+        "17226",
+        "25303"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-nasem-2019",
+        "title": "Reproducibility and Replicability in Science",
+        "doi": "10.17226/25303",
+        "authors": [
+          "Committee on Reproducibility and Replicability in Science",
+          "Board on Behavioral, Cognitive, and Sensory Sciences",
+          "Committee on National Statistics",
+          "Division of Behavioral and Social Sciences and Education",
+          "Nuclear and Radiation Studies Board",
+          "Division on Earth and Life Studies"
+        ],
+        "authorCount": 13,
+        "year": 2019,
+        "venue": "National Academies Press",
+        "type": "edited-book",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.17226%2F25303"
+      },
+      "linkedSections": [
+        {
+          "title": "1.1 问题背景",
+          "linkage": "author_year"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-13",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 13,
+      "raw": "Roache PJ. Verification and Validation in Computational Science and Engineering. Hermosa Publishers, 1998. ISBN: 0913478083（Open Library OL400789M 目录核对）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://openlibrary.org/books/OL400789M",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-roache-1998",
+        "title": "Verification and validation in computational science and engineering",
+        "doi": null,
+        "authors": [
+          "Patrick J. Roache"
+        ],
+        "authorCount": 1,
+        "year": 1998,
+        "venue": "Hermosa Publishers",
+        "type": "book",
+        "registry": "Open Library",
+        "sourceUrl": "https://openlibrary.org/books/OL400789M.json"
+      },
+      "linkedSections": [
+        {
+          "title": "1.1 问题背景",
+          "linkage": "author_year"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-14",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 14,
+      "raw": "Oberkampf WL, Trucano TG. Verification and validation in computational fluid dynamics. Progress in Aerospace Sciences, 2002, 38(3):209–272. DOI: 10.1016/S0376-0421(02)00005-2。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1016/s0376-0421(02)00005-2",
+      "identifiers": [
+        "00005"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-oberkampf-2002",
+        "title": "Verification and validation in computational fluid dynamics",
+        "doi": "10.1016/s0376-0421(02)00005-2",
+        "authors": [
+          "William L. Oberkampf",
+          "Timothy G. Trucano"
+        ],
+        "authorCount": 2,
+        "year": 2002,
+        "venue": "Progress in Aerospace Sciences",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1016%2FS0376-0421(02)00005-2"
+      },
+      "linkedSections": [
+        {
+          "title": "1.1 问题背景",
+          "linkage": "author_year"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-15",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 15,
+      "raw": "Brunton SL, Proctor JL, Kutz JN. Discovering governing equations from data by sparse identification of nonlinear dynamical systems. Proceedings of the National Academy of Sciences, 2016, 113(15):3932–3937. DOI: 10.1073/pnas.1517384113。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1073/pnas.1517384113",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-brunton-2016",
+        "title": "Discovering governing equations from data by sparse identification of nonlinear dynamical systems",
+        "doi": "10.1073/pnas.1517384113",
+        "authors": [
+          "Steven L. Brunton",
+          "Joshua L. Proctor",
+          "J. Nathan Kutz"
+        ],
+        "authorCount": 3,
+        "year": 2016,
+        "venue": "Proceedings of the National Academy of Sciences",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1073%2Fpnas.1517384113"
+      },
+      "linkedSections": [
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-16",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 16,
+      "raw": "de Moura L, Bjørner N. Z3: An Efficient SMT Solver. Lecture Notes in Computer Science, 2008:337–340. DOI: 10.1007/978-3-540-78800-3_24。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1007/978-3-540-78800-3_24",
+      "identifiers": [
+        "78800"
+      ],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-demoura-2008",
+        "title": "Z3: An Efficient SMT Solver",
+        "doi": "10.1007/978-3-540-78800-3_24",
+        "authors": [
+          "Leonardo de Moura",
+          "Nikolaj Bjørner"
+        ],
+        "authorCount": 2,
+        "year": 2008,
+        "venue": "Lecture Notes in Computer Science",
+        "type": "book-chapter",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1007%2F978-3-540-78800-3_24"
+      },
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        },
+        {
+          "title": "三、数值结果",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.1 本地引擎清点（环境审计，非性能基准）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.4 证据汇总（最小数值集）",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-17",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 17,
+      "raw": "Ong SP, Richards WD, Jain A, et al. Python Materials Genomics (pymatgen): A robust, open-source python library for materials analysis. Computational Materials Science, 2013, 68:314–319. DOI: 10.1016/j.commatsci.2012.10.028。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1016/j.commatsci.2012.10.028",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-ong-2013",
+        "title": "Python Materials Genomics (pymatgen): A robust, open-source python library for materials analysis",
+        "doi": "10.1016/j.commatsci.2012.10.028",
+        "authors": [
+          "Shyue Ping Ong",
+          "William Davidson Richards",
+          "Anubhav Jain",
+          "Geoffroy Hautier",
+          "Michael Kocher",
+          "Shreyas Cholia"
+        ],
+        "authorCount": 10,
+        "year": 2013,
+        "venue": "Computational Materials Science",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1016%2Fj.commatsci.2012.10.028"
+      },
+      "linkedSections": [
+        {
+          "title": "摘要",
+          "linkage": "identifier"
+        },
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        },
+        {
+          "title": "3.1 本地引擎清点（环境审计，非性能基准）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.3 硅密度的快照复核（对 \\(S\\)）",
+          "linkage": "identifier"
+        },
+        {
+          "title": "3.4 证据汇总（最小数值集）",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-18",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 18,
+      "raw": "Wilkinson MD, Dumontier M, Aalbersberg IJ, et al. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 2016, 3. DOI: 10.1038/sdata.2016.18。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1038/sdata.2016.18",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-wilkinson-2016",
+        "title": "The FAIR Guiding Principles for scientific data management and stewardship",
+        "doi": "10.1038/sdata.2016.18",
+        "authors": [
+          "Mark D. Wilkinson",
+          "Michel Dumontier",
+          "IJsbrand Jan Aalbersberg",
+          "Gabrielle Appleton",
+          "Myles Axton",
+          "Arie Baak"
+        ],
+        "authorCount": 53,
+        "year": 2016,
+        "venue": "Scientific Data",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1038%2Fsdata.2016.18"
+      },
+      "linkedSections": [
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        },
+        {
+          "title": "4.2 与 FAIR / artifact review 的关系",
+          "linkage": "author_year"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    },
+    {
+      "id": "03-ref-19",
+      "paperId": "03",
+      "paperTitle": "轻量可复现科研引擎的协作方法",
+      "number": 19,
+      "raw": "Association for Computing Machinery. Artifact Review and Badging Version 1.1, 2020-08-24. https://www.acm.org/publications/policies/artifact-review-and-badging-current（ACM 官方政策页面回读）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+      "identifiers": [],
+      "localFiles": [],
+      "metadata": {
+        "key": "context-acm-2020",
+        "title": "Artifact Review and Badging Version 1.1",
+        "doi": null,
+        "authors": [
+          "Association for Computing Machinery"
+        ],
+        "authorCount": 1,
+        "year": 2020,
+        "type": "policy",
+        "registry": "ACM official policy",
+        "sourceUrl": "https://www.acm.org/publications/badging-terms"
+      },
+      "linkedSections": [
+        {
+          "title": "1.3 相关工作",
+          "linkage": "author_year"
+        },
+        {
+          "title": "4.1 “不冒充新发现”是方法特性",
+          "linkage": "identifier"
+        },
+        {
+          "title": "4.2 与 FAIR / artifact review 的关系",
+          "linkage": "identifier"
+        }
+      ],
+      "linkage": "author_year",
+      "fullTextVerified": false
+    }
+  ]
+}

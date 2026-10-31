@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {"key":"paper1-07","doi":"10.1107/S1744309109036665","expectedTitle":"High-resolution structure of human carbonic anhydrase II complexed with acetazolamide reveals insights into inhibitor drug design","source":"crossref"},
+    {"key":"paper1-11","doi":"10.1021/bi971296x","expectedTitle":"Histidine --> carboxamide ligand substitutions in the zinc binding site of carbonic anhydrase II alter metal coordination geometry but retain catalytic activity","source":"crossref"},
+    {"key":"paper3-01","doi":"10.21105/joss.02104","expectedTitle":"PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data","source":"crossref"},
+    {"key":"paper3-02","doi":"10.21105/joss.03994","expectedTitle":"PySINDy: A comprehensive Python package for robust sparse system identification","source":"crossref"},
+    {"key":"paper3-07","doi":"10.1063/1.4812323","expectedTitle":"Commentary: The Materials Project: A materials genome approach to accelerating materials innovation","source":"crossref"},
+    {"key":"context-brunton-2016","doi":"10.1073/pnas.1517384113","expectedTitle":"Discovering governing equations from data by sparse identification of nonlinear dynamical systems","source":"crossref"},
+    {"key":"context-demoura-2008","doi":"10.1007/978-3-540-78800-3_24","expectedTitle":"Z3: An Efficient SMT Solver","source":"crossref"},
+    {"key":"context-ong-2013","doi":"10.1016/j.commatsci.2012.10.028","expectedTitle":"Python Materials Genomics (pymatgen): A robust, open-source python library for materials analysis","source":"crossref"},
+    {"key":"context-wilkinson-2016","doi":"10.1038/sdata.2016.18","expectedTitle":"The FAIR Guiding Principles for scientific data management and stewardship","source":"crossref"},
+    {"key":"context-nasem-2019","doi":"10.17226/25303","expectedTitle":"Reproducibility and Replicability in Science","source":"crossref"},
+    {"key":"context-oberkampf-2002","doi":"10.1016/S0376-0421(02)00005-2","expectedTitle":"Verification and validation in computational fluid dynamics","source":"crossref"},
+    {"key":"context-plesser-2018","doi":"10.3389/fninf.2017.00076","expectedTitle":"Reproducibility vs. Replicability: A Brief History of a Confused Terminology","source":"crossref"},
+    {"key":"context-barba-2018","doi":"10.48550/arXiv.1802.03311","expectedTitle":"Terminologies for Reproducible Research","source":"datacite"}
+  ]
+}

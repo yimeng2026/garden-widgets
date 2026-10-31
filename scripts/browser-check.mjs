@@ -133,10 +133,10 @@ async function run() {
     };
 
     await cdp.navigate(origin);
-    assert.equal(await cdp.evaluate("document.querySelectorAll('.widget-card').length"), 9);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.widget-card').length"), 10);
     await assertNoOverflow("gallery");
     await cdp.screenshot("01-gallery");
-    pass("画廊显示 9 个组件");
+    pass("画廊显示 10 个组件");
 
     await cdp.navigate(origin, "widgets/paper-library/index.html");
     await cdp.evaluate("document.querySelector('[data-action=figures]').click()");
@@ -208,13 +208,24 @@ async function run() {
     await assertNoOverflow("budget");
     pass("1 亿目标分为 8139 段及非法预算拦截");
 
+    await cdp.navigate(origin, "widgets/reference-audit/index.html");
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.project-card').length"), 12);
+    await cdp.evaluate("document.querySelector('#reference-paper').value='03';document.querySelector('#reference-status').value='metadata_matched';document.querySelector('[data-form=reference-filter]').requestSubmit()");
+    assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('匹配 13 条')"));
+    await cdp.evaluate("document.querySelector('#reference-status').value='all';document.querySelector('#reference-query').value='Roache';document.querySelector('[data-form=reference-filter]').requestSubmit()");
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.project-card').length"), 1);
+    assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('Hermosa')"));
+    await cdp.screenshot("09-references");
+    await assertNoOverflow("references");
+    pass("39 条来源、第三篇 13 条元数据与 Roache 定位");
+
     await cdp.call("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
-    for (const widget of ["paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget"]) {
+    for (const widget of ["paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"]) {
       await cdp.navigate(origin, `widgets/${widget}/index.html`);
       await assertNoOverflow(`${widget} mobile`);
     }
     await cdp.screenshot("08-mobile-budget");
-    pass("六个新增组件在 390 px 宽度下无横向溢出");
+    pass("七个新增组件在 390 px 宽度下无横向溢出");
     assert.deepEqual(cdp.errors, []);
     await assertLocalResources();
     pass("浏览器无脚本异常，资源均为本地来源");
