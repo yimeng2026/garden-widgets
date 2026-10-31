@@ -138,6 +138,42 @@
         "validation/pdb-4hhb.json",
         "validation/uniprot-hbb.json"
       ]
+    },
+    {
+      "id": "acetazolamide-chembl-pubchem-pdb",
+      "domain": "chemistry",
+      "title": "乙酰唑胺—CA II—实验结构链",
+      "status": "verified",
+      "evidenceClass": "cross_database_check",
+      "sources": [
+        "https://www.ebi.ac.uk/chembl/api/data",
+        "https://pubchem.ncbi.nlm.nih.gov/rest/pug",
+        "https://data.rcsb.org/rest/v1/core"
+      ],
+      "metrics": {
+        "chemblMolecule": "CHEMBL20",
+        "pubchemCid": 1986,
+        "targetChemblId": "CHEMBL205",
+        "targetUniprot": "P00918",
+        "activityId": 47560,
+        "assayChemblId": "CHEMBL657848",
+        "kiNm": 12.0,
+        "pchemblExternal": 7.92,
+        "pchemblRecomputed": 7.920818753952375,
+        "potentialDuplicate": 1,
+        "pdbId": "3HS4",
+        "ligandCompId": "AZM",
+        "resolutionA": 1.1
+      },
+      "scientificClaim": "乙酰唑胺的化合物标识、CA II 策划机制、单一 Ki 测定和 3HS4 实验复合物可以逐层追溯。",
+      "limitations": "化合物 InChIKey、靶点、单一活性记录和实验复合物的对应关系已核对；Ki=12 nM 只属于 assay CHEMBL657848。potential_duplicate=1 保留为审计警告，不据此直接判造假，也不外推临床效力。",
+      "upstreamContribution": "提供 InChIKey、assay、配体实体和重复标记完整保留的药物—靶点—结构审计链。",
+      "snapshotFiles": [
+        "validation/drug-target-structure.json",
+        "validation/chembl-acetazolamide.json",
+        "validation/pdb-3hs4.json",
+        "validation/pubchem-acetazolamide.json"
+      ]
     }
   ]
 }

@@ -17,7 +17,7 @@
     },
     {
       "title": "跨域证据链",
-      "status": "五项跨域复核",
+      "status": "六项跨域复核",
       "description": "数学、化学、材料和生物的上游复用、独立重算与跨库桥接。",
       "entry": "widgets/frontier-evidence/index.html",
       "snapshot": "snapshots/frontier-evidence.json"

@@ -23,15 +23,18 @@ test("law and complexity narratives render all cases without external dependenci
   assert.ok(complexityHtml.includes("待独立复核"));
 });
 
-test("frontier evidence renders five bounded cross-domain cases", () => {
+test("frontier evidence renders six bounded cross-domain cases", () => {
   const narrative = narrativeFromFrontierSnapshot(frontier);
   const html = renderResearchWidget(narrative);
-  assert.equal(narrative.cases.length, 5);
+  assert.equal(narrative.cases.length, 6);
   assert.deepEqual(assertStaticWidgetHtml(html), []);
   assert.ok(html.includes("硅结构派生量独立重算"));
   assert.ok(html.includes("P68871"));
   assert.ok(html.includes("未在本机重算"));
   assert.ok(html.includes("算法不同"));
+  assert.ok(html.includes("CHEMBL205"));
+  assert.ok(html.includes("potential_duplicate=1"));
+  assert.ok(html.includes("3HS4"));
 });
 
 test("payload and initial text cannot inject a closing script tag", () => {

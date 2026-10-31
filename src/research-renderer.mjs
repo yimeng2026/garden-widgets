@@ -89,6 +89,12 @@ function frontierMetrics(item) {
       { value: m.uniprotAccession, label: "UniProt", note: "reviewed HBB_HUMAN" },
       { value: `${m.uniprotLength}→${m.pdbLength}`, label: "序列长度", note: "去起始 M 后逐字符一致" },
     ];
+    case "acetazolamide-chembl-pubchem-pdb": return [
+      { value: m.chemblMolecule, label: "ChEMBL 分子", note: `PubChem CID ${m.pubchemCid}` },
+      { value: m.targetChemblId, label: "CA II 靶点", note: `UniProt ${m.targetUniprot}` },
+      { value: `${fixed(m.kiNm, 1)} nM`, label: "单 assay Ki", note: `pChEMBL ${m.pchemblExternal} · 重复标记 ${m.potentialDuplicate}` },
+      { value: m.pdbId, label: "实验复合物", note: `${m.ligandCompId} · ${fixed(m.resolutionA, 1)} Å` },
+    ];
     default: return [{ value: item.evidenceClass, label: "证据类别", note: `${item.sources.length} 个来源` }];
   }
 }

@@ -44,7 +44,7 @@ export function build({ rootDir = DEFAULT_ROOT, write = true } = {}) {
     {
       id: "frontier-evidence",
       narrative: narrativeFromFrontierSnapshot(frontier),
-      status: "五项跨域复核",
+      status: "六项跨域复核",
       description: "数学、化学、材料和生物的上游复用、独立重算与跨库桥接。",
       snapshot: "snapshots/frontier-evidence.json",
     },

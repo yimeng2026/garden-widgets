@@ -6,7 +6,7 @@
 
 - **规律实验室**：CA2 冻结规则留出验证、材料带隙对象完备性、可逆但不稳定的反演反例、竞争模型主动判别。
 - **复杂性与证据控制**：智能体控制论、诺顿穹顶与形式化、2025 三项数学工作、罗文俊·探索者及公开框架审查。
-- **跨域证据链**：PySINDy、Z3、PubChem/RDKit、Materials Project/PyMatGen、PDB/UniProt 的五项真实复核，显示算法口径、快照与上游互补贡献。
+- **跨域证据链**：PySINDy、Z3、PubChem/RDKit、Materials Project/PyMatGen、PDB/UniProt、ChEMBL/PubChem/PDB 的六项真实复核，显示算法口径、快照与上游互补贡献。
 
 所有组件都显示证据状态、反例、限制和下一项动作。页面不自行提升结论，不把形式证明、数据库留出、数值演示和独立实验复现混为一谈。
 
