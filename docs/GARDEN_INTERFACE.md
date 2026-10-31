@@ -82,6 +82,8 @@
 
 将快照放入 `snapshots/`，在 `scripts/build.mjs` 注册一个定义，选择 `narrativeFromComplexitySnapshot` 或添加同形适配器。构建器负责统一渲染，不应为每个案例复制一套框架。
 
+`frontier-breakthrough` 的 `exports/frontier-evidence.json` 通过 `narrativeFromFrontierSnapshot` 映射为 `frontier-evidence` 组件。它保留五个验证项的来源、指标、限制、上游贡献和快照文件；这只是作者时复制，不是实时 Binding。更新时先在上游项目重新生成证据包，再复制到 `snapshots/frontier-evidence.json` 并运行全量检查。
+
 新增后必须执行 `npm run check`，并至少回答：数据来自哪里、失败在哪里、哪些结论尚未独立复核、如何回到旧快照。
 
 ## 6. 静态页面安全契约

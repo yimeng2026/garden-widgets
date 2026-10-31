@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-31",
+  "project": "frontier-breakthrough",
+  "scope": "跨项目本地复核与数据库对照；verified 仅指所述检查，不是新发现、独立实验或外部认证。",
+  "items": [
+    {
+      "id": "pysindy-linear-system",
+      "domain": "math",
+      "title": "稀疏动力学已知答案复核",
+      "status": "verified",
+      "evidenceClass": "known_answer_reproduction",
+      "sources": [
+        "https://github.com/dynamicslab/pysindy"
+      ],
+      "metrics": {
+        "version": "2.1.0",
+        "maxAbsError": 3.136190275787598e-05,
+        "coefficients": [
+          [
+            -2.000031361902758,
+            0.0
+          ],
+          [
+            0.0,
+            1.0000040379877289
+          ]
+        ]
+      },
+      "scientificClaim": "本机 PySINDy 能从合成轨迹近似恢复预设线性系数。",
+      "limitations": "仅验证本机指定版本能恢复已知线性系统，不是新规律发现。",
+      "upstreamContribution": "提供固定特征库和显式误差边界的可重放基线。",
+      "snapshotFiles": [
+        "validation/pysindy.json"
+      ]
+    },
+    {
+      "id": "z3-real-constraints",
+      "domain": "math",
+      "title": "实数约束已知答案复核",
+      "status": "verified",
+      "evidenceClass": "known_answer_reproduction",
+      "sources": [
+        "https://github.com/Z3Prover/z3"
+      ],
+      "metrics": {
+        "version": "5.3.3.0",
+        "checks": {
+          "negation_of_x_positive_implies_x_plus_1_positive": "unsat",
+          "x_squared_less_than_zero": "unsat"
+        }
+      },
+      "scientificClaim": "两个预设实数约束均被 Z3 判定为不可满足。",
+      "limitations": "验证两个实数约束的已知答案，不等同一般数学定理的自动证明。",
+      "upstreamContribution": "为形式化前的反例搜索提供最小可执行样例。",
+      "snapshotFiles": [
+        "validation/z3.json"
+      ]
+    },
+    {
+      "id": "acetazolamide-pubchem-rdkit",
+      "domain": "chemistry",
+      "title": "乙酰唑胺跨库属性审计",
+      "status": "verified",
+      "evidenceClass": "cross_database_check",
+      "sources": [
+        "https://pubchem.ncbi.nlm.nih.gov/rest/pug",
+        "https://github.com/rdkit/rdkit"
+      ],
+      "metrics": {
+        "pubchemCid": 1986,
+        "formula": "C4H6N4O3S2",
+        "tpsaDefault": 115.03999999999999,
+        "tpsaIncludeSP": 151.66,
+        "pubchemTpsa": 152,
+        "rdkitMolLogP": -0.8561000000000003,
+        "pubchemXLogP": -0.3
+      },
+      "scientificClaim": "规范结构、分子式和精确质量一致；描述符差异必须连算法口径一起解释。",
+      "limitations": "规范结构、分子式和精确质量与 PubChem 快照一致；TPSA 计入 S/P 后按整数口径一致；XLogP 算法差异单独保留。这不是实验验证，也不据此指认数据造假。",
+      "upstreamContribution": "提供结构归一、S/P 口径、算法差异和精度的公开对照样例。",
+      "snapshotFiles": [
+        "validation/rdkit.json",
+        "validation/pubchem-acetazolamide.json"
+      ]
+    },
+    {
+      "id": "silicon-materials-project-pymatgen",
+      "domain": "physics",
+      "title": "硅结构派生量独立重算",
+      "status": "verified",
+      "evidenceClass": "local_recomputation",
+      "sources": [
+        "https://api.materialsproject.org",
+        "https://github.com/materialsproject/pymatgen"
+      ],
+      "metrics": {
+        "materialId": "mp-aaaaaaft",
+        "densityLocal": 2.3128002565764314,
+        "densityExternal": 2.3128002565764314,
+        "spaceGroup": "Fd-3m",
+        "spaceGroupNumber": 227,
+        "externalBandGapEv": 0.6102999999999996
+      },
+      "scientificClaim": "从同一公开晶体结构本地重算的密度和空间群与 Materials Project 快照一致。",
+      "limitations": "本地从公开结构独立重算密度与空间群并核对；带隙和稳定性仅为外部 DFT 快照，未在本机重算。",
+      "upstreamContribution": "提供规范 ID 迁移、结构快照与本地派生量核对的轻量复现包。",
+      "snapshotFiles": [
+        "validation/pymatgen.json",
+        "validation/materials-project-si.json"
+      ]
+    },
+    {
+      "id": "4hhb-hbb-uniprot",
+      "domain": "biology",
+      "title": "血红蛋白结构—序列跨库桥接",
+      "status": "verified",
+      "evidenceClass": "cross_database_check",
+      "sources": [
+        "https://data.rcsb.org/rest/v1/core",
+        "https://rest.uniprot.org"
+      ],
+      "metrics": {
+        "pdbId": "4HHB",
+        "pdbEntity": 2,
+        "chains": "B,D",
+        "resolutionA": 1.74,
+        "uniprotAccession": "P68871",
+        "uniprotLength": 147,
+        "pdbLength": 146,
+        "sequenceMd5": "209D686939D0B8D1EA089368150140E2"
+      },
+      "scientificClaim": "P68871 去除起始甲硫氨酸后与 4HHB entity 2 的 146 aa 序列逐字符一致。",
+      "limitations": "验证实验结构实体与 reviewed 序列记录的对应关系，不是蛋白功能、机制或临床结论。",
+      "upstreamContribution": "提供不依赖截断字段、由基因/物种检索到精确序列验证的跨库桥接。",
+      "snapshotFiles": [
+        "validation/pdb-uniprot.json",
+        "validation/pdb-4hhb.json",
+        "validation/uniprot-hbb.json"
+      ]
+    }
+  ]
+}

@@ -4,12 +4,14 @@ import fs from "node:fs";
 import {
   assertStaticWidgetHtml,
   narrativeFromComplexitySnapshot,
+  narrativeFromFrontierSnapshot,
   narrativeFromLawSnapshot,
   renderResearchWidget,
 } from "../src/research-renderer.mjs";
 
 const law = JSON.parse(fs.readFileSync(new URL("../snapshots/law-packages.json", import.meta.url), "utf8"));
 const complexity = JSON.parse(fs.readFileSync(new URL("../snapshots/complexity.json", import.meta.url), "utf8"));
+const frontier = JSON.parse(fs.readFileSync(new URL("../snapshots/frontier-evidence.json", import.meta.url), "utf8"));
 
 test("law and complexity narratives render all cases without external dependencies", () => {
   const lawHtml = renderResearchWidget(narrativeFromLawSnapshot(law));
@@ -19,6 +21,17 @@ test("law and complexity narratives render all cases without external dependenci
   assert.ok(lawHtml.includes("有限支持"));
   assert.ok(complexityHtml.includes("诺顿与形式化"));
   assert.ok(complexityHtml.includes("待独立复核"));
+});
+
+test("frontier evidence renders five bounded cross-domain cases", () => {
+  const narrative = narrativeFromFrontierSnapshot(frontier);
+  const html = renderResearchWidget(narrative);
+  assert.equal(narrative.cases.length, 5);
+  assert.deepEqual(assertStaticWidgetHtml(html), []);
+  assert.ok(html.includes("硅结构派生量独立重算"));
+  assert.ok(html.includes("P68871"));
+  assert.ok(html.includes("未在本机重算"));
+  assert.ok(html.includes("算法不同"));
 });
 
 test("payload and initial text cannot inject a closing script tag", () => {

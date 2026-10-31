@@ -7,6 +7,7 @@ import { escapeHtml } from "../src/contracts.mjs";
 import {
   assertStaticWidgetHtml,
   narrativeFromComplexitySnapshot,
+  narrativeFromFrontierSnapshot,
   narrativeFromLawSnapshot,
   renderResearchWidget,
 } from "../src/research-renderer.mjs";
@@ -24,6 +25,7 @@ function gallery(manifest) {
 export function build({ rootDir = DEFAULT_ROOT, write = true } = {}) {
   const law = readJson(rootDir, "snapshots/law-packages.json");
   const complexity = readJson(rootDir, "snapshots/complexity.json");
+  const frontier = readJson(rootDir, "snapshots/frontier-evidence.json");
   const definitions = [
     {
       id: "law-lab",
@@ -38,6 +40,13 @@ export function build({ rootDir = DEFAULT_ROOT, write = true } = {}) {
       status: "控制 · 形式化 · 复杂性",
       description: "智能体控制论、诺顿穹顶、2025 数学突破与公开理论框架审查。",
       snapshot: "snapshots/complexity.json",
+    },
+    {
+      id: "frontier-evidence",
+      narrative: narrativeFromFrontierSnapshot(frontier),
+      status: "五项跨域复核",
+      description: "数学、化学、材料和生物的上游复用、独立重算与跨库桥接。",
+      snapshot: "snapshots/frontier-evidence.json",
     },
   ];
   const outputs = new Map();

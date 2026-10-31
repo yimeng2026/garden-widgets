@@ -8,18 +8,18 @@ import { build } from "../scripts/build.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("build produces two widgets, a gallery, and a manifest without writing in inspection mode", () => {
+test("build produces three widgets, a gallery, and a manifest without writing in inspection mode", () => {
   const result = build({ rootDir: root, write: false });
   assert.equal(result.ok, true);
-  assert.deepEqual(result.outputs.sort(), ["index.html", "widgets/complexity-lab/index.html", "widgets/law-lab/index.html", "widgets/manifest.json"].sort());
-  assert.equal(result.manifest.length, 2);
+  assert.deepEqual(result.outputs.sort(), ["index.html", "widgets/complexity-lab/index.html", "widgets/frontier-evidence/index.html", "widgets/law-lab/index.html", "widgets/manifest.json"].sort());
+  assert.equal(result.manifest.length, 3);
 });
 
 test("build rejects duplicate case identifiers", () => {
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "garden-widgets-build-"));
   try {
     fs.mkdirSync(path.join(temporary, "snapshots"));
-    for (const name of ["law-packages.json", "complexity.json"]) {
+    for (const name of ["law-packages.json", "complexity.json", "frontier-evidence.json"]) {
       fs.copyFileSync(path.join(root, "snapshots", name), path.join(temporary, "snapshots", name));
     }
     const filename = path.join(temporary, "snapshots", "complexity.json");
