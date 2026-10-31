@@ -42,6 +42,8 @@ test("frontier evidence renders six bounded cross-domain cases", () => {
   assert.ok(html.includes("不是独立重复实验"));
   assert.ok(html.includes("六组文档表观比值范围"));
   assert.ok(html.includes("3.6 倍"));
+  assert.ok(html.includes("独立野生型重复"));
+  assert.ok(html.includes("260/259"));
 });
 
 test("payload and initial text cannot inject a closing script tag", () => {

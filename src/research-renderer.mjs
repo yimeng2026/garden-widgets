@@ -109,6 +109,7 @@ function frontierAnalysisSections(item) {
       `CA IX Ki=${m.caIxKiNm} nM，使用 CO2 hydrase 方法；不与酯酶结果合并计算比值或统一排名。`,
       `${m.selectivityIndependence}；三条记录均保留 potential_duplicate=1。`,
       `六组文档表观比值范围 ${Number(m.ratioMin.toFixed(4))}–${m.ratioMax}，极差 ${m.maxMinFold} 倍；仅 ${m.methodMatchedCount}/6 明确同方法，${m.methodIncompleteCount} 组信息不足，不执行跨文献合并。`,
+      `结构对照 ${m.structuralControlPdbId} 不是独立野生型重复：存在 ${m.structuralControlDifferenceEvents} 类序列差异及 ${m.structuralControlLengthDiscrepancy ? "260/259 长度元数据不一致" : "长度口径待核"}。`,
     ],
   }];
 }
