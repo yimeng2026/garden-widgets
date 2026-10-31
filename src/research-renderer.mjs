@@ -91,7 +91,7 @@ function frontierMetrics(item) {
     ];
     case "acetazolamide-chembl-pubchem-pdb": return [
       { value: m.chemblMolecule, label: "ChEMBL 分子", note: `PubChem CID ${m.pubchemCid}` },
-      { value: m.targetChemblId, label: "CA II 靶点", note: `UniProt ${m.targetUniprot}` },
+      { value: m.targetChemblId, label: "CA II 靶点", note: `${m.targetUniprot} · entity ${m.targetPdbEntity} 链 ${m.targetPdbChain} · ${m.targetSequenceLength} aa 精确一致` },
       { value: `${fixed(m.kiNm, 1)} nM`, label: "单 assay Ki", note: `pChEMBL ${m.pchemblExternal} · 重复标记 ${m.potentialDuplicate}` },
       { value: m.pdbId, label: "实验复合物", note: `${m.ligandCompId} · ${fixed(m.resolutionA, 1)} Å` },
     ];

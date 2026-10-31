@@ -155,6 +155,11 @@
         "pubchemCid": 1986,
         "targetChemblId": "CHEMBL205",
         "targetUniprot": "P00918",
+        "targetPdbEntity": 1,
+        "targetPdbChain": "A",
+        "targetSequenceExactMatch": true,
+        "targetSequenceLength": 260,
+        "targetSequenceMd5": "94EB709966E01FBC15DC1C46A0D03AC5",
         "activityId": 47560,
         "assayChemblId": "CHEMBL657848",
         "kiNm": 12.0,
@@ -165,13 +170,16 @@
         "ligandCompId": "AZM",
         "resolutionA": 1.1
       },
-      "scientificClaim": "乙酰唑胺的化合物标识、CA II 策划机制、单一 Ki 测定和 3HS4 实验复合物可以逐层追溯。",
-      "limitations": "化合物 InChIKey、靶点、单一活性记录和实验复合物的对应关系已核对；Ki=12 nM 只属于 assay CHEMBL657848。potential_duplicate=1 保留为审计警告，不据此直接判造假，也不外推临床效力。",
-      "upstreamContribution": "提供 InChIKey、assay、配体实体和重复标记完整保留的药物—靶点—结构审计链。",
+      "scientificClaim": "乙酰唑胺的化合物标识、CA II 策划机制、P00918/3HS4 的 260 aa 精确序列、单一 Ki 测定和实验复合物可以逐层追溯。",
+      "limitations": "化合物 InChIKey、CA II 靶点、P00918/3HS4 entity 1 的 260 aa 精确序列、单一活性记录和实验复合物已核对；Ki=12 nM 只属于 assay CHEMBL657848。potential_duplicate=1 保留为审计警告，不据此直接判造假，也不外推临床效力。",
+      "upstreamContribution": "提供 InChIKey、靶点全长序列、assay、配体实体和重复标记完整保留的药物—靶点—结构审计链。",
       "snapshotFiles": [
         "validation/drug-target-structure.json",
+        "validation/ca2-sequence.json",
         "validation/chembl-acetazolamide.json",
         "validation/pdb-3hs4.json",
+        "validation/pdb-3hs4-ca2.json",
+        "validation/uniprot-ca2.json",
         "validation/pubchem-acetazolamide.json"
       ]
     }

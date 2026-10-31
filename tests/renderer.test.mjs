@@ -35,6 +35,8 @@ test("frontier evidence renders six bounded cross-domain cases", () => {
   assert.ok(html.includes("CHEMBL205"));
   assert.ok(html.includes("potential_duplicate=1"));
   assert.ok(html.includes("3HS4"));
+  assert.ok(html.includes("260 aa 精确一致"));
+  assert.ok(html.includes("P00918"));
 });
 
 test("payload and initial text cannot inject a closing script tag", () => {
