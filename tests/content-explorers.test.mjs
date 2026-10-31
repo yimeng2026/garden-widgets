@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   activityExplorer,
   generationBudgetExplorer,
@@ -23,9 +25,40 @@ const selectivity = snapshot("ca-selectivity.json");
 const structure = snapshot("structural-control.json");
 const projects = snapshot("projects.json");
 const validations = snapshot("validation-records.json");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("author-time frontier sync covers all papers, figures, projects and validations", () => {
-  const result = syncFrontierContent({ write: false });
+function withFrontierFixture(run) {
+  const temporaryRoot = path.join(root, ".tmp");
+  fs.mkdirSync(temporaryRoot, { recursive: true });
+  const sourceDir = fs.mkdtempSync(path.join(temporaryRoot, "frontier-source-"));
+  const writeJson = (relative, value) => {
+    const target = path.join(sourceDir, relative);
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  };
+  try {
+    writeJson("data/projects.json", projects);
+    writeJson("papers/manifest.json", {
+      schemaVersion: 1,
+      papers: papers.papers.map(({ markdown, sha256, ...entry }) => entry),
+    });
+    for (const paper of papers.papers) {
+      fs.mkdirSync(path.join(sourceDir, "papers", paper.folder), { recursive: true });
+      fs.writeFileSync(path.join(sourceDir, "papers", paper.folder, paper.file), paper.markdown, "utf8");
+      for (const figure of paper.figureFiles) {
+        const target = path.join(sourceDir, "papers", paper.folder, figure);
+        fs.copyFileSync(path.join(root, "assets/papers", paper.folder, figure), target);
+      }
+    }
+    for (const record of validations.records) writeJson(record.file, record.data);
+    return run(sourceDir);
+  } finally {
+    fs.rmSync(sourceDir, { recursive: true, force: true });
+  }
+}
+
+test("author-time frontier sync covers all papers, figures, projects and validations in a standalone checkout", () => {
+  const result = withFrontierFixture((sourceDir) => syncFrontierContent({ sourceDir, write: false }));
   assert.equal(result.ok, true);
   assert.equal(result.papers, 3);
   assert.equal(result.figures, 13);
