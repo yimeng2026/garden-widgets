@@ -37,6 +37,9 @@ test("frontier evidence renders six bounded cross-domain cases", () => {
   assert.ok(html.includes("3HS4"));
   assert.ok(html.includes("260 aa 精确一致"));
   assert.ok(html.includes("P00918"));
+  assert.ok(html.includes("20.8333"));
+  assert.ok(html.includes("不与酯酶结果合并计算比值或统一排名"));
+  assert.ok(html.includes("不是独立重复实验"));
 });
 
 test("payload and initial text cannot inject a closing script tag", () => {

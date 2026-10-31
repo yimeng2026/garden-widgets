@@ -99,6 +99,19 @@ function frontierMetrics(item) {
   }
 }
 
+function frontierAnalysisSections(item) {
+  const m = item.metrics;
+  if (!m.caIiKiRatio) return [];
+  return [{
+    title: "方法一致的定量对照",
+    items: [
+      `CA I Ki=${m.caIKiNm} nM；CA II Ki=${m.caIiKiNm} nM；同酯酶方法表观比值 ${Number(m.caIiKiRatio.toFixed(4))}，ΔpChEMBL=${Number(m.caIiPchemblDelta.toFixed(5))}。`,
+      `CA IX Ki=${m.caIxKiNm} nM，使用 CO2 hydrase 方法；不与酯酶结果合并计算比值或统一排名。`,
+      `${m.selectivityIndependence}；三条记录均保留 potential_duplicate=1。`,
+    ],
+  }];
+}
+
 export function narrativeFromFrontierSnapshot(snapshot) {
   const labels = { math: "数学", chemistry: "化学", physics: "材料", biology: "生物" };
   return {
@@ -115,6 +128,7 @@ export function narrativeFromFrontierSnapshot(snapshot) {
       summary: item.scientificClaim,
       metrics: frontierMetrics(item),
       sections: [
+        ...frontierAnalysisSections(item),
         { title: "证据边界", items: [item.limitations] },
         { title: "可回馈上游的贡献", items: [item.upstreamContribution] },
         { title: "可重放快照", items: item.snapshotFiles },
