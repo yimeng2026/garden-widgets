@@ -3,6 +3,12 @@
   "records": [
     {"key":"paper1-07","doi":"10.1107/S1744309109036665","expectedTitle":"High-resolution structure of human carbonic anhydrase II complexed with acetazolamide reveals insights into inhibitor drug design","source":"crossref"},
     {"key":"paper1-11","doi":"10.1021/bi971296x","expectedTitle":"Histidine --> carboxamide ligand substitutions in the zinc binding site of carbonic anhydrase II alter metal coordination geometry but retain catalytic activity","source":"crossref"},
+    {"key":"paper2-01","doi":"10.1016/j.bmcl.2004.04.106","expectedTitle":"Carbonic anhydrase inhibitors. Inhibition of cytosolic isozyme XIII with aromatic and heterocyclic sulfonamides: a novel target for the drug design","source":"crossref"},
+    {"key":"paper2-02","doi":"10.1021/jm001051+","expectedTitle":"Carbonic Anhydrase Inhibitors: Water-Soluble 4-Sulfamoylphenylthioureas as Topical Intraocular Pressure-Lowering Agents with Long-Lasting Effects","source":"crossref"},
+    {"key":"paper2-03","doi":"10.1016/j.bmcl.2003.09.064","expectedTitle":"Carbonic anhydrase inhibitors: X-ray crystallographic structure of the adduct of human isozyme II with EMATE, a dual inhibitor of carbonic anhydrases and steroid sulfatase","source":"crossref"},
+    {"key":"paper2-04","doi":"10.1016/S0960-894X(03)00580-8","expectedTitle":"Carbonic anhydrase inhibitors: Topically acting antiglaucoma sulfonamides incorporating esters and amides of 3- and 4-carboxybenzolamide","source":"crossref"},
+    {"key":"paper2-05","doi":"10.1016/j.bmcl.2003.09.062","expectedTitle":"Carbonic anhydrase inhibitors: E7070, a sulfonamide anticancer agent, potently inhibits cytosolic isozymes I and II, and transmembrane, tumor-associated isozyme IX","source":"crossref"},
+    {"key":"paper2-06","doi":"10.1016/S0960-894X(00)00722-8","expectedTitle":"Carbonic anhydrase inhibitors: synthesis of sulfonamides incorporating dtpa tails and of their zinc complexes with powerful topical antiglaucoma properties","source":"crossref"},
     {"key":"paper3-01","doi":"10.21105/joss.02104","expectedTitle":"PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data","source":"crossref"},
     {"key":"paper3-02","doi":"10.21105/joss.03994","expectedTitle":"PySINDy: A comprehensive Python package for robust sparse system identification","source":"crossref"},
     {"key":"paper3-07","doi":"10.1063/1.4812323","expectedTitle":"Commentary: The Materials Project: A materials genome approach to accelerating materials innovation","source":"crossref"},

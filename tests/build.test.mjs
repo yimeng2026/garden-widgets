@@ -20,7 +20,7 @@ test("build rejects duplicate case identifiers", () => {
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "garden-widgets-build-"));
   try {
     fs.mkdirSync(path.join(temporary, "snapshots"));
-    const snapshots = ["law-packages.json", "complexity.json", "frontier-evidence.json", "paper-collection.json", "ca-document-stability.json", "ca-selectivity.json", "structural-control.json", "projects.json", "validation-records.json", "reference-audit.json"];
+    const snapshots = ["law-packages.json", "complexity.json", "frontier-evidence.json", "paper-collection.json", "ca-document-stability.json", "ca-document-methods.json", "ca-selectivity.json", "structural-control.json", "projects.json", "validation-records.json", "reference-audit.json"];
     for (const name of snapshots) {
       fs.copyFileSync(path.join(root, "snapshots", name), path.join(temporary, "snapshots", name));
     }

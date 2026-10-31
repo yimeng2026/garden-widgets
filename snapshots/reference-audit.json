@@ -22,7 +22,7 @@
       "id": "02",
       "title": "CA I/II 表观活性比为什么不应当作固定常数",
       "referenceCount": 8,
-      "explicitCitationCount": 8,
+      "explicitCitationCount": 12,
       "citedReferenceCount": 8,
       "uncitedReferenceNumbers": [],
       "invalidCitationNumbers": [],
@@ -42,13 +42,14 @@
   "statusCounts": {
     "local_evidence_present": 4,
     "local_version_matched": 5,
-    "metadata_matched": 15,
-    "record_snapshot_matched": 15
+    "metadata_matched": 21,
+    "record_snapshot_matched": 9
   },
   "fullTextCounts": {
-    "abstract_checked": 1,
+    "abstract_checked": 4,
     "full_text_checked": 4,
-    "not_obtained": 34
+    "not_obtained": 28,
+    "partial_text_checked": 3
   },
   "references": [
     {
@@ -709,10 +710,10 @@
       "paperId": "02",
       "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
       "number": 1,
-      "raw": "EMBL-EBI. ChEMBL activities 47559/47560/47561，document CHEMBL1146805，record_id=235477；CA I/II 为 esterase，CA IX 为 CO2 hydrase。https://www.ebi.ac.uk/chembl/api/data",
-      "kind": "database_record",
-      "status": "record_snapshot_matched",
-      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "raw": "EMBL-EBI. ChEMBL activities 47559/47560/47561，document CHEMBL1146805，record_id=235477；CA I/II 为 esterase，CA IX 为 CO2 hydrase。https://www.ebi.ac.uk/chembl/api/data；Lehtonen JM, Parkkila S, Vullo D, Casini A, Scozzafava A, Supuran CT. Carbonic anhydrase inhibitors. Inhibition of cytosolic isozyme XIII with aromatic and heterocyclic sulfonamides: a novel target for the drug design. Bioorganic & Medicinal Chemistry Letters, 2004, 14(14):3757–3762. DOI: 10.1016/j.bmcl.2004.04.106（出版社摘要、引言与片段回读，非全文）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1016/j.bmcl.2004.04.106",
       "identifiers": [
         "CHEMBL1146805",
         "47559",
@@ -721,7 +722,25 @@
         "235477"
       ],
       "localFiles": [],
-      "metadata": null,
+      "metadata": {
+        "key": "paper2-01",
+        "title": "Carbonic anhydrase inhibitors. Inhibition of cytosolic isozyme XIII with aromatic and heterocyclic sulfonamides: a novel target for the drug design",
+        "doi": "10.1016/j.bmcl.2004.04.106",
+        "authors": [
+          "Jonna M Lehtonen",
+          "Seppo Parkkila",
+          "Daniela Vullo",
+          "Angela Casini",
+          "Andrea Scozzafava",
+          "Claudiu T Supuran"
+        ],
+        "authorCount": 6,
+        "year": 2004,
+        "venue": "Bioorganic &amp; Medicinal Chemistry Letters",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1016%2Fj.bmcl.2004.04.106"
+      },
       "linkedSections": [
         {
           "title": "3.2 六组文档配对明细",
@@ -729,7 +748,17 @@
           "citation": "[1]"
         },
         {
-          "title": "3.4 负结果的呈现",
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[1,2,3,4,5,6]"
+        },
+        {
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[1]"
+        },
+        {
+          "title": "3.5 负结果的呈现",
           "linkage": "explicit_number",
           "citation": "[1,7]"
         }
@@ -757,7 +786,7 @@
           "linkage": "identifier"
         },
         {
-          "title": "3.4 负结果的呈现",
+          "title": "3.5 负结果的呈现",
           "linkage": "identifier"
         },
         {
@@ -766,7 +795,22 @@
         }
       ],
       "fullText": {
-        "status": "not_obtained"
+        "key": "paper2-01",
+        "status": "partial_text_checked",
+        "title": "Carbonic anhydrase inhibitors. Inhibition of cytosolic isozyme XIII with aromatic and heterocyclic sulfonamides: a novel target for the drug design",
+        "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0960894X0400647X",
+        "license": "出版社页面公开可读片段；未声明开放再分发许可。",
+        "coverage": "摘要、引言与 CA inhibition data 片段；不是完整全文、Table 1 或完整协议。",
+        "sourceSha256": "3b0f36bb411fbc6f946d5a5419a14ba24d8e9572edf53775acbd2bc1566a4c4f",
+        "scope": "证明 CA I／II／IX 数据此前已发表；esterase 描述仍属于数据库策划记录，不能冒充完整方法。",
+        "claims": [
+          {
+            "quote": "inhibition data against isozymes I, II, and IX have been published earlier, and will be not discussed in detail here",
+            "locator": "CA inhibition data 片段",
+            "supports": "CA I／II／IX 为此前发表数据。",
+            "verification": "quote_present"
+          }
+        ]
       },
       "fullTextVerified": false
     },
@@ -775,10 +819,10 @@
       "paperId": "02",
       "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
       "number": 2,
-      "raw": "EMBL-EBI. Activities 49652/49653，document CHEMBL1133556，record_id=282506。Ki 900/12 nM，方法描述未给出酯酶细节。同上。",
-      "kind": "database_record",
-      "status": "record_snapshot_matched",
-      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "raw": "EMBL-EBI. Activities 49652/49653，document CHEMBL1133556，record_id=282506。Ki 900/12 nM，方法描述未给出酯酶细节。同上；Casini A, Scozzafava A, Mincione F, Menabuoni L, Ilies MA, Supuran CT. Carbonic Anhydrase Inhibitors: Water-Soluble 4-Sulfamoylphenylthioureas as Topical Intraocular Pressure-Lowering Agents with Long-Lasting Effects. Journal of Medicinal Chemistry, 2000, 43(25):4884–4892. DOI: 10.1021/jm001051+（PubMed 摘要回读）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1021/jm001051+",
       "identifiers": [
         "CHEMBL1133556",
         "49652",
@@ -786,12 +830,35 @@
         "282506"
       ],
       "localFiles": [],
-      "metadata": null,
+      "metadata": {
+        "key": "paper2-02",
+        "title": "Carbonic Anhydrase Inhibitors:  Water-Soluble 4-Sulfamoylphenylthioureas as Topical Intraocular Pressure-Lowering Agents with Long-Lasting Effects",
+        "doi": "10.1021/jm001051+",
+        "authors": [
+          "Angela Casini",
+          "Andrea Scozzafava",
+          "Francesco Mincione",
+          "Luca Menabuoni",
+          "Marc A. Ilies",
+          "Claudiu T. Supuran"
+        ],
+        "authorCount": 6,
+        "year": 2000,
+        "venue": "Journal of Medicinal Chemistry",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1021%2Fjm001051%2B"
+      },
       "linkedSections": [
         {
           "title": "3.2 六组文档配对明细",
           "linkage": "explicit_number",
           "citation": "[2]"
+        },
+        {
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[1,2,3,4,5,6]"
         }
       ],
       "linkage": "explicit_number",
@@ -802,7 +869,22 @@
         }
       ],
       "fullText": {
-        "status": "not_obtained"
+        "key": "paper2-02",
+        "status": "abstract_checked",
+        "title": "Carbonic Anhydrase Inhibitors: Water-Soluble 4-Sulfamoylphenylthioureas as Topical Intraocular Pressure-Lowering Agents with Long-Lasting Effects",
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/11123998/",
+        "license": "PubMed 摘要可读；本次未取得全文。",
+        "coverage": "仅摘要。",
+        "sourceSha256": "324951cdf078d4b160d1c86321656bc8ed9386c34b2477104c4d7e38df2161b0",
+        "scope": "支持 CA I／II／IV 研究对象，不支持乙酰唑胺 Ki 的具体实验方法。",
+        "claims": [
+          {
+            "quote": "The new thiourea derivatives showed strong affinities toward isozymes I, II, and IV of carbonic anhydrase (CA, EC 4.2.1.1).",
+            "locator": "PubMed 摘要",
+            "supports": "研究对象覆盖 CA I／II／IV。",
+            "verification": "quote_present"
+          }
+        ]
       },
       "fullTextVerified": false
     },
@@ -811,10 +893,10 @@
       "paperId": "02",
       "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
       "number": 3,
-      "raw": "EMBL-EBI. Activities 80687/80688，document CHEMBL1146697，record_id=136210。Ki 900/12 nM，方法信息不足。同上。",
-      "kind": "database_record",
-      "status": "record_snapshot_matched",
-      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "raw": "EMBL-EBI. Activities 80687/80688，document CHEMBL1146697，record_id=136210。Ki 900/12 nM，方法信息不足。同上；Abbate F, Winum JY, Potter BVL, Casini A, Montero JL, Scozzafava A, Supuran CT. Carbonic anhydrase inhibitors: X-ray crystallographic structure of the adduct of human isozyme II with EMATE, a dual inhibitor of carbonic anhydrases and steroid sulfatase. Bioorganic & Medicinal Chemistry Letters, 2004, 14(1):231–234. DOI: 10.1016/j.bmcl.2003.09.064（出版社摘要、引言与晶体学片段回读，非全文）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1016/j.bmcl.2003.09.064",
       "identifiers": [
         "CHEMBL1146697",
         "80687",
@@ -822,10 +904,38 @@
         "136210"
       ],
       "localFiles": [],
-      "metadata": null,
+      "metadata": {
+        "key": "paper2-03",
+        "title": "Carbonic anhydrase inhibitors: X-ray crystallographic structure of the adduct of human isozyme II with EMATE, a dual inhibitor of carbonic anhydrases and steroid sulfatase",
+        "doi": "10.1016/j.bmcl.2003.09.064",
+        "authors": [
+          "Francesco Abbate",
+          "Jean-Yves Winum",
+          "Barry V.L. Potter",
+          "Angela Casini",
+          "Jean-Louis Montero",
+          "Andrea Scozzafava"
+        ],
+        "authorCount": 7,
+        "year": 2004,
+        "venue": "Bioorganic &amp; Medicinal Chemistry Letters",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1016%2Fj.bmcl.2003.09.064"
+      },
       "linkedSections": [
         {
           "title": "3.2 六组文档配对明细",
+          "linkage": "explicit_number",
+          "citation": "[3]"
+        },
+        {
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[1,2,3,4,5,6]"
+        },
+        {
+          "title": "3.3 文档身份、原文范围与实验独立性",
           "linkage": "explicit_number",
           "citation": "[3]"
         }
@@ -838,7 +948,22 @@
         }
       ],
       "fullText": {
-        "status": "not_obtained"
+        "key": "paper2-03",
+        "status": "partial_text_checked",
+        "title": "Carbonic anhydrase inhibitors: X-ray crystallographic structure of the adduct of human isozyme II with EMATE, a dual inhibitor of carbonic anhydrases and steroid sulfatase",
+        "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0960894X03010448",
+        "license": "出版社页面公开可读片段；未声明开放再分发许可。",
+        "coverage": "摘要、引言、Chemistry 与 Crystallography 片段；不是完整全文或乙酰唑胺 Ki 协议。",
+        "sourceSha256": "00d137f47a6b31597c59b1387784e5b8bdf072b5749bcbe21217744045dabe74",
+        "scope": "可读方法针对 EMATE—CA II 共结晶，不能据此补全乙酰唑胺活性测定方法。",
+        "claims": [
+          {
+            "quote": "The hCA II–1 adduct obtained by co-crystallization, was subjected to detailed X-ray crystallography.",
+            "locator": "Crystallography 片段",
+            "supports": "实验片段针对 EMATE 复合物的 X 射线晶体学。",
+            "verification": "quote_present"
+          }
+        ]
       },
       "fullTextVerified": false
     },
@@ -847,23 +972,48 @@
       "paperId": "02",
       "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
       "number": 4,
-      "raw": "EMBL-EBI. Activities 106505/106506，document CHEMBL1136178，record_id=180522。Ki 200/7 nM，双方 potential_duplicate=0。同上。",
-      "kind": "database_record",
-      "status": "record_snapshot_matched",
-      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "raw": "EMBL-EBI. Activities 106505/106506，document CHEMBL1136178，record_id=180522。Ki 200/7 nM，双方 potential_duplicate=0。同上；Casini A, Scozzafava A, Mincione F, Menabuoni L, Starnotti M, Supuran CT. Carbonic anhydrase inhibitors: Topically acting antiglaucoma sulfonamides incorporating esters and amides of 3- and 4-carboxybenzolamide. Bioorganic & Medicinal Chemistry Letters, 2003, 13(17):2867–2873. DOI: 10.1016/S0960-894X(03)00580-8（PubMed 摘要回读）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1016/s0960-894x(03)00580-8",
       "identifiers": [
         "CHEMBL1136178",
+        "894X",
         "106505",
         "106506",
-        "180522"
+        "180522",
+        "00580"
       ],
       "localFiles": [],
-      "metadata": null,
+      "metadata": {
+        "key": "paper2-04",
+        "title": "Carbonic anhydrase inhibitors: Topically acting antiglaucoma sulfonamides incorporating esters and amides of 3- and 4-carboxybenzolamide",
+        "doi": "10.1016/s0960-894x(03)00580-8",
+        "authors": [
+          "Angela Casini",
+          "Andrea Scozzafava",
+          "Francesco Mincione",
+          "Luca Menabuoni",
+          "Michele Starnotti",
+          "Claudiu T Supuran"
+        ],
+        "authorCount": 6,
+        "year": 2003,
+        "venue": "Bioorganic &amp; Medicinal Chemistry Letters",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1016%2FS0960-894X(03)00580-8"
+      },
       "linkedSections": [
         {
           "title": "3.2 六组文档配对明细",
           "linkage": "explicit_number",
           "citation": "[4]"
+        },
+        {
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[1,2,3,4,5,6]"
         }
       ],
       "linkage": "explicit_number",
@@ -874,7 +1024,22 @@
         }
       ],
       "fullText": {
-        "status": "not_obtained"
+        "key": "paper2-04",
+        "status": "abstract_checked",
+        "title": "Carbonic anhydrase inhibitors: Topically acting antiglaucoma sulfonamides incorporating esters and amides of 3- and 4-carboxybenzolamide",
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/14611846/",
+        "license": "PubMed 摘要可读；本次未取得全文。",
+        "coverage": "仅摘要。",
+        "sourceSha256": "4ee8e36e1537cf3aef80682f0d78a8e321c093135ae2f691214734e3003f41a7",
+        "scope": "支持 CA I／II／IV 研究对象，不支持乙酰唑胺 Ki 的具体实验方法。",
+        "claims": [
+          {
+            "quote": "The new derivatives showed low nanomolar affinity for three carbonic anhydrase (CA) isozymes, CA I, II and IV, and were effective as topical antiglaucoma agents in normotensive rabbits.",
+            "locator": "PubMed 摘要",
+            "supports": "研究对象覆盖 CA I／II／IV。",
+            "verification": "quote_present"
+          }
+        ]
       },
       "fullTextVerified": false
     },
@@ -883,10 +1048,10 @@
       "paperId": "02",
       "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
       "number": 5,
-      "raw": "EMBL-EBI. Activities 151872/151873，document CHEMBL1146695，record_id=126435。Ki 250/12 nM，方法信息不足。同上。",
-      "kind": "database_record",
-      "status": "record_snapshot_matched",
-      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "raw": "EMBL-EBI. Activities 151872/151873，document CHEMBL1146695，record_id=126435。Ki 250/12 nM，方法信息不足。同上；Abbate F, Casini A, Owa T, Scozzafava A, Supuran CT. Carbonic anhydrase inhibitors: E7070, a sulfonamide anticancer agent, potently inhibits cytosolic isozymes I and II, and transmembrane, tumor-associated isozyme IX. Bioorganic & Medicinal Chemistry Letters, 2004, 14(1):217–223. DOI: 10.1016/j.bmcl.2003.09.062（出版社引言与活性片段回读，非全文）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1016/j.bmcl.2003.09.062",
       "identifiers": [
         "CHEMBL1146695",
         "151872",
@@ -894,12 +1059,34 @@
         "126435"
       ],
       "localFiles": [],
-      "metadata": null,
+      "metadata": {
+        "key": "paper2-05",
+        "title": "Carbonic anhydrase inhibitors: E7070, a sulfonamide anticancer agent, potently inhibits cytosolic isozymes I and II, and transmembrane, tumor-associated isozyme IX",
+        "doi": "10.1016/j.bmcl.2003.09.062",
+        "authors": [
+          "Francesco Abbate",
+          "Angela Casini",
+          "Takashi Owa",
+          "Andrea Scozzafava",
+          "Claudiu T. Supuran"
+        ],
+        "authorCount": 5,
+        "year": 2004,
+        "venue": "Bioorganic &amp; Medicinal Chemistry Letters",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1016%2Fj.bmcl.2003.09.062"
+      },
       "linkedSections": [
         {
           "title": "3.2 六组文档配对明细",
           "linkage": "explicit_number",
           "citation": "[5]"
+        },
+        {
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[1,2,3,4,5,6]"
         }
       ],
       "linkage": "explicit_number",
@@ -910,7 +1097,22 @@
         }
       ],
       "fullText": {
-        "status": "not_obtained"
+        "key": "paper2-05",
+        "status": "partial_text_checked",
+        "title": "Carbonic anhydrase inhibitors: E7070, a sulfonamide anticancer agent, potently inhibits cytosolic isozymes I and II, and transmembrane, tumor-associated isozyme IX",
+        "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0960894X03010424",
+        "license": "出版社页面公开可读片段；未声明开放再分发许可。",
+        "coverage": "引言与 Chemistry and CA inhibition 片段；不是完整全文、Table 1 或完整协议。",
+        "sourceSha256": "443428e409c37358adf631c46f46472cbdd525b334dad721e2c6bbeb079966e4",
+        "scope": "确认六种化合物的四同工酶抑制表存在，但片段本身不给出乙酰唑胺 Ki 的完整测定条件。",
+        "claims": [
+          {
+            "quote": "Inhibition data against four CA isozymes with the six compounds 1–6 are shown in Table 1.",
+            "locator": "Chemistry and CA inhibition 片段",
+            "supports": "原文有六种化合物、四个同工酶的抑制表。",
+            "verification": "quote_present"
+          }
+        ]
       },
       "fullTextVerified": false
     },
@@ -919,23 +1121,47 @@
       "paperId": "02",
       "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
       "number": 6,
-      "raw": "EMBL-EBI. Activities 288595/288596，document CHEMBL1134204，record_id=302270。Ki 900/12 nM，方法信息不足。同上。",
-      "kind": "database_record",
-      "status": "record_snapshot_matched",
-      "url": "https://www.ebi.ac.uk/chembl/api/data",
+      "raw": "EMBL-EBI. Activities 288595/288596，document CHEMBL1134204，record_id=302270。Ki 900/12 nM，方法信息不足。同上；Scozzafava A, Menabuoni L, Mincione F, Mincione G, Supuran CT. Carbonic anhydrase inhibitors: synthesis of sulfonamides incorporating dtpa tails and of their zinc complexes with powerful topical antiglaucoma properties. Bioorganic & Medicinal Chemistry Letters, 2001, 11(4):575–582. DOI: 10.1016/S0960-894X(00)00722-8（PubMed 摘要回读）。",
+      "kind": "scholarly",
+      "status": "metadata_matched",
+      "url": "https://doi.org/10.1016/s0960-894x(00)00722-8",
       "identifiers": [
         "CHEMBL1134204",
+        "894X",
         "288595",
         "288596",
-        "302270"
+        "302270",
+        "00722"
       ],
       "localFiles": [],
-      "metadata": null,
+      "metadata": {
+        "key": "paper2-06",
+        "title": "Carbonic anhydrase inhibitors: synthesis of sulfonamides incorporating dtpa tails and of their zinc complexes with powerful topical antiglaucoma properties",
+        "doi": "10.1016/s0960-894x(00)00722-8",
+        "authors": [
+          "Andrea Scozzafava",
+          "Luca Menabuoni",
+          "Francesco Mincione",
+          "Giovanna Mincione",
+          "Claudiu T Supuran"
+        ],
+        "authorCount": 5,
+        "year": 2001,
+        "venue": "Bioorganic &amp; Medicinal Chemistry Letters",
+        "type": "journal-article",
+        "registry": "Crossref",
+        "sourceUrl": "https://api.crossref.org/works/10.1016%2FS0960-894X(00)00722-8"
+      },
       "linkedSections": [
         {
           "title": "3.2 六组文档配对明细",
           "linkage": "explicit_number",
           "citation": "[6]"
+        },
+        {
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[1,2,3,4,5,6]"
         }
       ],
       "linkage": "explicit_number",
@@ -946,7 +1172,22 @@
         }
       ],
       "fullText": {
-        "status": "not_obtained"
+        "key": "paper2-06",
+        "status": "abstract_checked",
+        "title": "Carbonic anhydrase inhibitors: synthesis of sulfonamides incorporating dtpa tails and of their zinc complexes with powerful topical antiglaucoma properties",
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/11229775/",
+        "license": "PubMed 摘要可读；本次未取得全文。",
+        "coverage": "仅摘要。",
+        "sourceSha256": "4afb2f6a8c95182329df7b826d49f40a68017c921eb052cae913a5f1d953de2e",
+        "scope": "支持 DTPA 论文的 CA I／II／IV 研究对象，不支持乙酰唑胺 Ki 的具体实验方法。",
+        "claims": [
+          {
+            "quote": "Many of these derivatives showed nanomolar affinity towards isozymes I, II and IV of carbonic anhydrase (CA).",
+            "locator": "PubMed 摘要",
+            "supports": "研究对象覆盖 CA I／II／IV。",
+            "verification": "quote_present"
+          }
+        ]
       },
       "fullTextVerified": false
     },
@@ -968,7 +1209,7 @@
       "metadata": null,
       "linkedSections": [
         {
-          "title": "3.4 负结果的呈现",
+          "title": "3.5 负结果的呈现",
           "linkage": "explicit_number",
           "citation": "[1,7]"
         }
@@ -985,7 +1226,7 @@
       "paperId": "02",
       "paperTitle": "CA I/II 表观活性比为什么不应当作固定常数",
       "number": 8,
-      "raw": "本研究原始面板与计算：`validation/chembl-ca-selectivity-panel.json`、`validation/ca-selectivity.json`、`validation/chembl-ca-document-pairs.json`、`validation/ca-document-stability.json`。",
+      "raw": "本研究原始面板与计算：`validation/chembl-ca-selectivity-panel.json`、`validation/ca-selectivity.json`、`validation/chembl-ca-document-pairs.json`、`validation/ca-document-stability.json`、`validation/ca-document-methods.json`。",
       "kind": "local_evidence",
       "status": "local_evidence_present",
       "url": null,
@@ -1014,12 +1255,23 @@
           "present": true,
           "sha256": "500e62fe58f4a5efebb98d5547aafa644310504a6a5133afaa91584afb3c8aeb",
           "script": "analyze_ca_document_stability.py"
+        },
+        {
+          "file": "validation/ca-document-methods.json",
+          "present": true,
+          "sha256": "a40b5b4e4e856cd58fb767160a7817144d9fa62cb533884783171d2e5948be69",
+          "script": "audit_ca_document_methods.py"
         }
       ],
       "metadata": null,
       "linkedSections": [
         {
-          "title": "3.3 不执行跨文献合并的理由",
+          "title": "3.3 文档身份、原文范围与实验独立性",
+          "linkage": "explicit_number",
+          "citation": "[8]"
+        },
+        {
+          "title": "3.4 不执行跨文献合并的理由",
           "linkage": "explicit_number",
           "citation": "[8]"
         }

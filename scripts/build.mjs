@@ -67,7 +67,7 @@ export function build({ rootDir = DEFAULT_ROOT, write = true } = {}) {
     },
     {
       id: "ca-activity",
-      explorer: activityExplorer(readJson(rootDir, "snapshots/ca-document-stability.json"), readJson(rootDir, "snapshots/ca-selectivity.json")),
+      explorer: activityExplorer(readJson(rootDir, "snapshots/ca-document-stability.json"), readJson(rootDir, "snapshots/ca-selectivity.json"), readJson(rootDir, "snapshots/ca-document-methods.json")),
       status: "6 组配对 · 方法敏感",
       description: "表观 Ki 比值、方法筛选、重复标记和 CA IX 单列边界。",
       snapshot: "snapshots/ca-document-stability.json",

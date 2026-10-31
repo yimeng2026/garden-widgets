@@ -15,6 +15,7 @@ const SCRIPT_BY_RECORD = {
   "z3.json": "verify_z3.py",
   "ca-selectivity.json": "analyze_ca_selectivity.py",
   "ca-document-stability.json": "analyze_ca_document_stability.py",
+  "ca-document-methods.json": "audit_ca_document_methods.py",
   "structural-control.json": "analyze_structural_control.py",
 };
 
@@ -110,6 +111,7 @@ export function syncFrontierContent({ rootDir = ROOT, sourceDir = DEFAULT_SOURCE
     },
     "snapshots/structural-control.json": records.find((item) => item.id === "structural-control")?.data,
     "snapshots/ca-document-stability.json": records.find((item) => item.id === "ca-document-stability")?.data,
+    "snapshots/ca-document-methods.json": records.find((item) => item.id === "ca-document-methods")?.data,
     "snapshots/ca-selectivity.json": records.find((item) => item.id === "ca-selectivity")?.data,
   };
   for (const [name, value] of Object.entries(snapshots)) if (!value) throw new Error(`Missing required snapshot: ${name}`);

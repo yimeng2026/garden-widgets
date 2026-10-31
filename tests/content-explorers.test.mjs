@@ -22,6 +22,7 @@ function snapshot(name) {
 const papers = snapshot("paper-collection.json");
 const stability = snapshot("ca-document-stability.json");
 const selectivity = snapshot("ca-selectivity.json");
+const methodAudit = snapshot("ca-document-methods.json");
 const structure = snapshot("structural-control.json");
 const projects = snapshot("projects.json");
 const validations = snapshot("validation-records.json");
@@ -63,7 +64,7 @@ test("author-time frontier sync covers all papers, figures, projects and validat
   assert.equal(result.papers, 3);
   assert.equal(result.figures, 13);
   assert.equal(result.projects, 88);
-  assert.equal(result.validations, 21);
+  assert.equal(result.validations, 22);
   assert.equal(new Set(projects.projects.map((item) => item.id)).size, 88);
   for (const record of validations.records) assert.match(record.sha256, /^[a-f0-9]{64}$/);
 });
@@ -97,17 +98,26 @@ test("paper renderer escapes raw HTML and rejects unregistered image paths", () 
   assert.throws(() => paperExplorer(badImage), /Unregistered or unsafe image path/);
 });
 
-test("activity explorer preserves all within-document ratios without a pooled estimate", () => {
+test("activity explorer preserves ratios and separates document identity from method completeness", () => {
   for (const pair of stability.pairs) {
     assert.ok(Math.abs(pair.ki_ratio - pair.ca_i_ki_nM / pair.ca_ii_ki_nM) < 1e-10);
   }
-  const html = renderContentExplorer(activityExplorer(stability, selectivity));
+  const html = renderContentExplorer(activityExplorer(stability, selectivity, methodAudit));
   assert.ok(html.includes("20.833333333333332"));
   assert.ok(html.includes('"ki_ratio":75'));
   assert.ok(html.includes("method_incomplete"));
   assert.ok(html.includes("CO2 hydrase assay method"));
   assert.ok(html.includes("不执行跨文献合并估计"));
+  assert.ok(html.includes("水溶性 4-sulfamoylphenylthioureas"));
+  assert.ok(html.includes("EMATE—CA II 复合物晶体结构"));
+  assert.ok(html.includes("DTPA 尾链磺酰胺及其锌配合物"));
+  assert.ok(html.includes("Curated by ChEMBL"));
+  assert.ok(html.includes("完整实验协议"));
   assert.ok(!html.includes("51.785714285714285"));
+  assert.equal(methodAudit.strictMethodMatchedCount, 1);
+  assert.equal(methodAudit.methodIncompleteCount, 5);
+  assert.equal(methodAudit.completeProtocolObtainedCount, 0);
+  assert.equal(methodAudit.independentWetExperimentCount, 0);
   assert.deepEqual(assertStaticWidgetHtml(html), []);
 });
 
@@ -141,7 +151,7 @@ test("project explorer includes every project with cooperation and local boundar
 test("validation explorer distinguishes executed checks from upstream snapshots", () => {
   const explorer = validationExplorer(validations);
   const html = renderContentExplorer(explorer);
-  assert.equal(explorer.data.records.length, 21);
+  assert.equal(explorer.data.records.length, 22);
   assert.ok(explorer.data.records.some((record) => record.evidenceKind === "upstream"));
   assert.ok(explorer.data.records.some((record) => record.evidenceKind === "executed" && record.script === "analyze_structural_control.py"));
   assert.ok(explorer.data.records.every((record) => !record.fields.some(([key]) => key === "python")));

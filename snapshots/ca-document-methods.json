@@ -1,0 +1,424 @@
+{
+  "engine": "ChEMBL document and assay-method evidence audit",
+  "version": "snapshot-2026-11-01",
+  "status": "verified",
+  "documentCount": 6,
+  "strictMethodMatchedCount": 1,
+  "methodIncompleteCount": 5,
+  "publisherSnippetCheckedCount": 3,
+  "abstractCheckedCount": 3,
+  "fullTextObtainedCount": 0,
+  "completeProtocolObtainedCount": 0,
+  "independentWetExperimentCount": 0,
+  "documents": [
+    {
+      "documentChemblId": "CHEMBL1146805",
+      "shortTitle": "CA XIII：芳香与杂环磺酰胺抑制",
+      "title": "Carbonic anhydrase inhibitors. Inhibition of cytosolic isozyme XIII with aromatic and heterocyclic sulfonamides: a novel target for the drug design",
+      "firstAuthor": "Lehtonen JM",
+      "citationYear": 2004,
+      "journal": "Bioorganic & Medicinal Chemistry Letters",
+      "volume": "14",
+      "issue": "14",
+      "pages": "3757-3762",
+      "doi": "10.1016/j.bmcl.2004.04.106",
+      "pmid": "15203157",
+      "chemblUrl": "https://www.ebi.ac.uk/chembl/explore/document/CHEMBL1146805",
+      "methodStatus": "explicit_matched",
+      "fullTextStatus": "not_obtained",
+      "primaryEvidence": {
+        "readingLevel": "partial_text_checked",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0960894X0400647X",
+        "coverage": "出版社摘要、引言与 CA inhibition data 片段；不是完整全文、Table 1 或完整实验协议。",
+        "quote": "inhibition data against isozymes I, II, and IX have been published earlier, and will be not discussed in detail here",
+        "supports": "CA I／II／IX 为此前已发表数据；CA I／II 的 esterase 描述仍来自 ChEMBL／BindingDB 策划记录。"
+      },
+      "openAccessEvidence": {
+        "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.bmcl.2004.04.106",
+        "reportedOpenAccess": false,
+        "reportedRepositoryFullText": false
+      },
+      "independenceConclusion": "原文片段明确部分抑制数据此前已发表，不能将文档内配对视为同批新实验。",
+      "methodGap": "完整 Table 1 与实验协议未取得；明确同酯酶只表示两组数据库描述一致，不表示完整协议已复核。",
+      "bindingDb": {
+        "doi": "10.7270/Q24Q7VJ8",
+        "url": "https://www.bindingdb.org/rwd/jsp/dbsearch/PrimarySearch_pubmed.jsp?pubmed=15203157&pubmed_submit=Search",
+        "curatedByChembl": true,
+        "independentExperiment": false,
+        "records": [
+          {
+            "target": "Carbonic anhydrase 1",
+            "kiNM": 250,
+            "assayDescription": "Inhibitory activity against human carbonic anhydrase I (hCA I) by using esterase assay method"
+          },
+          {
+            "target": "Carbonic anhydrase 2",
+            "kiNM": 12,
+            "assayDescription": "Inhibitory activity against human carbonic anhydrase II (hCA II) by using esterase assay method"
+          },
+          {
+            "target": "Carbonic anhydrase 9",
+            "kiNM": 25,
+            "assayDescription": "Inhibitory activity against human carbonic anhydrase IX (hCA IX) by using CO2 hydrase assay method"
+          },
+          {
+            "target": "Carbonic anhydrase 13",
+            "kiNM": 17,
+            "assayDescription": "Inhibitory activity against murine carbonic anhydrase XIII (mCA XIII) by using CO2 hydrase assay method"
+          }
+        ]
+      },
+      "chemblPair": {
+        "caIActivityId": 47559,
+        "caIIActivityId": 47560,
+        "caIKiNM": 250,
+        "caIIKiNM": 12,
+        "caIMethod": "esterase assay method",
+        "caIIMethod": "esterase assay method",
+        "caIDuplicateFlag": 1,
+        "caIIDuplicateFlag": 1,
+        "apparentKiRatio": 20.833333333333332
+      },
+      "activityEvidenceClass": "separate_database_view_same_curated_origin",
+      "protocolVerified": false
+    },
+    {
+      "documentChemblId": "CHEMBL1133556",
+      "shortTitle": "水溶性 4-sulfamoylphenylthioureas",
+      "title": "Carbonic Anhydrase Inhibitors: Water-Soluble 4-Sulfamoylphenylthioureas as Topical Intraocular Pressure-Lowering Agents with Long-Lasting Effects",
+      "firstAuthor": "Casini A",
+      "citationYear": 2000,
+      "journal": "Journal of Medicinal Chemistry",
+      "volume": "43",
+      "issue": "25",
+      "pages": "4884-4892",
+      "doi": "10.1021/jm001051+",
+      "pmid": "11123998",
+      "chemblUrl": "https://www.ebi.ac.uk/chembl/explore/document/CHEMBL1133556",
+      "methodStatus": "method_incomplete",
+      "fullTextStatus": "not_obtained",
+      "primaryEvidence": {
+        "readingLevel": "abstract_checked",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11123998/",
+        "coverage": "PubMed 摘要；不是完整全文或实验协议。",
+        "quote": "The new thiourea derivatives showed strong affinities toward isozymes I, II, and IV of carbonic anhydrase (CA, EC 4.2.1.1).",
+        "supports": "支持论文研究 CA I／II／IV；摘要未给出乙酰唑胺 Ki 的具体测定方法。"
+      },
+      "openAccessEvidence": {
+        "url": "https://api.openalex.org/works/https://doi.org/10.1021/jm001051+",
+        "reportedOpenAccess": false,
+        "reportedRepositoryFullText": false
+      },
+      "independenceConclusion": "BindingDB 与 ChEMBL 同值属于同源策划记录的一致，不构成独立实验重复。",
+      "methodGap": "仅有摘要和数据库简写；没有原文实验条件、底物、仪器或完整 Ki 计算流程。",
+      "bindingDb": {
+        "doi": "10.7270/Q22B8ZQQ",
+        "url": "https://www.bindingdb.org/rwd/jsp/dbsearch/PrimarySearch_pubmed.jsp?pubmed=11123998&pubmed_submit=Search",
+        "curatedByChembl": true,
+        "independentExperiment": false,
+        "records": [
+          {
+            "target": "Carbonic anhydrase 1",
+            "kiNM": 900,
+            "assayDescription": "Inhibitory activity against human recombinant carbonic anhydrase I"
+          },
+          {
+            "target": "Carbonic anhydrase 2",
+            "kiNM": 12,
+            "assayDescription": "Inhibitory activity against human recombinant carbonic anhydrase II"
+          },
+          {
+            "target": "Carbonic anhydrase 4",
+            "kiNM": 220,
+            "assayDescription": "Inhibitory activity against bovine carbonic anhydrase IV from lung microsomes"
+          }
+        ]
+      },
+      "chemblPair": {
+        "caIActivityId": 49652,
+        "caIIActivityId": 49653,
+        "caIKiNM": 900,
+        "caIIKiNM": 12,
+        "caIMethod": "not specified in assay description",
+        "caIIMethod": "not specified in assay description",
+        "caIDuplicateFlag": 1,
+        "caIIDuplicateFlag": 1,
+        "apparentKiRatio": 75
+      },
+      "activityEvidenceClass": "separate_database_view_same_curated_origin",
+      "protocolVerified": false
+    },
+    {
+      "documentChemblId": "CHEMBL1146697",
+      "shortTitle": "EMATE—CA II 复合物晶体结构",
+      "title": "Carbonic anhydrase inhibitors: X-ray crystallographic structure of the adduct of human isozyme II with EMATE, a dual inhibitor of carbonic anhydrases and steroid sulfatase",
+      "firstAuthor": "Abbate F",
+      "citationYear": 2004,
+      "journal": "Bioorganic & Medicinal Chemistry Letters",
+      "volume": "14",
+      "issue": "1",
+      "pages": "231-234",
+      "doi": "10.1016/j.bmcl.2003.09.064",
+      "pmid": "14684333",
+      "chemblUrl": "https://www.ebi.ac.uk/chembl/explore/document/CHEMBL1146697",
+      "methodStatus": "method_incomplete",
+      "fullTextStatus": "not_obtained",
+      "primaryEvidence": {
+        "readingLevel": "partial_text_checked",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0960894X03010448",
+        "coverage": "出版社摘要、引言、Chemistry 与 Crystallography 片段；不是完整全文或乙酰唑胺 Ki 实验协议。",
+        "quote": "The hCA II–1 adduct obtained by co-crystallization, was subjected to detailed X-ray crystallography.",
+        "supports": "原文可读方法片段针对 EMATE—CA II 共结晶与 X 射线晶体学，不是乙酰唑胺 CA I／II Ki 的测定协议。"
+      },
+      "openAccessEvidence": {
+        "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.bmcl.2003.09.064",
+        "reportedOpenAccess": false,
+        "reportedRepositoryFullText": false
+      },
+      "independenceConclusion": "论文主体是 EMATE 结构研究，既有抑制数据被用作背景；乙酰唑胺参考值不是独立结构重复。",
+      "methodGap": "可读晶体学片段不能补全乙酰唑胺 Ki 方法；不能把文献主题误当成参考化合物的实验方法。",
+      "bindingDb": {
+        "doi": "10.7270/Q2RN38DT",
+        "url": "https://www.bindingdb.org/rwd/jsp/dbsearch/PrimarySearch_pubmed.jsp?pubmed=14684333&pubmed_submit=Search",
+        "curatedByChembl": true,
+        "independentExperiment": false,
+        "records": [
+          {
+            "target": "Carbonic anhydrase 1",
+            "kiNM": 900,
+            "assayDescription": "Inhibition against human carbonic anhydrase I"
+          },
+          {
+            "target": "Carbonic anhydrase 2",
+            "kiNM": 12,
+            "assayDescription": "Inhibition against human carbonic anhydrase II"
+          },
+          {
+            "target": "Carbonic anhydrase 9",
+            "kiNM": 25,
+            "assayDescription": "Inhibition against human carbonic anhydrase IX"
+          }
+        ]
+      },
+      "chemblPair": {
+        "caIActivityId": 80687,
+        "caIIActivityId": 80688,
+        "caIKiNM": 900,
+        "caIIKiNM": 12,
+        "caIMethod": "not specified in assay description",
+        "caIIMethod": "not specified in assay description",
+        "caIDuplicateFlag": 1,
+        "caIIDuplicateFlag": 1,
+        "apparentKiRatio": 75
+      },
+      "activityEvidenceClass": "separate_database_view_same_curated_origin",
+      "protocolVerified": false
+    },
+    {
+      "documentChemblId": "CHEMBL1136178",
+      "shortTitle": "羧基苯佐拉胺酯与酰胺：局部抗青光眼",
+      "title": "Carbonic anhydrase inhibitors: Topically acting antiglaucoma sulfonamides incorporating esters and amides of 3- and 4-carboxybenzolamide",
+      "firstAuthor": "Casini A",
+      "citationYear": 2003,
+      "journal": "Bioorganic & Medicinal Chemistry Letters",
+      "volume": "13",
+      "issue": "17",
+      "pages": "2867-2873",
+      "doi": "10.1016/S0960-894X(03)00580-8",
+      "pmid": "14611846",
+      "chemblUrl": "https://www.ebi.ac.uk/chembl/explore/document/CHEMBL1136178",
+      "methodStatus": "method_incomplete",
+      "fullTextStatus": "not_obtained",
+      "primaryEvidence": {
+        "readingLevel": "abstract_checked",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14611846/",
+        "coverage": "PubMed 摘要；不是完整全文或实验协议。",
+        "quote": "The new derivatives showed low nanomolar affinity for three carbonic anhydrase (CA) isozymes, CA I, II and IV, and were effective as topical antiglaucoma agents in normotensive rabbits.",
+        "supports": "支持论文研究 CA I／II／IV；不能据此补写乙酰唑胺 Ki 测定方法。"
+      },
+      "openAccessEvidence": {
+        "url": "https://api.openalex.org/works/https://doi.org/10.1016/S0960-894X(03)00580-8",
+        "reportedOpenAccess": false,
+        "reportedRepositoryFullText": false
+      },
+      "independenceConclusion": "本组不是 Vullo 的肿瘤相关 CA IX 论文；BindingDB 同源记录不构成额外实验。",
+      "methodGap": "CA I／II 只有数据库活性描述；摘要没有给出可据以确认同方法的实验细节。",
+      "bindingDb": {
+        "doi": "10.7270/Q2BR8SQ8",
+        "url": "https://www.bindingdb.org/rwd/jsp/dbsearch/PrimarySearch_pubmed.jsp?pubmed=14611846&pubmed_submit=Search",
+        "curatedByChembl": true,
+        "independentExperiment": false,
+        "records": [
+          {
+            "target": "Carbonic anhydrase 1",
+            "kiNM": 200,
+            "assayDescription": "Inhibitory activity against human carbonic anhydrase I (hCA I)"
+          },
+          {
+            "target": "Carbonic anhydrase 2",
+            "kiNM": 7,
+            "assayDescription": "Inhibitory activity against human carbonic anhydrase II"
+          },
+          {
+            "target": "Carbonic anhydrase 4",
+            "kiNM": 120,
+            "assayDescription": "Inhibitory activity against Carbonic anhydrase IV isolated from bovine lung"
+          }
+        ]
+      },
+      "chemblPair": {
+        "caIActivityId": 106505,
+        "caIIActivityId": 106506,
+        "caIKiNM": 200,
+        "caIIKiNM": 7,
+        "caIMethod": "not specified in assay description",
+        "caIIMethod": "not specified in assay description",
+        "caIDuplicateFlag": 0,
+        "caIIDuplicateFlag": 0,
+        "apparentKiRatio": 28.571428571428573
+      },
+      "activityEvidenceClass": "separate_database_view_same_curated_origin",
+      "protocolVerified": false
+    },
+    {
+      "documentChemblId": "CHEMBL1146695",
+      "shortTitle": "E7070：CA I／II／IX 抑制与 CA II 晶体结构",
+      "title": "Carbonic anhydrase inhibitors: E7070, a sulfonamide anticancer agent, potently inhibits cytosolic isozymes I and II, and transmembrane, tumor-associated isozyme IX",
+      "firstAuthor": "Abbate F",
+      "citationYear": 2004,
+      "journal": "Bioorganic & Medicinal Chemistry Letters",
+      "volume": "14",
+      "issue": "1",
+      "pages": "217-223",
+      "doi": "10.1016/j.bmcl.2003.09.062",
+      "pmid": "14684331",
+      "chemblUrl": "https://www.ebi.ac.uk/chembl/explore/document/CHEMBL1146695",
+      "methodStatus": "method_incomplete",
+      "fullTextStatus": "not_obtained",
+      "primaryEvidence": {
+        "readingLevel": "partial_text_checked",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0960894X03010424",
+        "coverage": "出版社引言与 Chemistry and CA inhibition 片段；不是完整全文、Table 1 或完整实验协议。",
+        "quote": "Inhibition data against four CA isozymes with the six compounds 1–6 are shown in Table 1.",
+        "supports": "论文确实包含六种化合物的四同工酶抑制表，但可读片段没有给出乙酰唑胺 Ki 的完整测定条件。"
+      },
+      "openAccessEvidence": {
+        "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.bmcl.2003.09.062",
+        "reportedOpenAccess": false,
+        "reportedRepositoryFullText": false
+      },
+      "independenceConclusion": "与 CA XIII 论文复用相同乙酰唑胺参考值不能当作跨论文独立重复。",
+      "methodGap": "Table 1 和完整 Ki 实验协议未取得；数据库的 evaluated for inhibition 不是同方法证明。",
+      "bindingDb": {
+        "doi": "10.7270/Q2154HMF",
+        "url": "https://www.bindingdb.org/rwd/jsp/dbsearch/PrimarySearch_pubmed.jsp?pubmed=14684331&pubmed_submit=Search",
+        "curatedByChembl": true,
+        "independentExperiment": false,
+        "records": [
+          {
+            "target": "Carbonic anhydrase 1",
+            "kiNM": 250,
+            "assayDescription": "Compound was evaluated for inhibition against human carbonic anhydrase I"
+          },
+          {
+            "target": "Carbonic anhydrase 2",
+            "kiNM": 12,
+            "assayDescription": "Compound was evaluated for inhibition against human carbonic anhydrase II"
+          },
+          {
+            "target": "Carbonic anhydrase 4",
+            "kiNM": 70,
+            "assayDescription": "Compound was evaluated for inhibition against bovine carbonic anhydrase IV"
+          },
+          {
+            "target": "Carbonic anhydrase 9",
+            "kiNM": 25,
+            "assayDescription": "Compound was evaluated for inhibition against human carbonic anhydrase IX"
+          }
+        ]
+      },
+      "chemblPair": {
+        "caIActivityId": 151872,
+        "caIIActivityId": 151873,
+        "caIKiNM": 250,
+        "caIIKiNM": 12,
+        "caIMethod": "not specified in assay description",
+        "caIIMethod": "not specified in assay description",
+        "caIDuplicateFlag": 1,
+        "caIIDuplicateFlag": 1,
+        "apparentKiRatio": 20.833333333333332
+      },
+      "activityEvidenceClass": "separate_database_view_same_curated_origin",
+      "protocolVerified": false
+    },
+    {
+      "documentChemblId": "CHEMBL1134204",
+      "shortTitle": "DTPA 尾链磺酰胺及其锌配合物",
+      "title": "Carbonic anhydrase inhibitors: synthesis of sulfonamides incorporating dtpa tails and of their zinc complexes with powerful topical antiglaucoma properties",
+      "firstAuthor": "Scozzafava A",
+      "citationYear": 2001,
+      "journal": "Bioorganic & Medicinal Chemistry Letters",
+      "volume": "11",
+      "issue": "4",
+      "pages": "575-582",
+      "doi": "10.1016/S0960-894X(00)00722-8",
+      "pmid": "11229775",
+      "chemblUrl": "https://www.ebi.ac.uk/chembl/explore/document/CHEMBL1134204",
+      "methodStatus": "method_incomplete",
+      "fullTextStatus": "not_obtained",
+      "primaryEvidence": {
+        "readingLevel": "abstract_checked",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11229775/",
+        "coverage": "PubMed 摘要；不是完整全文或实验协议。",
+        "quote": "Many of these derivatives showed nanomolar affinity towards isozymes I, II and IV of carbonic anhydrase (CA).",
+        "supports": "支持 DTPA 论文研究 CA I／II／IV；摘要未提供乙酰唑胺 Ki 的具体方法。"
+      },
+      "openAccessEvidence": {
+        "url": "https://api.openalex.org/works?filter=doi:10.1016/S0960-894X(00)00722-8&select=id,doi,title,open_access,best_oa_location,locations",
+        "reportedOpenAccess": false,
+        "reportedRepositoryFullText": false
+      },
+      "independenceConclusion": "ChEMBL 文档页题名与 BindingDB DOI 共同确认 DTPA 身份，排除了同年 carboxamide 候选；同源数值仍非独立实验。",
+      "methodGap": "克隆同工酶描述没有给出与 CA XIII esterase 配对相同的完整测定方法。",
+      "bindingDb": {
+        "doi": "10.7270/Q2KW5GJQ",
+        "url": "https://www.bindingdb.org/rwd/jsp/dbsearch/PrimarySearch_pubmed.jsp?pubmed=11229775&pubmed_submit=Search",
+        "curatedByChembl": true,
+        "independentExperiment": false,
+        "records": [
+          {
+            "target": "Carbonic anhydrase 1",
+            "kiNM": 900,
+            "assayDescription": "Inhibition of cloned isozyme, human carbonic anhydrase I"
+          },
+          {
+            "target": "Carbonic anhydrase 2",
+            "kiNM": 12,
+            "assayDescription": "Inhibition of cloned isozyme, human carbonic anhydrase II"
+          },
+          {
+            "target": "Carbonic anhydrase 4",
+            "kiNM": 220,
+            "assayDescription": "Inhibition of cloned isozyme, human carbonic anhydrase IV"
+          }
+        ]
+      },
+      "chemblPair": {
+        "caIActivityId": 288595,
+        "caIIActivityId": 288596,
+        "caIKiNM": 900,
+        "caIIKiNM": 12,
+        "caIMethod": "not specified in assay description",
+        "caIIMethod": "not specified in assay description",
+        "caIDuplicateFlag": 1,
+        "caIIDuplicateFlag": 1,
+        "apparentKiRatio": 75
+      },
+      "activityEvidenceClass": "separate_database_view_same_curated_origin",
+      "protocolVerified": false
+    }
+  ],
+  "scope": "六组文档身份均已由 ChEMBL、DOI 与 PubMed／BindingDB 书目交叉确认；三组仅可读出版社正文片段，三组仅摘要，均未取得可复原乙酰唑胺 Ki 测定的完整协议。BindingDB 标注 Curated by ChEMBL，属于同源策划记录的另一入口，不是独立实验。明确同酯酶仍为 1/6，方法不足仍为 5/6。",
+  "source": "data/ca-document-methods-source.json",
+  "verification": "脚本逐文档断言 DOI 对应的 BindingDB 靶点与 Ki 同 ChEMBL 配对一致，并禁止将摘要／正文片段升级为完整协议。"
+}

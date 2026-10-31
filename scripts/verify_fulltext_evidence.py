@@ -125,13 +125,79 @@ SOURCES = [
             {"quote": "The FAIR principles can equally be applied to these non-data assets, which need to be identified, described, discovered, and reused in much the same manner as data.", "supports": "FAIR 也适用于工作流等非数据研究资产。"},
         ],
     },
+    {
+        "key": "paper2-01", "status": "partial_text_checked", "raw": "ca13-snippets.txt",
+        "title": "Carbonic anhydrase inhibitors. Inhibition of cytosolic isozyme XIII with aromatic and heterocyclic sulfonamides: a novel target for the drug design",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0960894X0400647X",
+        "license": "出版社页面公开可读片段；未声明开放再分发许可。",
+        "coverage": "摘要、引言与 CA inhibition data 片段；不是完整全文、Table 1 或完整协议。",
+        "scope": "证明 CA I／II／IX 数据此前已发表；esterase 描述仍属于数据库策划记录，不能冒充完整方法。",
+        "claims": [
+            {"quote": "inhibition data against isozymes I, II, and IX have been published earlier, and will be not discussed in detail here", "locator": "CA inhibition data 片段", "supports": "CA I／II／IX 为此前发表数据。"},
+        ],
+    },
+    {
+        "key": "paper2-02", "status": "abstract_checked", "raw": "thiourea-abstract.txt",
+        "title": "Carbonic Anhydrase Inhibitors: Water-Soluble 4-Sulfamoylphenylthioureas as Topical Intraocular Pressure-Lowering Agents with Long-Lasting Effects",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11123998/",
+        "license": "PubMed 摘要可读；本次未取得全文。",
+        "coverage": "仅摘要。",
+        "scope": "支持 CA I／II／IV 研究对象，不支持乙酰唑胺 Ki 的具体实验方法。",
+        "claims": [
+            {"quote": "The new thiourea derivatives showed strong affinities toward isozymes I, II, and IV of carbonic anhydrase (CA, EC 4.2.1.1).", "locator": "PubMed 摘要", "supports": "研究对象覆盖 CA I／II／IV。"},
+        ],
+    },
+    {
+        "key": "paper2-03", "status": "partial_text_checked", "raw": "emate-snippets.txt",
+        "title": "Carbonic anhydrase inhibitors: X-ray crystallographic structure of the adduct of human isozyme II with EMATE, a dual inhibitor of carbonic anhydrases and steroid sulfatase",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0960894X03010448",
+        "license": "出版社页面公开可读片段；未声明开放再分发许可。",
+        "coverage": "摘要、引言、Chemistry 与 Crystallography 片段；不是完整全文或乙酰唑胺 Ki 协议。",
+        "scope": "可读方法针对 EMATE—CA II 共结晶，不能据此补全乙酰唑胺活性测定方法。",
+        "claims": [
+            {"quote": "The hCA II–1 adduct obtained by co-crystallization, was subjected to detailed X-ray crystallography.", "locator": "Crystallography 片段", "supports": "实验片段针对 EMATE 复合物的 X 射线晶体学。"},
+        ],
+    },
+    {
+        "key": "paper2-04", "status": "abstract_checked", "raw": "carboxybenzolamide-abstract.txt",
+        "title": "Carbonic anhydrase inhibitors: Topically acting antiglaucoma sulfonamides incorporating esters and amides of 3- and 4-carboxybenzolamide",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14611846/",
+        "license": "PubMed 摘要可读；本次未取得全文。",
+        "coverage": "仅摘要。",
+        "scope": "支持 CA I／II／IV 研究对象，不支持乙酰唑胺 Ki 的具体实验方法。",
+        "claims": [
+            {"quote": "The new derivatives showed low nanomolar affinity for three carbonic anhydrase (CA) isozymes, CA I, II and IV, and were effective as topical antiglaucoma agents in normotensive rabbits.", "locator": "PubMed 摘要", "supports": "研究对象覆盖 CA I／II／IV。"},
+        ],
+    },
+    {
+        "key": "paper2-05", "status": "partial_text_checked", "raw": "e7070-snippets.txt",
+        "title": "Carbonic anhydrase inhibitors: E7070, a sulfonamide anticancer agent, potently inhibits cytosolic isozymes I and II, and transmembrane, tumor-associated isozyme IX",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0960894X03010424",
+        "license": "出版社页面公开可读片段；未声明开放再分发许可。",
+        "coverage": "引言与 Chemistry and CA inhibition 片段；不是完整全文、Table 1 或完整协议。",
+        "scope": "确认六种化合物的四同工酶抑制表存在，但片段本身不给出乙酰唑胺 Ki 的完整测定条件。",
+        "claims": [
+            {"quote": "Inhibition data against four CA isozymes with the six compounds 1–6 are shown in Table 1.", "locator": "Chemistry and CA inhibition 片段", "supports": "原文有六种化合物、四个同工酶的抑制表。"},
+        ],
+    },
+    {
+        "key": "paper2-06", "status": "abstract_checked", "raw": "dtpa-abstract.txt",
+        "title": "Carbonic anhydrase inhibitors: synthesis of sulfonamides incorporating dtpa tails and of their zinc complexes with powerful topical antiglaucoma properties",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11229775/",
+        "license": "PubMed 摘要可读；本次未取得全文。",
+        "coverage": "仅摘要。",
+        "scope": "支持 DTPA 论文的 CA I／II／IV 研究对象，不支持乙酰唑胺 Ki 的具体实验方法。",
+        "claims": [
+            {"quote": "Many of these derivatives showed nanomolar affinity towards isozymes I, II and IV of carbonic anhydrase (CA).", "locator": "PubMed 摘要", "supports": "研究对象覆盖 CA I／II／IV。"},
+        ],
+    },
 ]
 
 
 def main():
     records = []
     for source in SOURCES:
-        content = html_text(source["raw"]) if source["raw"].endswith(".html") else pdf_pages(source["raw"])
+        content = html_text(source["raw"]) if source["raw"].endswith((".html", ".txt")) else pdf_pages(source["raw"])
         records.append(verify(source, content))
     output = {
         "schemaVersion": 1,

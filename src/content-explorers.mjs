@@ -67,14 +67,15 @@ export function paperExplorer(snapshot) {
   };
 }
 
-export function activityExplorer(stability, selectivity) {
+export function activityExplorer(stability, selectivity, methodAudit) {
   return {
     kind: "activity",
     title: "CA 表观活性比较",
-    subtitle: "六组文档内配对 · 方法信息优先 · 不执行跨文献合并估计",
+    subtitle: "六组文档内配对 · 身份与原文分层 · 不执行跨文献合并估计",
     data: {
       stability: Object.fromEntries(Object.entries(stability).filter(([key]) => key !== "exploratory_median_ratio_not_a_selectivity_estimate")),
       selectivity,
+      methodAudit,
     },
   };
 }

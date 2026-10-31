@@ -160,12 +160,16 @@ async function run() {
 
     await cdp.navigate(origin, "widgets/ca-activity/index.html");
     assert.equal(await cdp.evaluate("document.querySelectorAll('.activity-row').length"), 6);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.record-card').length"), 6);
+    assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('水溶性 4-sulfamoylphenylthioureas')"));
+    assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('EMATE—CA II 复合物晶体结构')"));
+    assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('Curated by ChEMBL')"));
     await cdp.screenshot("03-activity");
     await cdp.evaluate("document.querySelector('#matched-only').click()");
     assert.equal(await cdp.evaluate("document.querySelectorAll('.activity-row').length"), 1);
     assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('20.8333')"));
     await assertNoOverflow("activity");
-    pass("六组活性比值与单组同方法筛选");
+    pass("六组活性比值、同方法筛选与文档方法分层");
 
     await cdp.navigate(origin, "widgets/structure-control/index.html");
     assert.equal(await cdp.evaluate("document.querySelectorAll('.diff-list li').length"), 3);
@@ -187,7 +191,7 @@ async function run() {
     pass("88 项目录的关键词与已验证状态筛选");
 
     await cdp.navigate(origin, "widgets/validation-workbench/index.html");
-    assert.equal(await cdp.evaluate("document.querySelectorAll('.record-button').length"), 21);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.record-button').length"), 22);
     await cdp.evaluate("document.querySelector('[data-record=structural-control]').click()");
     assert.ok(await cdp.evaluate("document.querySelector('.record-detail').innerText.includes('analyze_structural_control.py')"));
     await cdp.screenshot("06-validation");
@@ -195,7 +199,7 @@ async function run() {
     assert.ok(await cdp.evaluate("document.querySelectorAll('.record-button').length>0"));
     assert.ok(await cdp.evaluate("[...document.querySelectorAll('.record-button')].every(button=>button.getAttribute('aria-pressed')==='false'||button.dataset.record)"));
     await assertNoOverflow("validation");
-    pass("21 份快照、重放脚本与上游记录筛选");
+    pass("22 份快照、重放脚本与上游记录筛选");
 
     await cdp.navigate(origin, "widgets/generation-budget/index.html");
     await cdp.evaluate("document.querySelector('#budget-target').value='100000000';document.querySelector('[data-form=budget]').requestSubmit()");
@@ -227,8 +231,12 @@ async function run() {
     await cdp.evaluate("document.querySelector('#reference-paper').value='01';document.querySelector('#reference-query').value='';document.querySelector('#reference-fulltext').value='abstract_checked';document.querySelector('[data-form=reference-filter]').requestSubmit()");
     assert.equal(await cdp.evaluate("document.querySelectorAll('.project-card').length"), 1);
     assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('仅摘要，非全文')"));
+    await cdp.evaluate("document.querySelector('#reference-paper').value='02';document.querySelector('#reference-query').value='EMATE';document.querySelector('#reference-fulltext').value='partial_text_checked';document.querySelector('[data-form=reference-filter]').requestSubmit()");
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.project-card').length"), 1);
+    assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('正文片段已核（非全文）')"));
+    assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('Crystallography 片段')"));
     await assertNoOverflow("references");
-    pass("39 条来源、全文引文、引用覆盖与摘要边界");
+    pass("39 条来源、全文／片段／摘要分层与引用覆盖");
 
     await cdp.call("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
     for (const widget of ["paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"]) {
