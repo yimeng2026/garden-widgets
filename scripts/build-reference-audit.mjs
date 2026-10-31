@@ -67,6 +67,8 @@ export function buildReferenceAudit({ rootDir = ROOT, write = true } = {}) {
   const registry = read(rootDir, "snapshots/reference-metadata.json");
   const supplement = read(rootDir, "snapshots/reference-supplement.json");
   const validations = read(rootDir, "snapshots/validation-records.json");
+  const fulltextEvidence = read(rootDir, "snapshots/fulltext-evidence.json");
+  const fulltextByKey = new Map(fulltextEvidence.records.map((item) => [item.key, item]));
   const metadata = new Map([...registry.records, ...supplement.records].map((item) => [item.key, item]));
   const localRecords = new Map(validations.records.map((item) => [item.file, item]));
   const localCorpus = JSON.stringify(validations.records);
@@ -145,18 +147,21 @@ export function buildReferenceAudit({ rootDir = ROOT, write = true } = {}) {
         linkedSections,
         linkage: explicitSections.length ? "explicit_number" : inferredSections.some((item) => item.linkage === "author_year") ? "author_year" : inferredSections.length ? "identifier" : "bibliography_only",
         inferredSections,
-        fullTextVerified: false,
+        fullText: fulltextByKey.get(metadataKey) || { status: "not_obtained" },
+        fullTextVerified: fulltextByKey.get(metadataKey)?.status === "full_text_checked",
       });
     }
   }
   const statusCounts = Object.fromEntries([...new Set(references.map((item) => item.status))].sort().map((status) => [status, references.filter((item) => item.status === status).length]));
+  const fullTextCounts = Object.fromEntries([...new Set(references.map((item) => item.fullText.status))].sort().map((status) => [status, references.filter((item) => item.fullText.status === status).length]));
   const result = {
     schemaVersion: 1,
     snapshotType: "reference_audit",
-    scope: "逐条书目、正文编号、标识符与本地快照审计。DOI／目录元数据匹配不等于全文已读；数据库记录复核不等于独立实验；作者—年份与标识符仅作辅助关联。",
+    scope: "逐条书目、正文编号、原文与本地快照审计。全文核验只覆盖实际读取的正文和指定论断，不等于独立实验；摘要不冒充全文，作者—年份与标识符仅作辅助关联。",
     repair: { contextReferencesAdded: 10, metadataReferencesCorrected: 3, note: "第三篇补入正文已有作者—年份提及的 10 组背景来源，并校正 3 条注册书目信息。" },
     papers,
     statusCounts,
+    fullTextCounts,
     references,
   };
   if (write) fs.writeFileSync(path.join(rootDir, "snapshots/reference-audit.json"), `${JSON.stringify(result, null, 2)}\n`, "utf8");

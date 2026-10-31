@@ -219,9 +219,16 @@ async function run() {
     assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('正文编号')"));
     await cdp.evaluate("document.querySelector('.details summary').click()");
     assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('覆盖 19/19')"));
+    await cdp.evaluate("document.querySelector('#reference-query').value='FAIR';document.querySelector('#reference-fulltext').value='full_text_checked';document.querySelector('[data-form=reference-filter]').requestSubmit()");
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.project-card').length"), 1);
+    assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('R1.2.')"));
+    assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('PDF 第 4 页')"));
     await cdp.screenshot("09-references");
+    await cdp.evaluate("document.querySelector('#reference-paper').value='01';document.querySelector('#reference-query').value='';document.querySelector('#reference-fulltext').value='abstract_checked';document.querySelector('[data-form=reference-filter]').requestSubmit()");
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.project-card').length"), 1);
+    assert.ok(await cdp.evaluate("document.querySelector('.project-card').innerText.includes('仅摘要，非全文')"));
     await assertNoOverflow("references");
-    pass("39 条来源、第三篇 13 条元数据与 Roache 定位");
+    pass("39 条来源、全文引文、引用覆盖与摘要边界");
 
     await cdp.call("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
     for (const widget of ["paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"]) {
@@ -241,7 +248,7 @@ async function run() {
     await stopTree(preview);
     fs.closeSync(previewLog);
     fs.closeSync(edgeLog);
-    fs.rmSync(profile, { recursive: true, force: true });
+    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
     const file = path.join(OUT, "report.json");
     if (fs.existsSync(file)) {
       const report = JSON.parse(fs.readFileSync(file, "utf8"));

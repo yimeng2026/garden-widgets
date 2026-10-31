@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "snapshotType": "reference_audit",
-  "scope": "逐条书目、正文编号、标识符与本地快照审计。DOI／目录元数据匹配不等于全文已读；数据库记录复核不等于独立实验；作者—年份与标识符仅作辅助关联。",
+  "scope": "逐条书目、正文编号、原文与本地快照审计。全文核验只覆盖实际读取的正文和指定论断，不等于独立实验；摘要不冒充全文，作者—年份与标识符仅作辅助关联。",
   "repair": {
     "contextReferencesAdded": 10,
     "metadataReferencesCorrected": 3,
@@ -44,6 +44,11 @@
     "local_version_matched": 5,
     "metadata_matched": 15,
     "record_snapshot_matched": 15
+  },
+  "fullTextCounts": {
+    "abstract_checked": 1,
+    "full_text_checked": 4,
+    "not_obtained": 34
   },
   "references": [
     {
@@ -94,6 +99,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -153,6 +161,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -209,6 +220,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -248,6 +262,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -312,6 +329,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -387,6 +407,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -394,13 +417,11 @@
       "paperId": "01",
       "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
       "number": 7,
-      "raw": "Sippel KH, Robbins AH, Domsic J, Genis C, Agbandje-McKenna M, McKenna R. High-resolution structure of human carbonic anhydrase II complexed with acetazolamide reveals insights into inhibitor drug design. Acta Crystallographica Section F, 2009, 65:992–995. DOI: 10.1107/S1744309109036665（元数据由 PDB 3HS4 回读）。",
+      "raw": "Sippel KH, Robbins AH, Domsic J, Genis C, Agbandje-McKenna M, McKenna R. High-resolution structure of human carbonic anhydrase II complexed with acetazolamide reveals insights into inhibitor drug design. Acta Crystallographica Section F, 2009, 65:992–995. DOI: 10.1107/S1744309109036665（DOI、PDB 与 PMC 全文相关段落回读）。",
       "kind": "scholarly",
       "status": "metadata_matched",
       "url": "https://doi.org/10.1107/s1744309109036665",
-      "identifiers": [
-        "3HS4"
-      ],
+      "identifiers": [],
       "localFiles": [],
       "metadata": {
         "key": "paper1-07",
@@ -429,53 +450,38 @@
         }
       ],
       "linkage": "explicit_number",
-      "inferredSections": [
-        {
-          "title": "摘要",
-          "linkage": "identifier"
-        },
-        {
-          "title": "1.3 相关工作与已知结果",
-          "linkage": "identifier"
-        },
-        {
-          "title": "1.4 本文的研究动机与内容安排",
-          "linkage": "identifier"
-        },
-        {
-          "title": "2.2 身份核验的判据",
-          "linkage": "identifier"
-        },
-        {
-          "title": "3.1 核验结果汇总",
-          "linkage": "identifier"
-        },
-        {
-          "title": "3.2 逐层核验状态",
-          "linkage": "identifier"
-        },
-        {
-          "title": "3.3 结构性发现",
-          "linkage": "identifier"
-        },
-        {
-          "title": "4.1 命题 1 的成立条件",
-          "linkage": "identifier"
-        },
-        {
-          "title": "4.5 不同构建的结构对照与“独立重复”的边界",
-          "linkage": "identifier"
-        },
-        {
-          "title": "五、结论",
-          "linkage": "identifier"
-        },
-        {
-          "title": "5.2 开放问题",
-          "linkage": "identifier"
-        }
-      ],
-      "fullTextVerified": false
+      "inferredSections": [],
+      "fullText": {
+        "key": "paper1-07",
+        "status": "full_text_checked",
+        "title": "High-resolution structure of human carbonic anhydrase II complexed with acetazolamide reveals insights into inhibitor drug design",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2765883/",
+        "license": "PMC 免费全文可读；未据此声明开放再分发许可。",
+        "coverage": "PMC 正文全部主要章节，含实验方法与结果讨论。",
+        "sourceSha256": "52fe307b9dfb8d22f3f1c3a08c2bfa626b7c2e0d2b3de1a34529efdc81a316d0",
+        "scope": "支持 3HS4 的野生型 CA II–AZM、1.1 Å 和直接结合；不支持统一 Ki、独立活性重复或本项目三类序列差异。",
+        "claims": [
+          {
+            "quote": "The crystal structure of human carbonic anhydrase II (CA II) complexed with acetazolamide (AZM) has been determined at 1.1 Å resolution.",
+            "locator": "摘要",
+            "supports": "3HS4 为 1.1 Å 的 CA II–AZM 实验结构。",
+            "verification": "quote_present"
+          },
+          {
+            "quote": "Presented here is the refined crystal structure of wt CA II complexed with AZM at 1.1 Å resolution.",
+            "locator": "§1 引言",
+            "supports": "原文明确为野生型 CA II–AZM。",
+            "verification": "quote_present"
+          },
+          {
+            "quote": "the sulfonamide amine N atom of AZM 701 binds directly to the active-site Zn atom",
+            "locator": "§3.1 AZM interactions with CA II",
+            "supports": "AZM 在活性位点直接配位锌离子。",
+            "verification": "quote_present"
+          }
+        ]
+      },
+      "fullTextVerified": true
     },
     {
       "id": "01-ref-08",
@@ -498,6 +504,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -552,6 +561,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -582,6 +594,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -589,12 +604,11 @@
       "paperId": "01",
       "paperTitle": "乙酰唑胺—碳酸酐酶 II 的跨库证据链",
       "number": 11,
-      "raw": "Lesburg CA, Huang C, Christianson DW, Fierke CA. Histidine --> carboxamide ligand substitutions in the zinc binding site of carbonic anhydrase II alter metal coordination geometry but retain catalytic activity. Biochemistry, 1997, 36:15780–15791. DOI: 10.1021/bi971296x（元数据由 PDB 2H4N 回读）。",
+      "raw": "Lesburg CA, Huang C, Christianson DW, Fierke CA. Histidine --> carboxamide ligand substitutions in the zinc binding site of carbonic anhydrase II alter metal coordination geometry but retain catalytic activity. Biochemistry, 1997, 36:15780–15791. DOI: 10.1021/bi971296x（DOI、PDB 与 PubMed 摘要回读；全文未取得）。",
       "kind": "scholarly",
       "status": "metadata_matched",
       "url": "https://doi.org/10.1021/bi971296x",
       "identifiers": [
-        "2H4N",
         "15780",
         "15791"
       ],
@@ -624,12 +638,31 @@
         }
       ],
       "linkage": "explicit_number",
-      "inferredSections": [
-        {
-          "title": "4.5 不同构建的结构对照与“独立重复”的边界",
-          "linkage": "identifier"
-        }
-      ],
+      "inferredSections": [],
+      "fullText": {
+        "key": "paper1-11",
+        "status": "abstract_checked",
+        "title": "Histidine --> carboxamide ligand substitutions in the zinc binding site of carbonic anhydrase II alter metal coordination geometry but retain catalytic activity",
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/9398308/",
+        "license": "PubMed／ACS 摘要可读；本次未取得全文。",
+        "coverage": "仅摘要；出版社页面本次同样只返回摘要。",
+        "sourceSha256": "302fc37dec041a4c3e6d3b6aef9cf60e2661233599c458d217c762125b5b466d",
+        "scope": "摘要支持 H94N 构建及高分辨率 X 射线研究；起始 M 缺失、P 插入、260／259 长度不一致及全局比对只能由 PDB 和本地分析支持。",
+        "claims": [
+          {
+            "quote": "High-resolution X-ray crystal structure determinations of H94N, H119N, and H119Q CAIIs reveal that the engineered carboxamide side chains coordinate to zinc with optimal stereochemistry.",
+            "locator": "PubMed 摘要",
+            "supports": "H94N 等构建的高分辨率 X 射线结构研究。",
+            "verification": "quote_present"
+          },
+          {
+            "quote": "This is demonstrated by catalytic activity measurements for ester hydrolysis and CO2 hydration, as well as sulfonamide inhibitor affinity assays.",
+            "locator": "PubMed 摘要",
+            "supports": "摘要报告了催化与抑制剂亲和力测量；不能替代具体实验数据核对。",
+            "verification": "quote_present"
+          }
+        ]
+      },
       "fullTextVerified": false
     },
     {
@@ -666,6 +699,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -729,6 +765,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -762,6 +801,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -795,6 +837,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -828,6 +873,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -861,6 +909,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -894,6 +945,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -921,6 +975,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -969,6 +1026,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -976,7 +1036,7 @@
       "paperId": "03",
       "paperTitle": "轻量可复现科研引擎的协作方法",
       "number": 1,
-      "raw": "de Silva B, Champion K, Quade M, et al. PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data. Journal of Open Source Software, 2020, 5(49):2104. DOI: 10.21105/joss.02104。",
+      "raw": "de Silva B, Champion K, Quade M, et al. PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data. Journal of Open Source Software, 2020, 5(49):2104. DOI: 10.21105/joss.02104（JOSS 全文相关段落回读）。",
       "kind": "scholarly",
       "status": "metadata_matched",
       "url": "https://doi.org/10.21105/joss.02104",
@@ -1038,14 +1098,38 @@
           "linkage": "identifier"
         }
       ],
-      "fullTextVerified": false
+      "fullText": {
+        "key": "paper3-01",
+        "status": "full_text_checked",
+        "title": "PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data",
+        "sourceUrl": "https://joss.theoj.org/papers/10.21105/joss.02104",
+        "license": "CC BY 4.0。",
+        "coverage": "PDF 全部 4 页。",
+        "sourceSha256": "58214eb796b3e246102396bb16fc6b8b10de133bd74d5dad16bc3a88692c3b8d",
+        "scope": "支持 SINDy 的方法组成、数值微分和 STLSQ 等选项；本地 2.1.0 版本与误差值由本机快照而非该论文证明。",
+        "claims": [
+          {
+            "quote": "Applying SINDy involves making several modeling decisions, namely: which numerical differentiation method is used, which functions make up the feature library, and which sparse regression algorithm is applied to learn the model.",
+            "supports": "规律辨识必须分别记录微分、候选库和稀疏回归口径。",
+            "locator": "PDF 第 2 页",
+            "verification": "quote_present"
+          },
+          {
+            "quote": "The package provides a few standard options for numerical differentiation (finite difference and smoothed finite difference), feature libraries (polynomial and Fourier libraries, as well as a class for creating custom libraries), and sparse regression techniques (sequentially thresholded least squares",
+            "supports": "原文列明有限差分、候选库与 STLSQ 方法。",
+            "locator": "PDF 第 2 页",
+            "verification": "quote_present"
+          }
+        ]
+      },
+      "fullTextVerified": true
     },
     {
       "id": "03-ref-02",
       "paperId": "03",
       "paperTitle": "轻量可复现科研引擎的协作方法",
       "number": 2,
-      "raw": "Kaptanoglu AA, de Silva BM, Fasel U, et al. PySINDy: A comprehensive Python package for robust sparse system identification. Journal of Open Source Software, 2022, 7(69):3994. DOI: 10.21105/joss.03994。",
+      "raw": "Kaptanoglu AA, de Silva BM, Fasel U, et al. PySINDy: A comprehensive Python package for robust sparse system identification. Journal of Open Source Software, 2022, 7(69):3994. DOI: 10.21105/joss.03994（JOSS 全文相关段落回读）。",
       "kind": "scholarly",
       "status": "metadata_matched",
       "url": "https://doi.org/10.21105/joss.03994",
@@ -1107,7 +1191,31 @@
           "linkage": "identifier"
         }
       ],
-      "fullTextVerified": false
+      "fullText": {
+        "key": "paper3-02",
+        "status": "full_text_checked",
+        "title": "PySINDy: A comprehensive Python package for robust sparse system identification",
+        "sourceUrl": "https://joss.theoj.org/papers/10.21105/joss.03994",
+        "license": "CC BY 4.0。",
+        "coverage": "PDF 全部 7 页。",
+        "sourceSha256": "be76f07510e49cd8e0d65b32728be72310826d463be7dcb8d611e51db119659a",
+        "scope": "支持鲁棒 SINDy 扩展及微分方法差异；不把 2022 年论文的默认设置直接冒充本机 2.1.0 的行为。",
+        "claims": [
+          {
+            "quote": "Robust formulations, including the integral form of SINDy and ensembling",
+            "supports": "原文支持积分形式与集成方法等鲁棒扩展。",
+            "locator": "PDF 第 1 页",
+            "verification": "quote_present"
+          },
+          {
+            "quote": "PySINDy defaults to second order finite differences for computing derivatives, although a host of more sophisticated methods are now available",
+            "supports": "该版本论文明确说明默认微分与其他可选方法；本机版本需另行固定。",
+            "locator": "PDF 第 2 页",
+            "verification": "quote_present"
+          }
+        ]
+      },
+      "fullTextVerified": true
     },
     {
       "id": "03-ref-03",
@@ -1130,6 +1238,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1153,6 +1264,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1181,6 +1295,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1204,6 +1321,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1267,6 +1387,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1300,6 +1423,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1360,6 +1486,9 @@
       ],
       "linkage": "explicit_number",
       "inferredSections": [],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1404,6 +1533,9 @@
           "linkage": "author_year"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1447,6 +1579,9 @@
           "linkage": "author_year"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1496,6 +1631,9 @@
           "linkage": "author_year"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1537,6 +1675,9 @@
           "linkage": "author_year"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1581,6 +1722,9 @@
           "linkage": "author_year"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1624,6 +1768,9 @@
           "linkage": "author_year"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1684,6 +1831,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1746,6 +1896,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     },
     {
@@ -1753,7 +1906,7 @@
       "paperId": "03",
       "paperTitle": "轻量可复现科研引擎的协作方法",
       "number": 18,
-      "raw": "Wilkinson MD, Dumontier M, Aalbersberg IJ, et al. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 2016, 3. DOI: 10.1038/sdata.2016.18。",
+      "raw": "Wilkinson MD, Dumontier M, Aalbersberg IJ, et al. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 2016, 3. DOI: 10.1038/sdata.2016.18（Scientific Data 全文相关段落回读）。",
       "kind": "scholarly",
       "status": "metadata_matched",
       "url": "https://doi.org/10.1038/sdata.2016.18",
@@ -1796,7 +1949,31 @@
           "linkage": "author_year"
         }
       ],
-      "fullTextVerified": false
+      "fullText": {
+        "key": "context-wilkinson-2016",
+        "status": "full_text_checked",
+        "title": "The FAIR Guiding Principles for scientific data management and stewardship",
+        "sourceUrl": "https://www.nature.com/articles/sdata201618",
+        "license": "CC BY 4.0；第三方内容按原署名条款。",
+        "coverage": "PDF 全部 9 页，含 FAIR 原则、工作流讨论与许可。",
+        "sourceSha256": "cdddd9f4808f7e3e1f013139c3915ef4d7cdccb008fa947ef5f72b4c7b6ffde7",
+        "scope": "支持 FAIR 四项原则、详细来源信息和工作流资产；r-bundle 是本项目的轻量接口方法，不冒充 FAIR 原文术语或认证。",
+        "claims": [
+          {
+            "quote": "R1.2. (meta)data are associated with detailed provenance",
+            "supports": "可复用性要求详细的来源信息。",
+            "locator": "PDF 第 4 页",
+            "verification": "quote_present"
+          },
+          {
+            "quote": "The FAIR principles can equally be applied to these non-data assets, which need to be identified, described, discovered, and reused in much the same manner as data.",
+            "supports": "FAIR 也适用于工作流等非数据研究资产。",
+            "locator": "PDF 第 5 页",
+            "verification": "quote_present"
+          }
+        ]
+      },
+      "fullTextVerified": true
     },
     {
       "id": "03-ref-19",
@@ -1844,6 +2021,9 @@
           "linkage": "identifier"
         }
       ],
+      "fullText": {
+        "status": "not_obtained"
+      },
       "fullTextVerified": false
     }
   ]

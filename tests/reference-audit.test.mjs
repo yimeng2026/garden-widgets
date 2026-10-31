@@ -37,7 +37,8 @@ test("metadata corrections and background references preserve registration bound
   assert.ok(audit.references.find((item) => item.id === "01-ref-06").identifiers.includes("3HS4"));
   assert.equal(audit.references.find((item) => item.id === "01-ref-09").url, null);
   assert.ok(audit.references.find((item) => item.id === "01-ref-02").url.includes("ebi.ac.uk"));
-  assert.ok(audit.references.every((item) => item.fullTextVerified === false));
+  assert.deepEqual(audit.references.filter((item) => item.fullTextVerified).map((item) => item.id), ["01-ref-07", "03-ref-01", "03-ref-02", "03-ref-18"]);
+  assert.deepEqual(audit.fullTextCounts, { abstract_checked: 1, full_text_checked: 4, not_obtained: 34 });
   assert.ok(!JSON.stringify(audit).includes("Scholar 检索返回"));
 });
 
@@ -69,6 +70,18 @@ test("reference explorer renders original entries and metadata without network o
   assert.deepEqual(assertStaticWidgetHtml(html), []);
 });
 
+test("fulltext snapshot separates four complete sources from one abstract with eleven verified claims", () => {
+  const evidence = JSON.parse(fs.readFileSync(new URL("../snapshots/fulltext-evidence.json", import.meta.url), "utf8"));
+  assert.equal(evidence.records.length, 5);
+  assert.equal(evidence.records.filter((record) => record.status === "full_text_checked").length, 4);
+  assert.equal(evidence.records.filter((record) => record.status === "abstract_checked").length, 1);
+  const claims = evidence.records.flatMap((record) => record.claims);
+  assert.equal(claims.length, 11);
+  assert.ok(claims.every((claim) => claim.verification === "quote_present" && claim.locator && claim.quote));
+  assert.ok(evidence.records.every((record) => /^[a-f0-9]{64}$/.test(record.sourceSha256)));
+  assert.ok(evidence.records.find((record) => record.key === "paper1-11").scope.includes("只能由 PDB"));
+});
+
 test("citation audit reports missing and out-of-range numbers instead of forcing full coverage", () => {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
   const temporaryRoot = path.join(root, ".tmp");
@@ -76,7 +89,7 @@ test("citation audit reports missing and out-of-range numbers instead of forcing
   const temporary = fs.mkdtempSync(path.join(temporaryRoot, "reference-audit-"));
   try {
     fs.mkdirSync(path.join(temporary, "snapshots"));
-    for (const name of ["paper-collection.json", "reference-metadata.json", "reference-supplement.json", "validation-records.json"]) {
+    for (const name of ["paper-collection.json", "reference-metadata.json", "reference-supplement.json", "validation-records.json", "fulltext-evidence.json"]) {
       fs.copyFileSync(path.join(root, "snapshots", name), path.join(temporary, "snapshots", name));
     }
     const file = path.join(temporary, "snapshots/paper-collection.json");
