@@ -1,0 +1,9 @@
+{
+  "baseUrlEnv": "GARDEN_BASE_URL",
+  "tokenEnv": "GARDEN_AGENT_TOKEN",
+  "defaultBaseUrl": "http://localhost:7100",
+  "collectionPath": "/api/research/law-packages",
+  "itemPathTemplate": "/api/research/law-packages/{id}",
+  "snapshotPolicy": "author-time-only",
+  "browserNetworkPolicy": "no-fetch-no-external-scripts-no-credentials"
+}

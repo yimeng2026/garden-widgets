@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "widgets": [
+    {
+      "title": "规律实验室",
+      "status": "四类规律包",
+      "description": "CA2 留出验证、材料对象、反演反例与主动判别协议。",
+      "entry": "widgets/law-lab/index.html",
+      "snapshot": "snapshots/law-packages.json"
+    },
+    {
+      "title": "复杂性与证据控制",
+      "status": "控制 · 形式化 · 复杂性",
+      "description": "智能体控制论、诺顿穹顶、2025 数学突破与公开理论框架审查。",
+      "entry": "widgets/complexity-lab/index.html",
+      "snapshot": "snapshots/complexity.json"
+    }
+  ]
+}

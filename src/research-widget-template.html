@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__</title>
+<style>
+.research-widget{width:100%;font-family:var(--kimi-font-sans);color:var(--kimi-color-text-primary);padding-block-start:var(--kimi-space-4);padding-inline:var(--kimi-space-4);padding-block-end:var(--kimi-space-4);box-sizing:border-box}.research-widget *{box-sizing:border-box}.research-widget button,.research-widget input,.research-widget select,.research-widget textarea{font:inherit}.research-head{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--kimi-space-3)}.research-title{margin:0;font-size:20px;line-height:28px;font-weight:500}.research-subtitle{margin:var(--kimi-space-1) 0 0;color:var(--kimi-color-text-secondary);font-size:14px;line-height:20px}.research-count{flex:none}.research-tabs{display:flex;gap:var(--kimi-space-1);overflow-x:auto;padding-block:var(--kimi-space-4) var(--kimi-space-3);border-bottom:1px solid var(--kimi-color-border)}.research-tabs .kimi-chip{flex:none}.research-main{padding-block-start:var(--kimi-space-4)}.research-status-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--kimi-space-2)}.research-status{display:inline-flex;align-items:center;justify-content:center;min-height:22px;padding-inline:var(--kimi-space-2);border-radius:var(--kimi-radius-chip);font-size:12px;border:1px solid var(--kimi-color-border);color:var(--kimi-color-text-secondary)}.research-status--positive{color:var(--kimi-color-positive);background:color-mix(in srgb,var(--kimi-color-positive) 10%,transparent)}.research-status--warning{color:var(--kimi-color-warning);background:color-mix(in srgb,var(--kimi-color-warning) 12%,transparent)}.research-status--danger{color:var(--kimi-color-danger);background:color-mix(in srgb,var(--kimi-color-danger) 10%,transparent)}.research-status--accent{color:var(--kimi-color-accent);background:color-mix(in srgb,var(--kimi-color-accent) 10%,transparent)}.research-case-title{margin:var(--kimi-space-3) 0 var(--kimi-space-2);font-size:17px;line-height:24px;font-weight:500}.research-summary{margin:0;color:var(--kimi-color-text-secondary);font-size:14px;line-height:21px}.research-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--kimi-space-3);margin-block:var(--kimi-space-4);padding-block:var(--kimi-space-3);border-block:1px solid var(--kimi-color-border)}.research-metric{min-width:0;padding-inline-start:var(--kimi-space-3);border-inline-start:1px solid var(--kimi-color-border)}.research-metric:first-child{padding-inline-start:0;border-inline-start:0}.research-value{display:block;font-size:24px;line-height:29px;font-weight:500;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.research-label{display:block;margin-block-start:var(--kimi-space-1);font-size:12px;color:var(--kimi-color-text-secondary)}.research-note{display:block;margin-block-start:2px;font-size:12px;line-height:16px;color:var(--kimi-color-text-tertiary)}.research-section-title{margin:0 0 var(--kimi-space-2);font-size:14px;line-height:20px;font-weight:500}.research-items{display:grid;gap:var(--kimi-space-2);margin:0;padding:0;list-style:none}.research-item{padding-inline-start:var(--kimi-space-3);border-inline-start:1px solid var(--kimi-color-border);font-size:13px;line-height:20px}.research-details{margin-block-start:var(--kimi-space-3);border-top:1px solid var(--kimi-color-border);padding-block-start:var(--kimi-space-2)}.research-details summary{cursor:pointer;min-height:32px;padding-block:var(--kimi-space-1);color:var(--kimi-color-text-secondary);font-size:14px}.research-warning{margin-block:var(--kimi-space-3);padding:var(--kimi-space-3);border-inline-start:2px solid var(--kimi-color-warning);background:color-mix(in srgb,var(--kimi-color-warning) 8%,transparent);border-radius:var(--kimi-radius-small);font-size:13px;line-height:20px}.research-next{margin-block-start:var(--kimi-space-3);padding-block-start:var(--kimi-space-3);border-top:1px solid var(--kimi-color-border);font-size:14px;line-height:21px}.research-next span{display:block;color:var(--kimi-color-text-secondary);font-size:12px;margin-block-end:var(--kimi-space-1)}.research-sources{margin:var(--kimi-space-2) 0 0;padding-inline-start:var(--kimi-space-4);color:var(--kimi-color-text-secondary);font-size:12px;line-height:18px}.research-code{font-family:var(--kimi-font-mono);font-size:12px;overflow-wrap:anywhere}.research-rules{margin-block-start:var(--kimi-space-4);padding-block-start:var(--kimi-space-3);border-top:1px solid var(--kimi-color-border)}.research-rules ul{margin:0;padding-inline-start:var(--kimi-space-4);color:var(--kimi-color-text-secondary);font-size:12px;line-height:18px}@media(max-width:560px){.research-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.research-metric:nth-child(3){padding-inline-start:0;border-inline-start:0}.research-head{display:block}.research-count{margin-block-start:var(--kimi-space-2);display:inline-flex}}
+</style>
+</head>
+<body>
+<div class="research-widget">
+  <header class="research-head"><div><h1 class="research-title">__TITLE__</h1><p class="research-subtitle">__SUBTITLE__</p></div><span class="research-status research-count">__COUNT__ 个研究视图</span></header>
+  <nav class="research-tabs" id="research-tabs" aria-label="研究视图"></nav>
+  <main class="research-main" id="research-main" aria-live="polite"><h2 class="research-case-title">__INITIAL_TITLE__</h2><p class="research-summary">__INITIAL_SUMMARY__</p></main>
+</div>
+<script type="application/json" id="research-data">__PAYLOAD__</script>
+<script>
+(() => {
+  const data = JSON.parse(document.getElementById('research-data').textContent);
+  let activeId = data.cases[0].id;
+  const tabs = document.getElementById('research-tabs');
+  const main = document.getElementById('research-main');
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  function metricHtml(item){return `<div class="research-metric"><strong class="research-value">${esc(item.value)}</strong><span class="research-label">${esc(item.label)}</span><span class="research-note">${esc(item.note)}</span></div>`;}
+  function sectionHtml(section,index){
+    const content = `<h3 class="research-section-title">${esc(section.title)}</h3><ul class="research-items">${section.items.map(item => `<li class="research-item">${esc(item)}</li>`).join('')}</ul>`;
+    if(index===0) return `<section>${content}</section>`;
+    return `<details class="research-details"><summary>${esc(section.title)}</summary>${content}</details>`;
+  }
+  function renderCase(item){
+    const tone = ['positive','warning','danger','accent'].includes(item.tone) ? item.tone : 'accent';
+    const sources = (item.sources||[]).map(source => `<li><span class="research-code">${esc(source.label)} · ${esc(source.locator)}</span></li>`).join('');
+    main.innerHTML = `<div class="research-status-row"><span class="research-status research-status--${tone}">${esc(item.status)}</span></div>
+      <h2 class="research-case-title">${esc(item.title)}</h2><p class="research-summary">${esc(item.summary)}</p>
+      <div class="research-metrics">${item.metrics.map(metricHtml).join('')}</div>
+      ${item.sections.map(sectionHtml).join('')}
+      <div class="research-warning">${esc(item.boundary)}</div>
+      <div class="research-next"><span>下一项最有价值的动作</span>${esc(item.nextAction)}</div>
+      ${sources ? `<details class="research-details"><summary>来源定位</summary><ul class="research-sources">${sources}</ul></details>` : ''}`;
+  }
+  function renderTabs(){
+    tabs.innerHTML = data.cases.map(item => `<button type="button" class="kimi-chip" data-id="${esc(item.id)}" aria-pressed="${item.id===activeId}">${esc(item.label)}</button>`).join('');
+    tabs.querySelectorAll('button').forEach(button => button.addEventListener('click',()=>{activeId=button.dataset.id;renderTabs();renderCase(data.cases.find(item=>item.id===activeId));}));
+  }
+  renderTabs();
+  renderCase(data.cases[0]);
+  if(data.sharedRules?.length){
+    const rules = document.createElement('div');
+    rules.className='research-rules';
+    rules.innerHTML=`<details><summary>共享证据纪律</summary><ul>${data.sharedRules.map(rule=>`<li>${esc(rule)}</li>`).join('')}</ul></details>`;
+    main.appendChild(rules);
+  }
+})();
+</script>
+</body>
+</html>

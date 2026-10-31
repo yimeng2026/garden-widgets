@@ -1,0 +1,18 @@
+{
+  "name": "@garden/widgets",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Auditable research widgets and static evidence snapshots for headless BloomBloomGarden.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "sync": "node scripts/sync-law-packages.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run build && npm test"
+  },
+  "license": "MIT"
+}

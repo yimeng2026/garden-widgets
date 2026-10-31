@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/yimeng2026/garden-widgets/schemas/law-package.schema.json",
+  "title": "Garden law package",
+  "type": "object",
+  "required": ["id", "version", "kind", "title", "domain", "status", "statement", "summary", "metrics", "parameters", "validations", "counterexamples", "limitations", "nextAction", "sources", "evidenceHistory"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Z0-9]+(?:-[A-Z0-9]+)*$", "maxLength": 80 },
+    "version": { "type": "integer", "minimum": 1 },
+    "kind": { "enum": ["empirical", "effective_mapping", "formal_constraint", "protocol"] },
+    "status": { "enum": ["CONJECTURED", "SCREENING", "LIMITED_SUPPORT", "DOMAIN_VALIDATED", "REFUTED", "DEMONSTRATED", "DESIGN_READY", "RETIRED"] },
+    "title": { "type": "string", "minLength": 1 },
+    "domain": { "type": "string", "minLength": 1 },
+    "statement": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "nextAction": { "type": "string", "minLength": 1 },
+    "metrics": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["label", "value", "note"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "value": { "type": ["string", "number"] },
+          "note": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "parameters": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "meaning", "unit", "sourceType", "status"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "meaning": { "type": "string", "minLength": 1 },
+          "unit": { "type": "string", "minLength": 1 },
+          "sourceType": { "enum": ["DERIVED", "CONDITIONAL", "BOUNDARY", "MEASURED", "FITTED", "CONJECTURED", "REFUTED", "RETIRED"] },
+          "status": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "validations": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["level", "label", "status", "evidence"],
+        "properties": {
+          "level": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["PASS", "LIMITED", "FAIL", "PENDING", "NOT_APPLICABLE"] },
+          "evidence": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "counterexamples": { "type": "array", "items": { "type": "string" } },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "locator"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "locator": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "evidenceHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["at", "action", "detail"],
+        "properties": {
+          "at": { "type": "string", "minLength": 1 },
+          "action": { "type": "string", "minLength": 1 },
+          "detail": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

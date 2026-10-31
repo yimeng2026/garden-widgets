@@ -1,0 +1,480 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "id": "CA2-PAIR-DIRECTION-001",
+      "version": 1,
+      "kind": "empirical",
+      "title": "乙酰唑胺的 CA1／CA2 配对方向",
+      "domain": "生物活性与同工酶选择性",
+      "status": "LIMITED_SUPPORT",
+      "statement": "同一文档内，合格的人 CA1 Ki 中位数大于人 CA2 Ki 中位数；不主张固定倍数。",
+      "summary": "定性方向在数据库留出子集中获得有限支持；潜在重复使独立证据量显著下降，不能升级为普遍定律。",
+      "metrics": [
+        {
+          "label": "留出记录",
+          "value": 40,
+          "note": "偏移 20–59，冻结后读取"
+        },
+        {
+          "label": "合格配对",
+          "value": 5,
+          "note": "11 条合格记录"
+        },
+        {
+          "label": "主分析同向",
+          "value": 5,
+          "note": "无反向文档"
+        },
+        {
+          "label": "敏感性可评估",
+          "value": 1,
+          "note": "排除潜在重复后仍同向"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Ki_CA1",
+          "meaning": "人 CA1 抑制常数",
+          "unit": "nM",
+          "sourceType": "MEASURED",
+          "status": "CONDITIONAL"
+        },
+        {
+          "name": "Ki_CA2",
+          "meaning": "人 CA2 抑制常数",
+          "unit": "nM",
+          "sourceType": "MEASURED",
+          "status": "CONDITIONAL"
+        },
+        {
+          "name": "document_chembl_id",
+          "meaning": "共享实验文档的配对键",
+          "unit": "identifier",
+          "sourceType": "BOUNDARY",
+          "status": "BOUNDARY"
+        },
+        {
+          "name": "potential_duplicate",
+          "meaning": "数据库潜在重复标记，不是物理参数",
+          "unit": "flag",
+          "sourceType": "CONDITIONAL",
+          "status": "CONDITIONAL"
+        }
+      ],
+      "validations": [
+        {
+          "level": "held_out",
+          "label": "冻结后数据库留出",
+          "status": "PASS",
+          "evidence": "5 个可评估配对文档均支持冻结方向；不检验幅值。"
+        },
+        {
+          "level": "sensitivity",
+          "label": "潜在重复敏感性",
+          "status": "LIMITED",
+          "evidence": "排除标记后只剩 1 个可评估配对，仍同向，但证据量不足。"
+        },
+        {
+          "level": "magnitude",
+          "label": "固定选择性倍数",
+          "status": "PENDING",
+          "evidence": "20.833… 与 75 等比值只作描述，不作为通过条件。"
+        },
+        {
+          "level": "independent_replication",
+          "label": "独立实验复现",
+          "status": "PENDING",
+          "evidence": "数据库留出不等于独立实验室复现。"
+        }
+      ],
+      "counterexamples": [
+        "1 个文档只有 CA2 合格记录，按预注册规则不可评估；它不是反向证据。",
+        "多个文档重复出现相同 Ki 比值，不能把文档数直接当成独立实验数。"
+      ],
+      "limitations": [
+        "仅分析 CHEMBL20 的指定偏移子集，不是全库系统综述。",
+        "旧文献中的实验条件和重复谱系仍需回原文核对。"
+      ],
+      "nextAction": "冻结同一定性规则，转向未出现过的实验来源与独立测量；不根据本批结果调整配对或阈值。",
+      "sources": [
+        {
+          "label": "预注册",
+          "locator": "ca2-holdout-preregistration.json",
+          "sha256": "ad4576d89c23dba0a43a45db187ad684d277439036ef84aed82edc3da63daf9c"
+        },
+        {
+          "label": "留出结果",
+          "locator": "ca2-holdout-result.json"
+        }
+      ],
+      "evidenceHistory": [
+        {
+          "at": "2026-10-31T13:34:41+08:00",
+          "action": "FROZEN",
+          "detail": "冻结方向、配对键、终点、重复与不可评估规则。"
+        },
+        {
+          "at": "2026-10-31",
+          "action": "HOLDOUT_EVALUATED",
+          "detail": "主分析 5/5 同向；敏感性分析 1/1 同向，状态保持 LIMITED_SUPPORT。"
+        }
+      ]
+    },
+    {
+      "id": "MAT-BANDGAP-OBJECT-001",
+      "version": 1,
+      "kind": "effective_mapping",
+      "title": "材料带隙的对象完备性",
+      "domain": "计算材料与多保真映射",
+      "status": "SCREENING",
+      "statement": "带隙映射至少需要组成、晶体结构、局部配位与计算设置；仅化学式不足以定义单值关系。",
+      "summary": "多晶型数据直接反驳 formula-only 单值候选；更完备表示的跨族预测能力尚未验证。",
+      "metrics": [
+        {
+          "label": "Si 带隙范围",
+          "value": "0–1.3309 eV",
+          "note": "本次 6 个不同记录"
+        },
+        {
+          "label": "ZnO 带隙范围",
+          "value": "0.4516–1.2763 eV",
+          "note": "本次 8 个不同记录"
+        },
+        {
+          "label": "稳定 Si",
+          "value": "0.6103 eV",
+          "note": "Fd-3m，数据库 DFT 值"
+        },
+        {
+          "label": "稳定 ZnO",
+          "value": "0.7316 eV",
+          "note": "P6_3mc，数据库 DFT 值"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "composition",
+          "meaning": "化学组成",
+          "unit": "formula",
+          "sourceType": "BOUNDARY",
+          "status": "BOUNDARY"
+        },
+        {
+          "name": "crystal_structure",
+          "meaning": "晶相、空间群与局部配位",
+          "unit": "structure",
+          "sourceType": "BOUNDARY",
+          "status": "CONDITIONAL"
+        },
+        {
+          "name": "band_gap_DFT",
+          "meaning": "指定计算设置下的带隙",
+          "unit": "eV",
+          "sourceType": "DERIVED",
+          "status": "CONDITIONAL"
+        },
+        {
+          "name": "energy_above_hull",
+          "meaning": "相对凸包能量",
+          "unit": "eV/atom",
+          "sourceType": "DERIVED",
+          "status": "CONDITIONAL"
+        }
+      ],
+      "validations": [
+        {
+          "level": "object_completeness",
+          "label": "仅化学式单值映射",
+          "status": "FAIL",
+          "evidence": "同一化学式的不同晶相具有不同 DFT 带隙。"
+        },
+        {
+          "level": "cross_structure",
+          "label": "完备表示跨结构预测",
+          "status": "PENDING",
+          "evidence": "尚未执行结构族隔离比较。"
+        },
+        {
+          "level": "experimental_fidelity",
+          "label": "DFT 到实验多保真核验",
+          "status": "PENDING",
+          "evidence": "当前数值保持为计算记录，不冒充实验真值。"
+        }
+      ],
+      "counterexamples": [
+        "Eg=f(formula) 在本批 Si 与 ZnO 多晶型记录中不是单值函数。"
+      ],
+      "limitations": [
+        "返回记录是定向小样例，不用于估计全库分布。",
+        "局部配位与计算设置的完整表示仍待构造。"
+      ],
+      "nextAction": "比较仅化学式、加入空间群、加入局部配位与计算设置三组表示，按材料族和结构族双重隔离。",
+      "sources": [
+        {
+          "label": "Si 多晶型",
+          "locator": "materials-si-polymorphs.json"
+        },
+        {
+          "label": "ZnO 多晶型",
+          "locator": "materials-zno-polymorphs.json"
+        },
+        {
+          "label": "稳定相",
+          "locator": "materials-si-stable.json; materials-zno-stable.json"
+        }
+      ],
+      "evidenceHistory": [
+        {
+          "at": "2026-10-31",
+          "action": "COUNTEREXAMPLE_REGISTERED",
+          "detail": "formula-only 降级为失败候选，新表示保持 SCREENING。"
+        }
+      ]
+    },
+    {
+      "id": "INV-STABILITY-001",
+      "version": 1,
+      "kind": "formal_constraint",
+      "title": "可逆性与稳定反演的边界",
+      "domain": "结构驱动反演与数值稳定性",
+      "status": "DEMONSTRATED",
+      "statement": "矩阵可逆不蕴含逆问题稳定；近零奇异值方向可放大微小测量扰动。",
+      "summary": "对角矩阵给出可复核数值反例；它是数学示范，不宣称已完成 Lean 证明。",
+      "metrics": [
+        {
+          "label": "条件数",
+          "value": "10⁸",
+          "note": "diag(1, 10⁻⁸)"
+        },
+        {
+          "label": "输入相对扰动",
+          "value": "10⁻⁸",
+          "note": "测量端"
+        },
+        {
+          "label": "输出相对误差",
+          "value": "0.7071",
+          "note": "反演端"
+        },
+        {
+          "label": "误差放大",
+          "value": "7.071×10⁷",
+          "note": "相对误差之比"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "sigma_min",
+          "meaning": "最小奇异值",
+          "unit": "operator norm",
+          "sourceType": "DERIVED",
+          "status": "DERIVED"
+        },
+        {
+          "name": "delta_b",
+          "meaning": "测量扰动",
+          "unit": "data unit",
+          "sourceType": "BOUNDARY",
+          "status": "BOUNDARY"
+        },
+        {
+          "name": "regularization",
+          "meaning": "稳定化与截断策略",
+          "unit": "scheme",
+          "sourceType": "CONDITIONAL",
+          "status": "CONDITIONAL"
+        }
+      ],
+      "validations": [
+        {
+          "level": "analytical_inverse",
+          "label": "直接可逆性",
+          "status": "PASS",
+          "evidence": "对角元素均非零。"
+        },
+        {
+          "level": "numerical_counterexample",
+          "label": "噪声放大反例",
+          "status": "PASS",
+          "evidence": "x=(1,1)，扰动后反演为 (1,2)。"
+        },
+        {
+          "level": "unregularized_stability",
+          "label": "无稳定化反演",
+          "status": "FAIL",
+          "evidence": "微小输入扰动产生有限大输出误差。"
+        },
+        {
+          "level": "lean",
+          "label": "Lean 形式化",
+          "status": "PENDING",
+          "evidence": "本案例仅使用 NumPy 复核，没有声称形式化完成。"
+        }
+      ],
+      "counterexamples": [
+        "A=diag(1,10⁻⁸) 可逆，但 δb=(0,10⁻⁸) 使 x 的第二分量由 1 变为 2。"
+      ],
+      "limitations": [
+        "这是构造反例，不估计任何真实实验噪声分布。"
+      ],
+      "nextAction": "在结构驱动反演前加入条件数、谱截断、噪声模型和扰动压力测试门槛。",
+      "sources": [
+        {
+          "label": "数值反例",
+          "locator": "inverse-stability-demo.json"
+        }
+      ],
+      "evidenceHistory": [
+        {
+          "at": "2026-10-31",
+          "action": "NUMERICAL_COUNTEREXAMPLE_VERIFIED",
+          "detail": "条件数与误差放大均由脚本重算。"
+        }
+      ]
+    },
+    {
+      "id": "EXP-MODEL-DISCRIM-001",
+      "version": 1,
+      "kind": "protocol",
+      "title": "竞争模型的主动判别协议",
+      "domain": "方程发现、因果发现与闭环实验",
+      "status": "DESIGN_READY",
+      "statement": "当竞争模型在已有数据上拟合相近时，优先选择能在参数变化下稳健扩大模型分歧的新测量。",
+      "summary": "把研究目标从同分布误差最小化转为竞争假设淘汰；真实实验有效性与可实施性仍须逐案验证。",
+      "metrics": [
+        {
+          "label": "互补视角",
+          "value": 5,
+          "note": "方程、因果、形式、多保真、闭环"
+        },
+        {
+          "label": "候选模型",
+          "value": "≥2",
+          "note": "先确认已有数据难以区分"
+        },
+        {
+          "label": "优化目标",
+          "value": "稳健分歧",
+          "note": "不是继续压低同一损失"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "candidate_models",
+          "meaning": "竞争结构集合",
+          "unit": "model set",
+          "sourceType": "CONDITIONAL",
+          "status": "CONDITIONAL"
+        },
+        {
+          "name": "robust_discrimination_gap",
+          "meaning": "最坏参数情形下的模型响应差异",
+          "unit": "design metric",
+          "sourceType": "DERIVED",
+          "status": "CONDITIONAL"
+        },
+        {
+          "name": "measurement_cost",
+          "meaning": "新测量的资源与可实施约束",
+          "unit": "cost",
+          "sourceType": "BOUNDARY",
+          "status": "BOUNDARY"
+        }
+      ],
+      "validations": [
+        {
+          "level": "method_literature",
+          "label": "模型判别方法依据",
+          "status": "PASS",
+          "evidence": "公开研究明确将新实验设计用于区分竞争模型，并处理参数变化下的稳健性。"
+        },
+        {
+          "level": "real_world_experiment",
+          "label": "真实实验判别",
+          "status": "PENDING",
+          "evidence": "本组件尚未执行物理实验。"
+        },
+        {
+          "level": "benchmark_leakage",
+          "label": "基准与训练污染审计",
+          "status": "PENDING",
+          "evidence": "基础模型和公开方程基准需单独登记来源。"
+        }
+      ],
+      "counterexamples": [
+        "若所有可实施测量都无法区分模型，应报告不可识别，而不是继续调参。",
+        "预测分歧最大的点若不可测量或不安全，必须被实验约束排除。"
+      ],
+      "limitations": [
+        "协议本身不是经验规律；每个领域需要重新定义模型响应、成本和安全边界。"
+      ],
+      "nextAction": "选两个竞争结构，冻结响应距离、最坏参数域与测量约束，再选择下一批判别数据。",
+      "sources": [
+        {
+          "label": "闭环自动科学发现综述",
+          "locator": "https://link.springer.com/article/10.1007/s10994-025-06955-2"
+        },
+        {
+          "label": "稳健模型判别实验",
+          "locator": "https://doi.org/10.1371/journal.pone.0055723"
+        }
+      ],
+      "evidenceHistory": [
+        {
+          "at": "2026-10-31",
+          "action": "PROTOCOL_REGISTERED",
+          "detail": "将候选生成、因果混杂、形式反例、多保真和主动判别纳入同一证据闭环。"
+        }
+      ]
+    }
+  ],
+  "perspectives": [
+    {
+      "id": "equation",
+      "title": "方程与符号回归",
+      "output": "可解释候选关系",
+      "strength": "高效生成结构与复杂度前沿",
+      "blindSpot": "拟合成功不等于规律成立",
+      "role": "候选生成器"
+    },
+    {
+      "id": "causal",
+      "title": "因果发现",
+      "output": "因果图与干预响应",
+      "strength": "识别混杂、配对和干预假设",
+      "blindSpot": "依赖因果充分性与观测假设",
+      "role": "对象与混杂审计"
+    },
+    {
+      "id": "formal",
+      "title": "形式验证与反例",
+      "output": "定理、公理债务、反例",
+      "strength": "锁定不变量和失效边界",
+      "blindSpot": "形式化鸿沟与现实模型假设",
+      "role": "逻辑与稳定性闸门"
+    },
+    {
+      "id": "multifidelity",
+      "title": "多保真与不确定性",
+      "output": "带保真标签的预测与误差",
+      "strength": "区分 DFT、仪器和实验偏差",
+      "blindSpot": "低保真系统偏差不能靠数据量消除",
+      "role": "尺度与测量校准"
+    },
+    {
+      "id": "closed_loop",
+      "title": "主动实验与闭环",
+      "output": "下一项最有判别力的测量",
+      "strength": "以最少新证据淘汰竞争模型",
+      "blindSpot": "可实施性、成本和最坏参数域",
+      "role": "下一轮研究决策"
+    }
+  ],
+  "snapshot": {
+    "source": "/api/research/law-packages",
+    "generatedAt": "2026-10-31T06:55:28.962Z",
+    "payloadSha256": "201ec9e12d605e2c280c6ac29a91c8720850428bf32999a8634045cfdc6c6428",
+    "note": "Author-time immutable evidence snapshot; no browser credentials or live update."
+  }
+}
