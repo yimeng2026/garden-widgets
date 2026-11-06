@@ -21,6 +21,7 @@ import {
   structureExplorer,
   validationExplorer,
 } from "../src/content-explorers.mjs";
+import { renderMethodLineageWidget } from "../src/method-lineage-renderer.mjs";
 
 function readJson(root, relative) {
   return JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));
@@ -73,6 +74,14 @@ export function build({ rootDir = DEFAULT_ROOT, write = true } = {}) {
       snapshot: "snapshots/ca-document-stability.json",
     },
     {
+      id: "method-lineage",
+      title: "实验方法血缘",
+      html: renderMethodLineageWidget(readJson(rootDir, "snapshots/method-lineage-ca-six.json")),
+      status: "6 篇 · 15 组信息不足",
+      description: "原始方法指纹、来源角色、外部上下文排除与独立性边界。",
+      snapshot: "snapshots/method-lineage-ca-six.json",
+    },
+    {
       id: "structure-control",
       explorer: structureExplorer(readJson(rootDir, "snapshots/structural-control.json")),
       status: "3 类差异 · 长度待核",
@@ -116,11 +125,11 @@ export function build({ rootDir = DEFAULT_ROOT, write = true } = {}) {
       const ids = definition.narrative.cases.map((item) => item.id);
       if (new Set(ids).size !== ids.length) issues.push(`${definition.id}: duplicate case id`);
     }
-    const html = definition.explorer ? renderContentExplorer(definition.explorer) : renderResearchWidget(definition.narrative);
+    const html = definition.html || (definition.explorer ? renderContentExplorer(definition.explorer) : renderResearchWidget(definition.narrative));
     issues.push(...assertStaticWidgetHtml(html, [process.env.GARDEN_AGENT_TOKEN || ""]).map((issue) => `${definition.id}: ${issue}`));
     outputs.set(`widgets/${definition.id}/index.html`, html);
     manifest.push({
-      title: definition.explorer?.title || definition.narrative.title,
+      title: definition.title || definition.explorer?.title || definition.narrative?.title,
       status: definition.status,
       description: definition.description,
       entry: `widgets/${definition.id}/index.html`,

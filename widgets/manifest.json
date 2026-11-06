@@ -37,6 +37,13 @@
       "snapshot": "snapshots/ca-document-stability.json"
     },
     {
+      "title": "实验方法血缘",
+      "status": "6 篇 · 15 组信息不足",
+      "description": "原始方法指纹、来源角色、外部上下文排除与独立性边界。",
+      "entry": "widgets/method-lineage/index.html",
+      "snapshot": "snapshots/method-lineage-ca-six.json"
+    },
+    {
       "title": "结构—序列构建对照",
       "status": "3 类差异 · 长度待核",
       "description": "3HS4 与 2H4N 的构建差异、完整对齐区间和排除候选。",

@@ -9,6 +9,7 @@
 - **跨域证据链**：PySINDy、Z3、PubChem/RDKit、Materials Project/PyMatGen、PDB/UniProt、ChEMBL/PubChem/PDB 的六项真实复核，显示算法口径、快照与上游互补贡献。
 - **论文与图件阅览室**：三篇完整研究简报、篇内全文检索、章节导航与 13 幅图件放大。
 - **CA 表观活性比较**：六组文档内 Ki 配对、同方法筛选、重复标记和 CA IX 方法边界。
+- **实验方法血缘**：六篇文档的方法指纹、来源角色、外部上下文排除、15 组比较和独立实验边界。
 - **结构—序列构建对照**：3HS4／2H4N 的三类构建差异、完整对齐区间、排除候选和长度元数据不一致。
 - **全球前沿项目协作图谱**：88 个公开项目按领域、采用层级、本地状态和关键词筛选，强调与上游协作而非重复包装。
 - **验证与重放工作台**：21 份验证或上游快照、SHA-256、标量记录和关联重放脚本。
@@ -84,7 +85,7 @@ scripts/
   verify-reference-metadata.mjs DOI 注册元数据作者时回读
   build-reference-audit.mjs     39 条来源、版本、快照与引用关联审计
   verify_fulltext_evidence.py   4 篇全文、1 篇摘要的引文与页码核验
-  build.mjs                     构建 10 个组件与画廊
+  build.mjs                     构建 11 个组件与画廊
   dev.mjs                       显式创建的安全预览服务器
 schemas/
   law-package.schema.json       公开 JSON Schema
@@ -98,9 +99,10 @@ snapshots/
   reference-metadata.json      13 条 DOI 注册元数据
   reference-supplement.json    图书馆目录与 ACM 官方政策元数据
   reference-audit.json         39 条来源与正文关联审计
+  method-lineage-ca-six.json   六篇文献的方法血缘快照
   history/                     不覆盖的历史快照
 assets/papers/                 13 幅本地论文原图
-widgets/                       10 个独立静态组件与 manifest
+widgets/                       11 个独立静态组件与 manifest
 tests/                         Node 内置测试，无额外测试框架
 ```
 

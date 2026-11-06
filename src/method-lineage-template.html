@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>实验方法血缘</title>
+<style>
+body{margin:0}.lineage{width:100%;box-sizing:border-box;padding:var(--kimi-space-4,16px);font-family:var(--kimi-font-sans,sans-serif);color:var(--kimi-color-text-primary,CanvasText);line-height:1.5}.lineage *{box-sizing:border-box}.lineage button,.lineage input,.lineage select,.lineage textarea{font:inherit}.lineage h1,.lineage h2,.lineage h3,.lineage strong{font-weight:500}.lineage h1{margin:0;font-size:20px;line-height:28px}.lineage h2{font-size:17px;line-height:24px}.lineage h3{font-size:16px;line-height:24px}.lineage p{line-height:1.65}.lineage a{color:inherit}.lineage button{cursor:pointer}.lineage button:focus-visible,.lineage select:focus-visible,.lineage summary:focus-visible,.lineage a:focus-visible{outline:2px solid currentColor;outline-offset:3px}.head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--kimi-space-3,12px);padding-block-end:var(--kimi-space-3,12px);border-bottom:1px solid var(--kimi-color-border,#ddd)}.subtitle{margin:var(--kimi-space-1,4px) 0 0;font-size:14px;color:var(--kimi-color-text-secondary,#666)}.badge{display:inline-flex;align-items:center;min-height:24px;flex:none;padding-inline:var(--kimi-space-2,8px);border:1px solid var(--kimi-color-border,#ccc);border-radius:var(--kimi-radius-chip,6px);font-size:12px;color:var(--kimi-color-text-secondary,#666)}.badge--warning{color:var(--kimi-color-warning,#875c00);background:color-mix(in srgb,var(--kimi-color-warning,#875c00) 10%,transparent)}.badge--positive{color:var(--kimi-color-positive,#276749);background:color-mix(in srgb,var(--kimi-color-positive,#276749) 10%,transparent)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--kimi-space-3,12px);padding-block:var(--kimi-space-4,16px);border-bottom:1px solid var(--kimi-color-border,#ddd)}.metric{padding-inline-start:var(--kimi-space-3,12px);border-inline-start:1px solid var(--kimi-color-border,#ddd)}.metric:first-child{padding-inline-start:0;border-inline-start:0}.metric-value{display:block;font-size:26px;line-height:32px;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}.metric-label{display:block;font-size:12px;color:var(--kimi-color-text-secondary,#666)}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--kimi-space-2,8px);margin-block:var(--kimi-space-3,12px)}.kimi-button,.kimi-chip{min-height:32px;padding:var(--kimi-space-1,4px) var(--kimi-space-2,8px);border:1px solid var(--kimi-color-border,#ccc);border-radius:var(--kimi-radius-chip,6px);color:inherit;background:transparent}.kimi-chip[aria-pressed=true],.kimi-button[aria-pressed=true]{color:var(--kimi-color-surface,#fff);background:var(--kimi-color-text-primary,#222)}.kimi-select{min-height:36px;max-width:100%;padding:var(--kimi-space-2,8px);border:1px solid var(--kimi-color-border,#ccc);border-radius:var(--kimi-radius-input,10px);color:inherit;background:transparent}.muted{color:var(--kimi-color-text-secondary,#666)}.small{font-size:12px;line-height:18px}.code{font-family:var(--kimi-font-mono,monospace);font-size:12px;overflow-wrap:anywhere}.notice{padding:var(--kimi-space-3,12px);border-inline-start:2px solid var(--kimi-color-warning,#875c00);background:color-mix(in srgb,var(--kimi-color-warning,#875c00) 8%,transparent);font-size:14px;line-height:21px}.graph{display:block;width:100%;height:auto;max-height:380px;border-bottom:1px solid var(--kimi-color-border,#ddd)}.graph text{font-family:var(--kimi-font-sans,sans-serif);font-size:12px}.graph .edge{fill:none;stroke-width:1.2}.legend{display:flex;flex-wrap:wrap;gap:var(--kimi-space-3,12px);padding-block:var(--kimi-space-2,8px)}.legend span{display:inline-flex;align-items:center;gap:var(--kimi-space-1,4px);font-size:12px;color:var(--kimi-color-text-secondary,#666)}.mark{display:inline-block;width:16px;height:8px;border:1px solid currentColor;border-radius:var(--kimi-radius-small,4px)}.mark--primary{color:var(--kimi-chart-1,#377eb8)}.mark--context{color:var(--kimi-color-warning,#875c00);border-style:dashed}.mark--citation{color:var(--kimi-color-text-quaternary,#999);border-style:dotted}.detail{padding-block:var(--kimi-space-3,12px);border-bottom:1px solid var(--kimi-color-border,#ddd)}.details{margin-block-start:var(--kimi-space-3,12px);padding-block-start:var(--kimi-space-2,8px)}.details summary{cursor:pointer;min-height:32px}.source{padding-block:var(--kimi-space-2,8px);border-bottom:1px solid var(--kimi-color-border,#ddd)}.table-scroll{overflow-x:auto}.data-table{width:100%;border-collapse:collapse;font-size:12px;line-height:18px}.data-table th,.data-table td{padding:var(--kimi-space-2,8px);border-bottom:1px solid var(--kimi-color-border,#ddd);text-align:start;vertical-align:top}.data-table th{color:var(--kimi-color-text-secondary,#666);font-weight:500}.empty{padding:var(--kimi-space-5,20px) 0;color:var(--kimi-color-text-secondary,#666)}
+@media(max-width:640px){.head{display:block}.head>.badge{margin-block-start:var(--kimi-space-2,8px)}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric:nth-child(3){border-inline-start:0;padding-inline-start:0}.graph text{font-size:11px}.toolbar{align-items:stretch}.kimi-select{flex:1;min-width:160px}}
+</style></head><body>
+<div class="lineage" data-document-count="__DOCUMENT_COUNT__" data-context-excluded="__CONTEXT_EXCLUDED__" data-comparison-count="__COMPARISON_COUNT__" data-complete-fingerprints="__COMPLETE_FINGERPRINTS__">
+<header class="head"><div><h1>实验方法血缘</h1><p class="subtitle">__DOCUMENT_COUNT__ 篇文献 · __EVIDENCE_COUNT__ 条证据 · __NODE_COUNT__ 个节点 · __EDGE_COUNT__ 条描述边</p></div><span class="badge">只读作者时快照</span></header>
+<div class="metrics"><div class="metric"><strong class="metric-value">__DOCUMENT_COUNT__</strong><span class="metric-label">目标文献</span></div><div class="metric"><strong class="metric-value">__COMPLETE_FINGERPRINTS__</strong><span class="metric-label">完整方法指纹</span></div><div class="metric"><strong class="metric-value">__COMPARISON_COUNT__</strong><span class="metric-label">比较均为信息不足</span></div><div class="metric"><strong class="metric-value">__INDEPENDENT_COUNT__</strong><span class="metric-label">独立湿实验</span></div></div>
+<p class="notice">__CONTEXT_EXCLUDED__ 条外部方法上下文不进入目标指纹。方法描述边与显式派生边不代表独立重复；相同数值也不是新的湿实验。</p>
+<main id="lineage-main"></main>
+<details class="details"><summary>查看原始证据与来源角色</summary><div id="source-list"></div></details>
+<p class="small muted">快照时间：__GENERATED_AT__ · 请求 ID：__REQUEST_ID__ · 本页面无实时请求、无写入、无证据晋升。</p>
+</div>
+<script type="application/json" id="lineage-data">__GRAPH_JSON__</script>
+<script>
+(() => {
+  const graph = JSON.parse(document.getElementById('lineage-data').textContent);
+  const main = document.getElementById('lineage-main');
+  const state = { filter: 'all', view: 'graph', documentKey: graph.methodFingerprints[0]?.documentKey || '' };
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const docs = graph.nodes.filter(node => node.type === 'document');
+  const evidence = graph.nodes.filter(node => node.type === 'evidence');
+  const roleLabels = { primary: '目标原始材料', citation: '历史引用', curation: '数据库策划', context: '外部上下文', correspondence: '沟通记录', lead: '待追溯线索', unspecified: '角色未定' };
+  const shortNames = {
+    'ca13-publisher-snippet': 'CA XIII 引文',
+    'thiourea-pubmed-abstract': '硫脲摘要',
+    'emate-crystallography-snippet': 'EMATE 晶体',
+    'carboxybenzolamide-pubmed-abstract': '羧基摘要',
+    'e7070-table-snippet': 'E7070 片段',
+    'dtpa-pubmed-abstract': 'DTPA 摘要',
+    '3bae3a73-0f02-441c-92c5-e13380cd25fb': '2016 讲座',
+    '2126afab-57ee-4435-b5e4-2990da3ccbf4': '2012 DTC 方法'
+  };
+  const roleOf = item => item.lineage?.kind || 'unspecified';
+  const visible = item => state.filter === 'all' || roleOf(item) === state.filter || (state.filter === 'primary' && item.type === 'document');
+  const statusLabel = status => status === 'complete' ? '完整' : status === 'conflict' ? '字段冲突' : '信息不足';
+  function graphView() {
+    const docPositions = new Map(docs.map((doc, index) => [doc.id, { x: 18, y: 30 + index * 55 }]));
+    const evidencePositions = new Map(evidence.map((item, index) => [item.id, { x: 435, y: 20 + index * 43 }]));
+    const edgeMarkup = graph.edges.map(edge => {
+      const source = docPositions.get(edge.from) || evidencePositions.get(edge.from);
+      const target = docPositions.get(edge.to) || evidencePositions.get(edge.to);
+      if (!source || !target) return '';
+      const derived = edge.type === 'DERIVED_FROM';
+      const targetEvidence = evidence.find(item => item.id === edge.from);
+      const context = targetEvidence && roleOf(targetEvidence) === 'context';
+      const color = context ? 'var(--kimi-color-warning,#875c00)' : derived ? 'var(--kimi-chart-4,#9467bd)' : 'var(--kimi-color-text-quaternary,#999)';
+      return `<path class="edge" d="M ${source.x + 182} ${source.y + 17} C 315 ${source.y + 17}, 315 ${target.y + 14}, ${target.x} ${target.y + 14}" stroke="${color}" stroke-dasharray="${derived ? '5 3' : context ? '3 3' : 'none'}" opacity="${visible(targetEvidence || {}) ? 0.8 : 0.12}"><title>${esc(edge.type)}</title></path>`;
+    }).join('');
+    const docMarkup = docs.map(doc => {
+      const pos = docPositions.get(doc.id);
+      const fingerprint = graph.methodFingerprints.find(item => item.documentKey === doc.id);
+      return `<g data-document="${esc(doc.id)}"><rect x="${pos.x}" y="${pos.y}" width="182" height="34" rx="6" fill="color-mix(in srgb,var(--kimi-color-text-primary,#222) 4%,transparent)" stroke="var(--kimi-color-text-tertiary,#888)"/><text x="${pos.x + 8}" y="${pos.y + 14}" fill="var(--kimi-color-text-primary,CanvasText)">${esc(doc.id)}<title>${esc(doc.title)}</title></text><text x="${pos.x + 8}" y="${pos.y + 28}" fill="var(--kimi-color-text-secondary,#666)">${esc(statusLabel(fingerprint?.status))} · ${fingerprint?.unknownFields.length || 0} 项未知</text></g>`;
+    }).join('');
+    const evidenceMarkup = evidence.map(item => {
+      const pos = evidencePositions.get(item.id);
+      const role = roleOf(item);
+      const external = role === 'context';
+      const citation = role === 'citation';
+      const stroke = external ? 'var(--kimi-color-warning,#875c00)' : citation ? 'var(--kimi-color-text-quaternary,#999)' : 'var(--kimi-chart-1,#377eb8)';
+      const fill = external ? 'color-mix(in srgb,var(--kimi-color-warning,#875c00) 12%,transparent)' : citation ? 'transparent' : 'color-mix(in srgb,var(--kimi-chart-1,#377eb8) 9%,transparent)';
+      return `<g data-evidence="${esc(item.id)}" opacity="${visible(item) ? 1 : 0.14}"><rect x="${pos.x}" y="${pos.y}" width="230" height="28" rx="6" fill="${fill}" stroke="${stroke}" stroke-dasharray="${external ? '4 2' : citation ? '1 3' : 'none'}"/><text x="${pos.x + 8}" y="${pos.y + 18}" fill="var(--kimi-color-text-primary,CanvasText)">${esc(shortNames[item.id] || item.id)} · ${esc(roleLabels[role])}<title>${esc(item.locator)} · ${esc(item.level)} · ${esc(item.verification)}</title></text></g>`;
+    }).join('');
+    const fingerprint = graph.methodFingerprints.find(item => item.documentKey === state.documentKey) || graph.methodFingerprints[0];
+    return `<div class="toolbar" role="group" aria-label="显示方式"><button class="kimi-chip" data-view="graph" aria-pressed="true">血缘图</button><button class="kimi-chip" data-view="matrix" aria-pressed="false">方法比较矩阵</button><select class="kimi-select" id="doc-select" aria-label="查看文档方法缺口">${graph.methodFingerprints.map(item => `<option value="${esc(item.documentKey)}" ${item.documentKey === fingerprint?.documentKey ? 'selected' : ''}>${esc(item.documentKey)}</option>`).join('')}</select></div><div class="toolbar" role="group" aria-label="来源角色筛选">${[['all','全部'],['primary','目标原始材料'],['context','外部上下文'],['citation','历史引用']].map(([key,label]) => `<button class="kimi-chip" data-filter="${key}" aria-pressed="${state.filter === key}">${label}</button>`).join('')}</div><svg class="graph" viewBox="0 0 700 365" role="img" aria-label="六篇文档与八条证据的描述关系；外部上下文用虚线单独标记，连线不表示独立实验"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--kimi-color-text-quaternary,#999)"/></marker></defs>${edgeMarkup}${docMarkup}${evidenceMarkup}</svg><div class="legend"><span><i class="mark mark--primary"></i>原始材料</span><span><i class="mark mark--citation"></i>历史引用</span><span><i class="mark mark--context"></i>外部上下文（排除）</span><span>虚线不是独立重复</span></div>${fingerprint ? `<section class="detail"><h2>${esc(fingerprint.documentKey)} · ${esc(statusLabel(fingerprint.status))}</h2><p class="small">已知字段：${fingerprint.knownFields.length ? fingerprint.knownFields.map(esc).join('、') : '无'}。未知字段：${fingerprint.unknownFields.map(esc).join('、')}。</p><p class="small muted">仅目标原始、已核验全文／协议可补入这些字段；当前没有完整协议可用于跨文献比较。</p></section>` : ''}`;
+  }
+  function matrixView() {
+    return `<div class="toolbar" role="group" aria-label="显示方式"><button class="kimi-chip" data-view="graph" aria-pressed="false">血缘图</button><button class="kimi-chip" data-view="matrix" aria-pressed="true">方法比较矩阵</button></div><p class="small muted">${graph.comparisons.length} 组两两比较；匹配候选不等于独立实验，信息不足不能强行合并。</p><div class="table-scroll"><table class="data-table"><thead><tr><th>文档 A</th><th>文档 B</th><th>判定</th><th>依据</th></tr></thead><tbody>${graph.comparisons.map(item => `<tr><td class="code">${esc(item.left)}</td><td class="code">${esc(item.right)}</td><td>${esc(item.verdict === 'insufficient' ? '信息不足' : item.verdict)}</td><td>${esc(item.reason)}</td></tr>`).join('')}</tbody></table></div>`;
+  }
+  function render() { main.innerHTML = state.view === 'graph' ? graphView() : matrixView(); }
+  main.addEventListener('click', event => {
+    const button = event.target.closest('button');
+    if (!button) return;
+    if (button.dataset.view) { state.view = button.dataset.view; render(); }
+    if (button.dataset.filter) { state.filter = button.dataset.filter; state.view = 'graph'; render(); }
+  });
+  main.addEventListener('change', event => { if (event.target.id === 'doc-select') { state.documentKey = event.target.value; render(); } });
+  document.getElementById('source-list').innerHTML = evidence.map(item => `<article class="source"><span class="badge ${roleOf(item) === 'context' ? 'badge--warning' : ''}">${esc(roleLabels[roleOf(item)])}</span><p class="small"><strong>${esc(shortNames[item.id] || item.id)}</strong> · ${esc(item.level)} · ${esc(item.verification)}<br>${esc(item.locator)}<br>“${esc(item.quote)}”<br><a href="${esc(item.sourceUrl)}" target="_blank" rel="noreferrer noopener">打开来源</a></p></article>`).join('');
+  render();
+})();
+</script></body></html>

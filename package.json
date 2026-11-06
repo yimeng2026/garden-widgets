@@ -12,6 +12,7 @@
     "build": "node scripts/build.mjs",
     "sync": "node scripts/sync-law-packages.mjs",
     "sync:frontier": "node scripts/sync-frontier-content.mjs",
+    "sync:method-lineage": "node scripts/sync-method-lineage.mjs",
     "test": "node --test tests/*.test.mjs",
     "audit:references": "node scripts/build-reference-audit.mjs",
     "audit:fulltext": "python scripts/verify_fulltext_evidence.py",

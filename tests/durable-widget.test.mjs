@@ -9,9 +9,9 @@ import { assertStaticWidgetHtml } from "../src/research-renderer.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "widgets/manifest.json"), "utf8"));
 
-test("durable research hub links all ten components without remote dependencies", () => {
+test("durable research hub links all eleven components without remote dependencies", () => {
   const html = durableWidgetHub(manifest);
-  assert.equal((html.match(/<article class="hub-card">/g) || []).length, 10);
+  assert.equal((html.match(/<article class="hub-card">/g) || []).length, 11);
   assert.ok(html.includes("论文为未同行评议研究简报"));
   assert.ok(!html.includes("height:100vh"));
   assert.deepEqual(assertStaticWidgetHtml(html), []);
@@ -24,7 +24,7 @@ test("durable export contains every component, snapshot and all thirteen figures
   try {
     const result = exportDurableWidget({ targetDir: target });
     assert.equal(result.ok, true);
-    assert.equal(result.widgets, 10);
+    assert.equal(result.widgets, 11);
     for (const widget of manifest.widgets) {
       assert.ok(fs.existsSync(path.join(target, widget.entry)));
       assert.ok(fs.existsSync(path.join(target, widget.snapshot)));

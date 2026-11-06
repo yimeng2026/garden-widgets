@@ -8,21 +8,25 @@ import { build } from "../scripts/build.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("build produces ten widgets, a gallery, and a manifest without writing in inspection mode", () => {
+test("build produces eleven widgets, a gallery, and a manifest without writing in inspection mode", () => {
   const result = build({ rootDir: root, write: false });
   assert.equal(result.ok, true);
-  const widgets = ["law-lab", "complexity-lab", "frontier-evidence", "paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"];
+  const widgets = ["law-lab", "complexity-lab", "frontier-evidence", "paper-library", "ca-activity", "method-lineage", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"];
   assert.deepEqual(result.outputs.sort(), ["index.html", "widgets/manifest.json", ...widgets.map((id) => `widgets/${id}/index.html`)].sort());
-  assert.equal(result.manifest.length, 10);
+  assert.equal(result.manifest.length, 11);
 });
 
-test("build rejects duplicate case identifiers", () => {
+test("build rejects duplicate case identifiers in a standalone checkout", () => {
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "garden-widgets-build-"));
   try {
     fs.mkdirSync(path.join(temporary, "snapshots"));
-    const snapshots = ["law-packages.json", "complexity.json", "frontier-evidence.json", "paper-collection.json", "ca-document-stability.json", "ca-document-methods.json", "ca-selectivity.json", "structural-control.json", "projects.json", "validation-records.json", "reference-audit.json"];
+    const snapshots = ["law-packages.json", "complexity.json", "frontier-evidence.json", "paper-collection.json", "ca-document-stability.json", "ca-document-methods.json", "ca-selectivity.json", "method-lineage-ca-six.json", "structural-control.json", "projects.json", "validation-records.json", "reference-audit.json"];
     for (const name of snapshots) {
       fs.copyFileSync(path.join(root, "snapshots", name), path.join(temporary, "snapshots", name));
+    }
+    fs.mkdirSync(path.join(temporary, "src"), { recursive: true });
+    for (const name of ["method-lineage-renderer.mjs", "method-lineage-template.html"]) {
+      fs.copyFileSync(path.join(root, "src", name), path.join(temporary, "src", name));
     }
     const filename = path.join(temporary, "snapshots", "complexity.json");
     const data = JSON.parse(fs.readFileSync(filename, "utf8"));

@@ -1,0 +1,449 @@
+{
+  "requestId": "ca-six-2026",
+  "generatedAt": "2026-11-06T03:42:59.987Z",
+  "nodes": [
+    {
+      "id": "CHEMBL1146805",
+      "type": "document",
+      "title": "Carbonic anhydrase inhibitors. Inhibition of cytosolic isozyme XIII with aromatic and heterocyclic sulfonamides: a novel target for the drug design",
+      "methodStatus": "explicit_matched",
+      "doi": "10.1016/j.bmcl.2004.04.106"
+    },
+    {
+      "id": "CHEMBL1133556",
+      "type": "document",
+      "title": "Carbonic Anhydrase Inhibitors: Water-Soluble 4-Sulfamoylphenylthioureas as Topical Intraocular Pressure-Lowering Agents with Long-Lasting Effects",
+      "methodStatus": "method_incomplete",
+      "doi": "10.1021/jm001051+"
+    },
+    {
+      "id": "CHEMBL1146697",
+      "type": "document",
+      "title": "Carbonic anhydrase inhibitors: X-ray crystallographic structure of the adduct of human isozyme II with EMATE, a dual inhibitor of carbonic anhydrases and steroid sulfatase",
+      "methodStatus": "method_incomplete",
+      "doi": "10.1016/j.bmcl.2003.09.064"
+    },
+    {
+      "id": "CHEMBL1136178",
+      "type": "document",
+      "title": "Carbonic anhydrase inhibitors: Topically acting antiglaucoma sulfonamides incorporating esters and amides of 3- and 4-carboxybenzolamide",
+      "methodStatus": "method_incomplete",
+      "doi": "10.1016/S0960-894X(03)00580-8"
+    },
+    {
+      "id": "CHEMBL1146695",
+      "type": "document",
+      "title": "Carbonic anhydrase inhibitors: E7070, a sulfonamide anticancer agent, potently inhibits cytosolic isozymes I and II, and transmembrane, tumor-associated isozyme IX",
+      "methodStatus": "method_incomplete",
+      "doi": "10.1016/j.bmcl.2003.09.062"
+    },
+    {
+      "id": "CHEMBL1134204",
+      "type": "document",
+      "title": "Carbonic anhydrase inhibitors: synthesis of sulfonamides incorporating dtpa tails and of their zinc complexes with powerful topical antiglaucoma properties",
+      "methodStatus": "method_incomplete",
+      "doi": "10.1016/S0960-894X(00)00722-8"
+    },
+    {
+      "id": "ca13-publisher-snippet",
+      "type": "evidence",
+      "documentKey": "CHEMBL1146805",
+      "level": "partial_text",
+      "verification": "verified",
+      "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0960894X0400647X",
+      "locator": "CA inhibition data 片段",
+      "quote": "inhibition data against isozymes I, II, and IX have been published earlier, and will be not discussed in detail here",
+      "lineage": {
+        "kind": "citation",
+        "derivedFromEvidenceIds": []
+      },
+      "independentWetExperiment": false
+    },
+    {
+      "id": "thiourea-pubmed-abstract",
+      "type": "evidence",
+      "documentKey": "CHEMBL1133556",
+      "level": "abstract",
+      "verification": "verified",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/11123998/",
+      "locator": "PubMed 摘要",
+      "quote": "The new thiourea derivatives showed strong affinities toward isozymes I, II, and IV of carbonic anhydrase (CA, EC 4.2.1.1).",
+      "lineage": {
+        "kind": "primary",
+        "derivedFromEvidenceIds": []
+      },
+      "independentWetExperiment": false
+    },
+    {
+      "id": "emate-crystallography-snippet",
+      "type": "evidence",
+      "documentKey": "CHEMBL1146697",
+      "level": "partial_text",
+      "verification": "verified",
+      "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0960894X03010448",
+      "locator": "Crystallography 片段",
+      "quote": "The hCA II–1 adduct obtained by co-crystallization, was subjected to detailed X-ray crystallography.",
+      "lineage": {
+        "kind": "primary",
+        "derivedFromEvidenceIds": []
+      },
+      "independentWetExperiment": false
+    },
+    {
+      "id": "carboxybenzolamide-pubmed-abstract",
+      "type": "evidence",
+      "documentKey": "CHEMBL1136178",
+      "level": "abstract",
+      "verification": "verified",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/14611846/",
+      "locator": "PubMed 摘要",
+      "quote": "The new derivatives showed low nanomolar affinity for three carbonic anhydrase (CA) isozymes, CA I, II and IV, and were effective as topical antiglaucoma agents in normotensive rabbits.",
+      "lineage": {
+        "kind": "primary",
+        "derivedFromEvidenceIds": []
+      },
+      "independentWetExperiment": false
+    },
+    {
+      "id": "e7070-table-snippet",
+      "type": "evidence",
+      "documentKey": "CHEMBL1146695",
+      "level": "partial_text",
+      "verification": "verified",
+      "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0960894X03010424",
+      "locator": "Chemistry and CA inhibition 片段",
+      "quote": "Inhibition data against four CA isozymes with the six compounds 1–6 are shown in Table 1.",
+      "lineage": {
+        "kind": "primary",
+        "derivedFromEvidenceIds": []
+      },
+      "independentWetExperiment": false
+    },
+    {
+      "id": "dtpa-pubmed-abstract",
+      "type": "evidence",
+      "documentKey": "CHEMBL1134204",
+      "level": "abstract",
+      "verification": "verified",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/11229775/",
+      "locator": "PubMed 摘要",
+      "quote": "Many of these derivatives showed nanomolar affinity towards isozymes I, II and IV of carbonic anhydrase (CA).",
+      "lineage": {
+        "kind": "primary",
+        "derivedFromEvidenceIds": []
+      },
+      "independentWetExperiment": false
+    },
+    {
+      "id": "3bae3a73-0f02-441c-92c5-e13380cd25fb",
+      "type": "evidence",
+      "documentKey": "CHEMBL1146805",
+      "level": "lead",
+      "verification": "verified",
+      "sourceUrl": "https://www.iasoc.it/home/wp-content/uploads/2016/11/Supuran_2016.pdf",
+      "locator": "page 55, ChemComm Table 1 screenshot",
+      "quote": "10 (acetazolamide) 250 12 25",
+      "lineage": {
+        "kind": "context",
+        "derivedFromEvidenceIds": []
+      },
+      "independentWetExperiment": false
+    },
+    {
+      "id": "2126afab-57ee-4435-b5e4-2990da3ccbf4",
+      "type": "evidence",
+      "documentKey": "CHEMBL1146805",
+      "level": "partial_text",
+      "verification": "verified",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3313672/",
+      "locator": "Experimental Protocols, CA inhibition, and Table 1",
+      "quote": "An Applied Photophysics stopped-flow instrument has been used for assaying the CA catalysed CO2 hydration activity.",
+      "lineage": {
+        "kind": "context",
+        "derivedFromEvidenceIds": []
+      },
+      "methodFacet": {
+        "assayFamily": "stopped_flow_co2_hydration",
+        "instrument": "Applied Photophysics stopped-flow",
+        "substrate": "CO2 hydration"
+      },
+      "independentWetExperiment": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "ca13-publisher-snippet",
+      "to": "CHEMBL1146805",
+      "type": "DESCRIBES"
+    },
+    {
+      "from": "thiourea-pubmed-abstract",
+      "to": "CHEMBL1133556",
+      "type": "DESCRIBES"
+    },
+    {
+      "from": "emate-crystallography-snippet",
+      "to": "CHEMBL1146697",
+      "type": "DESCRIBES"
+    },
+    {
+      "from": "carboxybenzolamide-pubmed-abstract",
+      "to": "CHEMBL1136178",
+      "type": "DESCRIBES"
+    },
+    {
+      "from": "e7070-table-snippet",
+      "to": "CHEMBL1146695",
+      "type": "DESCRIBES"
+    },
+    {
+      "from": "dtpa-pubmed-abstract",
+      "to": "CHEMBL1134204",
+      "type": "DESCRIBES"
+    },
+    {
+      "from": "3bae3a73-0f02-441c-92c5-e13380cd25fb",
+      "to": "CHEMBL1146805",
+      "type": "DESCRIBES"
+    },
+    {
+      "from": "2126afab-57ee-4435-b5e4-2990da3ccbf4",
+      "to": "CHEMBL1146805",
+      "type": "DESCRIBES"
+    }
+  ],
+  "methodFingerprints": [
+    {
+      "documentKey": "CHEMBL1146805",
+      "status": "insufficient",
+      "fields": {},
+      "knownFields": [],
+      "unknownFields": [
+        "assayFamily",
+        "instrument",
+        "substrate",
+        "readout",
+        "enzymeSource",
+        "pH",
+        "temperature",
+        "incubation",
+        "kiCalculation",
+        "replicates"
+      ],
+      "conflictFields": [],
+      "primaryEvidenceIds": []
+    },
+    {
+      "documentKey": "CHEMBL1133556",
+      "status": "insufficient",
+      "fields": {},
+      "knownFields": [],
+      "unknownFields": [
+        "assayFamily",
+        "instrument",
+        "substrate",
+        "readout",
+        "enzymeSource",
+        "pH",
+        "temperature",
+        "incubation",
+        "kiCalculation",
+        "replicates"
+      ],
+      "conflictFields": [],
+      "primaryEvidenceIds": []
+    },
+    {
+      "documentKey": "CHEMBL1146697",
+      "status": "insufficient",
+      "fields": {},
+      "knownFields": [],
+      "unknownFields": [
+        "assayFamily",
+        "instrument",
+        "substrate",
+        "readout",
+        "enzymeSource",
+        "pH",
+        "temperature",
+        "incubation",
+        "kiCalculation",
+        "replicates"
+      ],
+      "conflictFields": [],
+      "primaryEvidenceIds": []
+    },
+    {
+      "documentKey": "CHEMBL1136178",
+      "status": "insufficient",
+      "fields": {},
+      "knownFields": [],
+      "unknownFields": [
+        "assayFamily",
+        "instrument",
+        "substrate",
+        "readout",
+        "enzymeSource",
+        "pH",
+        "temperature",
+        "incubation",
+        "kiCalculation",
+        "replicates"
+      ],
+      "conflictFields": [],
+      "primaryEvidenceIds": []
+    },
+    {
+      "documentKey": "CHEMBL1146695",
+      "status": "insufficient",
+      "fields": {},
+      "knownFields": [],
+      "unknownFields": [
+        "assayFamily",
+        "instrument",
+        "substrate",
+        "readout",
+        "enzymeSource",
+        "pH",
+        "temperature",
+        "incubation",
+        "kiCalculation",
+        "replicates"
+      ],
+      "conflictFields": [],
+      "primaryEvidenceIds": []
+    },
+    {
+      "documentKey": "CHEMBL1134204",
+      "status": "insufficient",
+      "fields": {},
+      "knownFields": [],
+      "unknownFields": [
+        "assayFamily",
+        "instrument",
+        "substrate",
+        "readout",
+        "enzymeSource",
+        "pH",
+        "temperature",
+        "incubation",
+        "kiCalculation",
+        "replicates"
+      ],
+      "conflictFields": [],
+      "primaryEvidenceIds": []
+    }
+  ],
+  "comparisons": [
+    {
+      "left": "CHEMBL1146805",
+      "right": "CHEMBL1133556",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146805",
+      "right": "CHEMBL1146697",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146805",
+      "right": "CHEMBL1136178",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146805",
+      "right": "CHEMBL1146695",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146805",
+      "right": "CHEMBL1134204",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1133556",
+      "right": "CHEMBL1146697",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1133556",
+      "right": "CHEMBL1136178",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1133556",
+      "right": "CHEMBL1146695",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1133556",
+      "right": "CHEMBL1134204",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146697",
+      "right": "CHEMBL1136178",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146697",
+      "right": "CHEMBL1146695",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146697",
+      "right": "CHEMBL1134204",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1136178",
+      "right": "CHEMBL1146695",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1136178",
+      "right": "CHEMBL1134204",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    },
+    {
+      "left": "CHEMBL1146695",
+      "right": "CHEMBL1134204",
+      "verdict": "insufficient",
+      "reason": "目标原始方法字段不完整；外部方法、同值和模型意见不能补齐"
+    }
+  ],
+  "summary": {
+    "documentCount": 6,
+    "evidenceCount": 8,
+    "nodeCount": 14,
+    "edgeCount": 8,
+    "fingerprintCompleteCount": 0,
+    "fingerprintConflictCount": 0,
+    "comparisonCount": 15,
+    "comparisonCounts": {
+      "insufficient": 15
+    },
+    "externalContextExcluded": 2,
+    "independentWetExperimentCount": 0,
+    "evidenceUpgrade": false
+  },
+  "boundaries": [
+    "只有 verified 的 full_text／protocol 且 lineage.kind=primary 才进入目标方法指纹。",
+    "方法匹配候选不等于独立湿实验；独立性必须有明确的原始实验依据。",
+    "未登记的派生关系不做猜测，外部方法和相同参考值不补入目标文献。"
+  ]
+}

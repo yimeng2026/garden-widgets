@@ -80,7 +80,7 @@ class Cdp {
   }
   async navigate(origin, widget = "") {
     await this.call("Page.navigate", { url: `${origin}/${widget}` });
-    await until(async () => this.evaluate("document.readyState==='complete' && !!document.querySelector('#explorer-main, .gallery')"), `load ${widget || "gallery"}`);
+    await until(async () => this.evaluate("document.readyState==='complete' && !!document.querySelector('#explorer-main, #lineage-main, .gallery')"), `load ${widget || "gallery"}`);
     await pause(100);
   }
   async screenshot(name) {
@@ -134,10 +134,10 @@ async function run() {
     };
 
     await cdp.navigate(origin);
-    assert.equal(await cdp.evaluate("document.querySelectorAll('.widget-card').length"), 10);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.widget-card').length"), 11);
     await assertNoOverflow("gallery");
     await cdp.screenshot("01-gallery");
-    pass("画廊显示 10 个组件");
+    pass("画廊显示 11 个组件");
 
     await cdp.navigate(origin, "widgets/paper-library/index.html");
     await cdp.evaluate("document.querySelector('[data-action=figures]').click()");
@@ -170,6 +170,19 @@ async function run() {
     assert.ok(await cdp.evaluate("document.querySelector('#explorer-main').innerText.includes('20.8333')"));
     await assertNoOverflow("activity");
     pass("六组活性比值、同方法筛选与文档方法分层");
+
+    await cdp.navigate(origin, "widgets/method-lineage/index.html");
+    assert.equal(await cdp.evaluate("document.querySelectorAll('[data-document]').length"), 6);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('[data-evidence]').length"), 8);
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.source').length"), 8);
+    await cdp.evaluate("document.querySelector('[data-filter=context]').click()");
+    assert.ok(await cdp.evaluate("[...document.querySelectorAll('[data-evidence]')].filter(node=>node.getAttribute('opacity')==='0.14').length===6"));
+    await cdp.screenshot("03b-method-lineage");
+    await cdp.evaluate("document.querySelector('[data-view=matrix]').click()");
+    assert.equal(await cdp.evaluate("document.querySelectorAll('.data-table tbody tr').length"), 15);
+    assert.ok(await cdp.evaluate("document.querySelector('#lineage-main').innerText.includes('信息不足')"));
+    await assertNoOverflow("method lineage");
+    pass("六篇方法血缘、15 组信息不足与外部上下文筛选");
 
     await cdp.navigate(origin, "widgets/structure-control/index.html");
     assert.equal(await cdp.evaluate("document.querySelectorAll('.diff-list li').length"), 3);
@@ -239,12 +252,12 @@ async function run() {
     pass("39 条来源、全文／片段／摘要分层与引用覆盖");
 
     await cdp.call("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
-    for (const widget of ["paper-library", "ca-activity", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"]) {
+    for (const widget of ["paper-library", "ca-activity", "method-lineage", "structure-control", "project-atlas", "validation-workbench", "generation-budget", "reference-audit"]) {
       await cdp.navigate(origin, `widgets/${widget}/index.html`);
       await assertNoOverflow(`${widget} mobile`);
     }
     await cdp.screenshot("08-mobile-budget");
-    pass("七个新增组件在 390 px 宽度下无横向溢出");
+    pass("八个新增组件在 390 px 宽度下无横向溢出");
     assert.deepEqual(cdp.errors, []);
     await assertLocalResources();
     pass("浏览器无脚本异常，资源均为本地来源");
